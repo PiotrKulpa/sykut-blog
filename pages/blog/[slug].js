@@ -4,13 +4,15 @@ import path from "path";
 import matter from "gray-matter";
 import Head from "next/head";
 import marked from "marked";
+import parseMD from 'parse-md';
 
-const Post = ({ htmlString, data }) => {
+
+const Post = ({ htmlString, date, title, description }) => {
   return (
     <>
       <Head>
-        <title>{data.title}</title>
-        <meta title="description" content={data.description} />
+        <title>{title}</title>
+        <meta title="description" content={description} />
       </Head>
       <div dangerouslySetInnerHTML={{ __html: htmlString }} />
     </>
@@ -35,17 +37,21 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params: { slug } }) => {
   const markdownWithMetadata = fs
-    .readFileSync(path.join("content/blog", slug + ".md"))
-    .toString();
-   
-  const parsedMarkdown = matter(markdownWithMetadata);
+    .readFileSync(path.join("content/blog", slug + ".md"), 'utf8');
+    const { metadata, content } = parseMD(markdownWithMetadata);  
+    const parsedMarkdown = matter(content);
+    const htmlString = marked(parsedMarkdown.content);
+  // const parsedMarkdown = matter(markdownWithMetadata);
 
-  const htmlString = marked(parsedMarkdown.content);
+  // const htmlString = marked(parsedMarkdown.content);
 
   return {
     props: {
       htmlString,
-      data: parsedMarkdown.data
+      date: metadata.date.toLocaleString(),
+      title: metadata.title,
+      description: metadata.description,
+
     }
   };
 };
