@@ -37,7 +37,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
   const markdownWithMetadata = fs
     .readFileSync(path.join("content/blog", slug + ".md"))
     .toString();
-    console.log("markdownWithMetadata: ", markdownWithMetadata);
+   
   const parsedMarkdown = matter(markdownWithMetadata);
 
   const htmlString = marked(parsedMarkdown.content);
