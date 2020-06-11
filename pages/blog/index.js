@@ -9,6 +9,7 @@ import parseMD from 'parse-md';
 
 
 const index = ({ posts }) => {
+  const { title } = attributes;
   return (
     <>
       <div>
@@ -24,7 +25,9 @@ const index = ({ posts }) => {
                     </div>
                     <div className="right">
                       <p className="small_tag">SERVICES</p>
-                      <h2><span className="theme_color">How to provide</span> tools that help anyone give a voice to their ideas</h2>
+                      <h2>
+                        <BlogContent />
+                      </h2>
                     </div>
                   </div>
                 </div>
@@ -34,7 +37,14 @@ const index = ({ posts }) => {
 
               {/* loop */}
               {posts.map(post => {
-                const { slug = '', date = '', htmlString = '', title = '' } = post;
+                const { 
+                  slug = '', 
+                  date = '', 
+                  htmlString = '', 
+                  title = '', 
+                  description = '',
+                  featuredimage = ''
+                } = post;
                 // dangerouslySetInnerHTML={{ __html: post.htmlString }}
                 return (
 
@@ -43,13 +53,13 @@ const index = ({ posts }) => {
                       <a>
                         <div className="service_blog">
                           <div className="service_icons">
-                            <img width={75} height={75} src="img/icon-1.png" alt="#" />
+                            <img  src={featuredimage} alt="#" />
                           </div>
                           <div className="full">
                             <h4>{title}</h4>
                           </div>
                           <div className="full">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
+                            <p>{description}</p>
                           </div>
                         </div>
                       </a>
@@ -210,6 +220,8 @@ export const getStaticProps = async () => {
           slug: filename.replace(".md", ""),
           date: metadata.date.toLocaleString(),
           title: metadata.title,
+          description: metadata.description,
+          featuredimage: metadata.featuredimage,
           htmlString
         }
 
