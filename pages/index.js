@@ -4,12 +4,11 @@ import Banner from '../components/Banner';
 
 export default class Home extends Component {
   render() {
-    let { title } = attributes;
-    console.log(attributes['home-main-banner']);
+    let { homeMainBanner = [] } = attributes;
     
     return (
       <>
-      <Banner />
+      <Banner data={homeMainBanner} />
         {/* section */}
         <div className="section layout_padding">
           <div className="container">

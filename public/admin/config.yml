@@ -21,9 +21,9 @@ collections:
             - { label: "Tytuł", name: "title", widget: "string"}
             - { label: "Podtytuł", name: "subtitle", widget: "text"}
             - { label: "Hasło", name: "message", widget: "text"}
-            - { label: "Tekst przycisku", name: "btn-txt", widget: "string"}
-            - { label: "Url przycisku", name: "btn-url", widget: "string"}
-            - { label: "Grafika", name: "img-url", widget: "image"}
+            - { label: "Tekst przycisku", name: "btnTxt", widget: "string"}
+            - { label: "Url przycisku", name: "btnUrl", widget: "string"}
+            - { label: "Grafika", name: "imgUrl", widget: "image"}
     - label: "Blog"
       name: "blog"
       file: "content/blog.md"
