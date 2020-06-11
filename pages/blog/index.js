@@ -8,7 +8,7 @@ import marked from "marked";
 import parseMD from 'parse-md';
 
 
-const index = ({posts}) => {
+const index = ({ posts }) => {
   return (
     <>
       <div>
@@ -31,84 +31,34 @@ const index = ({posts}) => {
               </div>
             </div>
             <div className="row margin-top_30">
-              <div className="col-sm-6 col-md-4">
-                <div className="service_blog">
-                  <div className="service_icons">
-                    <img width={75} height={75} src="img/icon-1.png" alt="#" />
+
+              {/* loop */}
+              {posts.map(post => {
+                const { slug = '', date = '', htmlString = '', title = '' } = post;
+                // dangerouslySetInnerHTML={{ __html: post.htmlString }}
+                return (
+
+                  <div className="col-sm-6 col-md-4">
+                    <Link href={`/blog/${slug}`}>
+                      <a>
+                        <div className="service_blog">
+                          <div className="service_icons">
+                            <img width={75} height={75} src="img/icon-1.png" alt="#" />
+                          </div>
+                          <div className="full">
+                            <h4>{title}</h4>
+                          </div>
+                          <div className="full">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
+                          </div>
+                        </div>
+                      </a>
+                    </Link>
                   </div>
-                  <div className="full">
-                    <h4>DIGITAL marketing</h4>
-                  </div>
-                  <div className="full">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-6 col-md-4">
-                <div className="service_blog">
-                  <div className="service_icons">
-                    <img width={75} height={75} src="img/icon-2.png" alt="#" />
-                  </div>
-                  <div className="full">
-                    <h4>DIGITAL marketing</h4>
-                  </div>
-                  <div className="full">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-6 col-md-4">
-                <div className="service_blog">
-                  <div className="service_icons">
-                    <img width={75} height={75} src="img/icon-3.png" alt="#" />
-                  </div>
-                  <div className="full">
-                    <h4>DIGITAL marketing</h4>
-                  </div>
-                  <div className="full">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-6 col-md-4">
-                <div className="service_blog">
-                  <div className="service_icons">
-                    <img width={75} height={75} src="img/icon-4.png" alt="#" />
-                  </div>
-                  <div className="full">
-                    <h4>DIGITAL marketing</h4>
-                  </div>
-                  <div className="full">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-6 col-md-4">
-                <div className="service_blog">
-                  <div className="service_icons">
-                    <img width={75} height={75} src="img/icon-5.png" alt="#" />
-                  </div>
-                  <div className="full">
-                    <h4>DIGITAL marketing</h4>
-                  </div>
-                  <div className="full">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-6 col-md-4">
-                <div className="service_blog">
-                  <div className="service_icons">
-                    <img width={75} height={75} src="img/icon-6.png" alt="#" />
-                  </div>
-                  <div className="full">
-                    <h4>DIGITAL marketing</h4>
-                  </div>
-                  <div className="full">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
-                  </div>
-                </div>
-              </div>
+
+                );
+              })}
+
             </div>
           </div>
         </div>
@@ -238,23 +188,7 @@ const index = ({posts}) => {
       </p>
       <BlogContent />
       <div>
-    posts:
-    {posts.map(post => {
-      
-      return (
-        <div key={post.slug}>
-          <Link href={"/blog/" + post.slug}>
-            <a>{"/blog/" + post.slug}</a>
-          </Link>
-          <p>Data wpisu to: {post.date}</p>
-          <div>
-            data:
-            <div dangerouslySetInnerHTML={{ __html: post.htmlString }} />
-          </div>
-        </div>
-      );
-    })}
-  </div>
+      </div>
 
     </>
   )
@@ -262,22 +196,23 @@ const index = ({posts}) => {
 
 export const getStaticProps = async () => {
   const files = fs.readdirSync("content/blog");
-  
-  
+
+
   return {
     props: {
       posts: files.map(filename => {
         const markdownWithMetadata = fs
-        .readFileSync(path.join("content/blog", filename), 'utf8')
-        const { metadata, content } = parseMD(markdownWithMetadata);  
+          .readFileSync(path.join("content/blog", filename), 'utf8')
+        const { metadata, content } = parseMD(markdownWithMetadata);
         const parsedMarkdown = matter(content);
         const htmlString = marked(parsedMarkdown.content);
         return {
           slug: filename.replace(".md", ""),
           date: metadata.date.toLocaleString(),
+          title: metadata.title,
           htmlString
         }
-        
+
       })
     }
   };
