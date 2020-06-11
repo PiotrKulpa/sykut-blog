@@ -4,8 +4,8 @@ import Banner from '../components/Banner';
 
 export default class Home extends Component {
   render() {
-    let { title, cats } = attributes;
-    console.log(cats);
+    let { title } = attributes;
+    console.log(attributes['home-main-banner']);
     
     return (
       <>
