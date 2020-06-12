@@ -24,7 +24,7 @@ class MyDocument extends Document {
           {/* Bootstrap CSS */}
           <link rel="stylesheet" href="css/bootstrap.min.css" />
           {/* Pogo Slider CSS */}
-          <link rel="stylesheet" href="css/pogo-slider.min.css" />
+          {/* <link rel="stylesheet" href="css/pogo-slider.min.css" /> */}
           {/* Site CSS */}
           <link rel="stylesheet" href="css/style.css" />
           {/* Responsive CSS */}
