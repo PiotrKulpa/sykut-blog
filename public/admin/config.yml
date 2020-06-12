@@ -35,19 +35,33 @@ collections:
   - name: "components"
     label: "Komponenty strony"
     files:
-    - label: "Slider na stronie domowej"
-      name: "slider"
-      file: "content/slider.md"
-      - label: 'Treść slidera'
-        name: "sliderContent"
-        widget: list
-        fields:
-          - { label: "Tytuł", name: "title", widget: "string"}
-          - { label: "Podtytuł", name: "subtitle", widget: "text"}
-          - { label: "Hasło", name: "message", widget: "text"}
-          - { label: "Tekst przycisku", name: "btnTxt", widget: "string"}
-          - { label: "Url przycisku", name: "btnUrl", widget: "string"}
-          - { label: "Grafika", name: "imgUrl", widget: "image"}
+    - label: "Slider"
+      name: "componentSlider"
+      file: "content/componentSlider.md"
+      fields:
+        - { label: "Tytuł", name: "title", widget: "string"}
+        - { label: "Data publikacji", name: "date", widget: "datetime" }
+        - label: 'Slider zawartość'
+          name: "homeMainSlider"
+          widget: list
+          fields:
+            - { label: "Tytuł", name: "title", widget: "string"}
+            - { label: "Podtytuł", name: "subtitle", widget: "text"}
+            - { label: "Hasło", name: "message", widget: "text"}
+            - { label: "Tekst przycisku", name: "btnTxt", widget: "string"}
+            - { label: "Url przycisku", name: "btnUrl", widget: "string"}
+            - { label: "Grafika", name: "imgUrl", widget: "image"}
+    - label: "O nas"
+      name: "componentAboutUs"
+      file: "content/componentAboutUs.md"
+      fields:
+        - { label: "Tytuł", name: "title", widget: "string"}
+        - { label: "Podtytuł", name: "subtitle", widget: "string"}
+        - { label: "Hasło", name: "slogan", widget: "string"}
+        - { label: "Data publikacji", name: "date", widget: "datetime" }
+        - { label: "Tytuł czarny", name: "titleDark", widget: "string"}
+        - { label: "Zawartość", name: "body", widget: "text"}
+        - { label: "Grafika", name: "imgUrl", widget: "image"}
 
   - name: "blog"
     label: "Blog"
