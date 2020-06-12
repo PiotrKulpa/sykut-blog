@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { attributes, react as ServicesContent } from '../content/componentServices.md';
+import { attributes } from '../content/componentServices.md';
 
 const Services = () => {
 

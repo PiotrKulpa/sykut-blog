@@ -76,6 +76,31 @@ collections:
             - { label: "Podtytuł", name: "subtitle", widget: "text"}
             - { label: "Url przycisku", name: "btnUrl", widget: "string"}
             - { label: "Grafika", name: "imgUrl", widget: "image"}
+    - label: "Portfolio"
+      name: "componentPortfolio"
+      file: "content/componentPortfolio.md"
+      fields:
+        - { label: "Tytuł", name: "title", widget: "string"}
+        - { label: "Podtytuł", name: "subtitle", widget: "markdown"}
+        - { label: "Hasło", name: "slogan", widget: "string"}
+        - { label: "Treść", name: "content", widget: "text"}
+        - { label: "Tekst przycisku", name: "btnTxt", widget: "string"}
+        - { label: "Url przycisku", name: "btnUrl", widget: "string"}
+        - label: 'Lista zdjęć'
+          name: "postfolioList"
+          widget: list
+          fields:
+            - { label: "Grafika", name: "imgUrl", widget: "image"}
+    - label: "Czego dokonaliśmy"
+      name: "componentWhatWeDone"
+      file: "content/componentWhatWeDone.md"
+      fields:
+        - { label: "Zawartość CMS", name: "content", widget: "markdown"}
+    - label: "Nasz zespół"
+      name: "componentOurTeam"
+      file: "content/componentOurTeam.md"
+      fields:
+        - { label: "Zawartość CMS", name: "content", widget: "markdown"}
 
   - name: "blog"
     label: "Blog"
