@@ -1,20 +1,26 @@
 import React from 'react';
 import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
+import { attributes } from '../content/componentSlider.md';
 
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 
-const Banner = (props) => {
+const Banner = () => {
 
-  const { data = [] } = props;
-  console.log(data);
+  const { homeMainSlider = [] } = attributes;
+  
   return (
 
     <div className="ulockd-home-slider">
       <div className="container-fluid">
         <div className="row">
-          <AutoplaySlider play={true} className="pogoSlider" id="js-main-slider">
-            {data && data.map(({
+          <AutoplaySlider 
+            play={true} 
+            className="pogoSlider" 
+            id="js-main-slider"
+            interval={6000}
+          >
+            {homeMainSlider && homeMainSlider.map(({
               btnTxt = '',
               btnUrl = '',
               imgUrl = '',

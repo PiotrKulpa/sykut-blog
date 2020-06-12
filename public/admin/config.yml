@@ -62,6 +62,20 @@ collections:
         - { label: "Tytuł czarny", name: "titleDark", widget: "string"}
         - { label: "Zawartość", name: "body", widget: "text"}
         - { label: "Grafika", name: "imgUrl", widget: "image"}
+    - label: "Uslugi"
+      name: "componentServices"
+      file: "content/componentServices.md"
+      fields:
+        - { label: "Tytuł", name: "title", widget: "string"}
+        - { label: "Podtytuł", name: "subtitle", widget: "markdown"}
+        - label: 'Lista usług'
+          name: "serviceList"
+          widget: list
+          fields:
+            - { label: "Tytuł", name: "title", widget: "string"}
+            - { label: "Podtytuł", name: "subtitle", widget: "text"}
+            - { label: "Url przycisku", name: "btnUrl", widget: "string"}
+            - { label: "Grafika", name: "imgUrl", widget: "image"}
 
   - name: "blog"
     label: "Blog"
