@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import { attributes, react as HomeContent } from '../content/home.md';
 import Banner from '../components/Banner';
+import AboutUs from '../components/AboutUs';
+import Services from '../components/Services';
 
 export default class Home extends Component {
   render() {
@@ -9,162 +11,10 @@ export default class Home extends Component {
     return (
       <>
       <Banner data={homeMainBanner} />
-        {/* section */}
-        <div className="section layout_padding">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12">
-                <div className="full">
-                  <div className="heading_main text_align_left">
-                    <div className="left">
-                      <p className="section_count">01</p>
-                    </div>
-                    <div className="right">
-                      <p className="small_tag">About us</p>
-                      <h2><span className="theme_color">WE CAN</span> HELP YOUR business GROW</h2>
-                      <p className="large">Get your Business in 4 easy steps</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* end section */}
-
-        {/* section */}
-        <div className="section dark_bg">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-lg-6 col-md-12 text_align_center padding_0">
-                <div className="full">
-                  <img className="img-responsive" src="img/img-2png.png" alt="#" />
-                </div>
-              </div>
-              <div className="col-lg-6 col-md-12 white_fonts layout_padding padding_left_right">
-                <h3 className="small_heading">EVERYTHING<br />YOU NEED IN ONE SOLUTION</h3>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-                looking at its layout.
-                The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to
-                using 'Content here,
-                content here', making it look like readable English. Many desktop publishing packages and web page editors
-                now use Lorem Ipsum as
-          their default model..</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* end section */}
-
-        <div>
-          {/* section */}
-          <div className="section layout_padding">
-            <div className="container">
-              <div className="row">
-                <div className="col-md-12">
-                  <div className="full">
-                    <div className="heading_main text_align_left">
-                      <div className="left">
-                        <p className="section_count">02</p>
-                      </div>
-                      <div className="right">
-                        <p className="small_tag">SERVICES</p>
-                        <h2><span className="theme_color">How to provide</span> tools that help anyone give a voice to their ideas
-                </h2>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="row margin-top_30">
-                <div className="col-sm-6 col-md-4">
-                  <div className="service_blog">
-                    <div className="service_icons">
-                      <img width={75} height={75} src="img/icon-1.png" alt="#" />
-                    </div>
-                    <div className="full">
-                      <h4>DIGITAL marketing</h4>
-                    </div>
-                    <div className="full">
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-sm-6 col-md-4">
-                  <div className="service_blog">
-                    <div className="service_icons">
-                      <img width={75} height={75} src="img/icon-2.png" alt="#" />
-                    </div>
-                    <div className="full">
-                      <h4>DIGITAL marketing</h4>
-                    </div>
-                    <div className="full">
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-sm-6 col-md-4">
-                  <div className="service_blog">
-                    <div className="service_icons">
-                      <img width={75} height={75} src="img/icon-3.png" alt="#" />
-                    </div>
-                    <div className="full">
-                      <h4>DIGITAL marketing</h4>
-                    </div>
-                    <div className="full">
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-sm-6 col-md-4">
-                  <div className="service_blog">
-                    <div className="service_icons">
-                      <img width={75} height={75} src="img/icon-4.png" alt="#" />
-                    </div>
-                    <div className="full">
-                      <h4>DIGITAL marketing</h4>
-                    </div>
-                    <div className="full">
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-sm-6 col-md-4">
-                  <div className="service_blog">
-                    <div className="service_icons">
-                      <img width={75} height={75} src="img/icon-5.png" alt="#" />
-                    </div>
-                    <div className="full">
-                      <h4>DIGITAL marketing</h4>
-                    </div>
-                    <div className="full">
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-sm-6 col-md-4">
-                  <div className="service_blog">
-                    <div className="service_icons">
-                      <img width={75} height={75} src="img/icon-6.png" alt="#" />
-                    </div>
-                    <div className="full">
-                      <h4>DIGITAL marketing</h4>
-                    </div>
-                    <div className="full">
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* end section */}
+      <AboutUs />
+      <Services />
+        
+         
           {/* section */}
           <div className="section layout_padding">
             <div className="container">
@@ -473,7 +323,7 @@ export default class Home extends Component {
           </div>
           {/* end section */}
 
-        </div>
+        
       </>
     )
   }
