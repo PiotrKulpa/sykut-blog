@@ -8,7 +8,7 @@
                 <p class="section_count">04</p>
               </div>
               <div class="right">
-                <h2>Create <span class="theme_color">PERSONALISED Business</h2>
+                <h2>Create <span class="theme_color">PERSONALISED Business</span></h2>
                 <p class="large">What we done</p>
               </div>
             </div>
@@ -24,33 +24,32 @@
         </div>
         <div class="col-lg-12">
           <div class="full">
-            <a href="about.html" class="contact_bt">Read More ></a>
+            <a href="about.html" class="contact_bt">Read More &gt;</a>
           </div>
         </div>
       </div>
       <div class="row margin-top_30 counter_section">
         <div class="col-sm-12 col-md-4">
           <div class="counter margin-top_30">
-
-            <h2 class="timer count-title count-number" data-to="23" data-speed="1500"></h2>
+<div>
+            <h2 class="timer count-title count-number" data-to="23" data-speed="1500">23</h2>
             <p class="count-text">NOMINATIONS</p>
           </div>
         </div>
         <div class="col-sm-12 col-md-4">
           <div class="counter margin-top_30">
-
-            <h2 class="timer count-title count-number" data-to="7" data-speed="1500"></h2>
+<div>
+            <h2 class="timer count-title count-number" data-to="7" data-speed="1500">7</h2>
             <p class="count-text">AWARDS</p>
           </div>
         </div>
         <div class="col-sm-12 col-md-4">
           <div class="counter margin-top_30">
-
-            <h2 class="timer count-title count-number" data-to="31" data-speed="1500"></h2>
+<div>
+            <h2 class="timer count-title count-number" data-to="31" data-speed="1500">31</h2>
             <p class="count-text">AGENCIES</p>
           </div>
         </div>
       </div>
 
-    </div>
   </div>
