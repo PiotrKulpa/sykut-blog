@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { react as OurTeamContent } from '../content/componentOurTeam.md';
 
 export const OurTeam = () => {
   return (
-    <div>
-      
-    </div>
+    <OurTeamContent />
   )
 }
+
+export default OurTeam;

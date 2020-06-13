@@ -1,13 +1,9 @@
 import React from 'react';
-import { attributes } from '../content/componentWhatWeDone.md';
+import { react as WhatWeDoneContent } from '../content/componentWhatWeDone.md';
 
 const WhatWeDone = () => {
 
-  const {
-    content = '',
-  } = attributes;
-
-  return (<div dangerouslySetInnerHTML={{ __html: content }} />);
+  return (<WhatWeDoneContent />);
 }
 
 export default WhatWeDone;
