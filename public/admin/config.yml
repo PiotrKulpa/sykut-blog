@@ -95,12 +95,12 @@ collections:
       name: "componentWhatWeDone"
       file: "content/componentWhatWeDone.md"
       fields:
-        - { label: "Zawartość CMS", name: "content", widget: "markdown"}
+        - { label: "Zawartość CMS", name: "body", widget: "markdown"}
     - label: "Nasz zespół"
       name: "componentOurTeam"
       file: "content/componentOurTeam.md"
       fields:
-        - { label: "Zawartość CMS", name: "content", widget: "markdown"}
+        - { label: "Zawartość CMS", name: "body", widget: "markdown"}
 
   - name: "blog"
     label: "Blog"
