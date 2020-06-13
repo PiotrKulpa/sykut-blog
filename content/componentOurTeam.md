@@ -18,7 +18,7 @@
     <div class="row margin-top_30">
       <div class="col-lg-12 margin-top_30">
         <div id="team_slider" class="carousel slide" data-ride="carousel">
-          <!-- The slideshow -->
+          
           <div class="carousel-inner">
             <div class="carousel-item">
               <div class="row">
@@ -203,7 +203,7 @@
               </div>
             </div>
             <div class="bullets">
-              <!-- Indicators -->
+              
               <ul class="carousel-indicators"></ul>
             </div>
           </div>
