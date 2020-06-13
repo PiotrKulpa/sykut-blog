@@ -3,20 +3,16 @@ content: >-
   <div class="section layout_padding">
 
 
-  \    <div class="container">
+  <div class="container">
 
 
-  \    <div class="row">
+  <div class="row">
 
+   <div class="col-md-12">
 
-  \    <div class="col-md-12">
+  <div class="full">
 
-
-  \    <div class="full">
-
-
-  \    <div class="heading_main text_align_left">
-
+   <div class="heading_main text_align_left">
 
   \    <div class="left">
 
@@ -61,8 +57,6 @@ content: >-
   \    <div id="team_slider" class="carousel slide" data-ride="carousel">
 
 
-
-
   \    <!-- The slideshow -->
 
 
@@ -73,8 +67,6 @@ content: >-
 
 
   \    <div class="row">
-
-
 
 
   \    <div class="col-lg-4 col-md-4 col-sm-12">
@@ -141,8 +133,6 @@ content: >-
   \    </div>
 
 
-
-
   \    <div class="col-lg-4 col-md-4 col-sm-12">
 
 
@@ -207,8 +197,6 @@ content: >-
   \    </div>
 
 
-
-
   \    <div class="col-lg-4 col-md-4 col-sm-12">
 
 
@@ -271,8 +259,6 @@ content: >-
 
 
   \    </div>
-
-
 
 
   \    </div>
@@ -287,8 +273,6 @@ content: >-
   \    <div class="row">
 
 
-
-
   \    <div class="col-lg-4 col-md-4 col-sm-12">
 
 
@@ -351,8 +335,6 @@ content: >-
 
 
   \    </div>
-
-
 
 
   \    <div class="col-lg-4 col-md-4 col-sm-12">
@@ -419,8 +401,6 @@ content: >-
   \    </div>
 
 
-
-
   \    <div class="col-lg-4 col-md-4 col-sm-12">
 
 
@@ -457,7 +437,7 @@ content: >-
   \    </div>
 
 
-  \    </div>
+  </div>
 
 
   \    <div class="full text_align_center">
@@ -485,14 +465,10 @@ content: >-
   \    </div>
 
 
-
-
   \    </div>
 
 
   \    </div>
-
-
 
 
   \    <div class="bullets">
@@ -516,14 +492,10 @@ content: >-
   \    </div>
 
 
-
-
   \    </div>
 
 
   \    </div>
-
-
 
 
   \    </div>
