@@ -17,7 +17,7 @@ const Header = () => {
               <li><a className="nav-link" href="about.html">Aboutus</a></li>
               <li><a className="nav-link" href="services.html">Services</a></li>
               <li><a className="nav-link" href="/blog">Blog</a></li>
-              <li><a className="nav-link" href="contact.html">Contact us</a></li>
+              <li><a className="nav-link" href="/contact">Contact us</a></li>
               <li><a className="nav-link active" style={{ background: '#f2184f', color: '#fff' }} href="#">Sinup now</a></li>
             </ul>
           </div>
