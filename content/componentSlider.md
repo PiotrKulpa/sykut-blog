@@ -14,5 +14,11 @@ homeMainSlider:
     message: Puste hasło dobre hasło
     subtitle: dlatego tacy jesteśmy
     title: Jesteśmy zajebiści
+  - btnTxt: Slide 3
+    btnUrl: Slide3
+    imgUrl: /img/img-2png.png
+    message: Slider
+    subtitle: Slide nr 3
+    title: Slide nr 3
 ---
 
