@@ -11,7 +11,7 @@ class Banner extends Component {
     var settings = {
       dots: false,
       infinite: true,
-      autoplay: true,
+      autoplay: false,
       autoplaySpeed: 5000,
       speed: 500,
       slidesToShow: 1,
@@ -57,7 +57,7 @@ class Banner extends Component {
           </ul>
         </div>
 
-        <div className="full-width-container">
+        <div className="full-width-container" style={{width: "100%"}}>
           <div className="slider-area slider-layout1 slider-top-margin95">
             <SlickSlider {...settings}>
              

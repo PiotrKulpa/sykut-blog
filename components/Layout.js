@@ -11,10 +11,11 @@ class Layout extends Component {
       <Head>
       <title>Dr N. Med Janusz Sykut</title>
       </Head>
+      <div id="wrapper" className="wrapper">
         <Header />
         {children}
         <Footer />
-        
+      </div>
       </>
     );
   }

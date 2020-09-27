@@ -43,6 +43,18 @@ class MyDocument extends Document {
           <link rel="stylesheet" href="/css/rt-canvas-menu.css" />
           {/*  Custom CSS  */}
           <link rel="stylesheet" href="/css/style.css"></link>
+          {/* React Slick Carousel */}
+          <link
+            rel="stylesheet"
+            type="text/css"
+            charset="UTF-8"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+          />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+          />
           {/* Vendor Scripts */}
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
           <script src="/js/modernizr-3.6.0.min.js"></script>
@@ -50,37 +62,37 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-           {/* jquery */}
+          {/* jquery */}
           <script src="/js/jquery-2.2.4.min.js"></script>
-           {/* Plugins js  */}
+          {/* Plugins js  */}
           <script src="/js/plugins.js"></script>
-           {/* Popper js  */}
+          {/* Popper js  */}
           <script src="/js/popper.min.js"></script>
-           {/* Bootstrap js  */}
+          {/* Bootstrap js  */}
           <script src="/js/bootstrap.min.js"></script>
-           {/* Counterup Js  */}
+          {/* Counterup Js  */}
           <script src="/js/jquery.counterup.min.js"></script>
-           {/* Waypoints Js  */}
+          {/* Waypoints Js  */}
           <script src="/js/waypoints.min.js"></script>
-           {/* Parallaxie Js  */}
+          {/* Parallaxie Js  */}
           <script src="/js/parallaxie.js"></script>
-           {/* Countdown js  */}
+          {/* Countdown js  */}
           <script src="/js/jquery.countdown.min.js"></script>
-           {/* Meanmenu Js  */}
+          {/* Meanmenu Js  */}
           <script src="/js/jquery.meanmenu.min.js"></script>
-           {/* Magnific Popup Js  */}
+          {/* Magnific Popup Js  */}
           <script src="/js/jquery.magnific-popup.min.js"></script>
-           {/* Isotope Js  */}
+          {/* Isotope Js  */}
           <script src="/js/isotope.pkgd.min.js"></script>
-           {/* Imagesloaded Js  */}
+          {/* Imagesloaded Js  */}
           <script src="/js/imagesloaded.pkgd.min.js"></script>
-           {/* Scroll Up Js  */}
+          {/* Scroll Up Js  */}
           <script src="/js/jquery.scrollUp.min.js"></script>
-           {/* Tilt Js  */}
+          {/* Tilt Js  */}
           <script src="/js/tilt.jquery.min.js"></script>
-           {/* offcanvas Js  */}
+          {/* offcanvas Js  */}
           <script src="/js/rt-canvas-menu.js"></script>
-           {/* Custom Js  */}
+          {/* Custom Js  */}
           <script src="/js/main.js"></script>
         </body>
       </Html>

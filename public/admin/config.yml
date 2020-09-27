@@ -1,8 +1,8 @@
 backend:
   name: git-gateway
   branch: master
-media_folder: public/img
-public_folder: img
+media_folder: public/images
+public_folder: images
 collections:
   - name: "pages"
     label: "Pages"
@@ -35,7 +35,7 @@ collections:
   - name: "components"
     label: "Komponenty strony"
     files:
-    - label: "Slider"
+    - label: "Home Top Slider"
       name: "componentSlider"
       file: "content/componentSlider.md"
       fields:
@@ -51,15 +51,12 @@ collections:
             - { label: "Tekst przycisku", name: "btnTxt", widget: "string"}
             - { label: "Url przycisku", name: "btnUrl", widget: "string"}
             - { label: "Grafika", name: "imgUrl", widget: "image"}
-    - label: "O nas"
+    - label: "O mnie"
       name: "componentAboutUs"
       file: "content/componentAboutUs.md"
       fields:
         - { label: "Tytuł", name: "title", widget: "string"}
-        - { label: "Podtytuł", name: "subtitle", widget: "string"}
-        - { label: "Hasło", name: "slogan", widget: "string"}
         - { label: "Data publikacji", name: "date", widget: "datetime" }
-        - { label: "Tytuł czarny", name: "titleDark", widget: "string"}
         - { label: "Zawartość", name: "body", widget: "text"}
         - { label: "Grafika", name: "imgUrl", widget: "image"}
     - label: "Uslugi"

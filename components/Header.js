@@ -24,7 +24,7 @@ const Header = () => {
                       <Link href="/"><a className="active-menu">Home</a></Link>
                     </li>
                     <li>
-                      <Link href="#about"><a className="active-menu">O mnie</a></Link>
+                      <Link href="/#omnie"><a className="active-menu">O mnie</a></Link>
                     </li>
                     <li>
                       <Link href="/blog"><a className="active-menu">Blog</a></Link>
