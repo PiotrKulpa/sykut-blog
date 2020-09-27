@@ -1,55 +1,89 @@
-import React from 'react';
-import AwesomeSlider from 'react-awesome-slider';
-import withAutoplay from 'react-awesome-slider/dist/autoplay';
+import React, { Component } from 'react';
 import { attributes } from '../content/componentSlider.md';
+import SlickSlider from "react-slick";
 
-const AutoplaySlider = withAutoplay(AwesomeSlider);
+const { homeMainSlider = [] } = attributes;
+console.log(homeMainSlider);
+class Banner extends Component {
 
-const Banner = () => {
 
-  const { homeMainSlider = [] } = attributes;
-  
-  return (
+  render() {
+    var settings = {
+      dots: false,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
 
-    <div className="ulockd-home-slider">
-      <div className="container-fluid">
-        <div className="row">
-          <AutoplaySlider 
-            play={true} 
-            className="pogoSlider" 
-            id="js-main-slider"
-            interval={6000}
-          >
-            {homeMainSlider && homeMainSlider.map(({
-              btnTxt = '',
-              btnUrl = '',
-              imgUrl = '',
-              message = '',
-              subtitle = '',
-              title = ''
-            }, i) =>
-              <div key={i} className="pogoSlider-slide" style={{ backgroundImage: `url(${imgUrl})` }}>
-                <div className="container">
-                  <div className="row">
-                    <div className="col-md-12">
-                      <div className="slide_text">
-                        <h3>{title}</h3>
-                        <br />
-                        <h4><span className="theme_color">{subtitle}</span></h4>
-                        <br />
-                        <p>{message}</p>
-                        <a className="contact_bt" href={btnUrl}>{btnTxt}</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-          </AutoplaySlider>
+    return (
+
+      <section className="slider-wrap-layout1 box-layout-child-4">
+        <div className="slider-left-side-content">JANUSZ SYKUT BLOG</div>
+        <div className="slider-right-side-content">
+          <ul>
+            <li>
+              <a href="/">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <i className="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <i className="fab fa-behance"></i>
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <i className="fab fa-dribbble"></i>
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <i className="fab fa-google-plus-g"></i>
+              </a>
+            </li>
+          </ul>
         </div>
-      </div>
-    </div >
-  )
+
+        <div className="full-width-container">
+          <div className="slider-area slider-layout1 slider-top-margin95">
+            <SlickSlider {...settings}>
+             
+
+              {homeMainSlider && homeMainSlider.map(({
+                btnTxt = '',
+                btnUrl = '',
+                imgUrl = '',
+                message = '',
+                subtitle = '',
+                title = ''
+              }, i) =>
+              <div>
+                <img src={imgUrl}alt=""/>
+              </div>
+              )}
+          </SlickSlider>
+          </div>
+        </div>
+
+
+      </section>
+
+
+    );
+  }
 }
 
 export default Banner;
