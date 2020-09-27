@@ -9,7 +9,7 @@ class Layout extends Component {
     return (
       <>
       <Head>
-      <title>RD Business - Responsive HTML5 Template</title>
+      <title>Dr N. Med Janusz Sykut</title>
       </Head>
         <Header />
         {children}
