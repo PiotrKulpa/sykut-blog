@@ -9,9 +9,9 @@ const Header = () => {
           <div className="row no-gutters d-flex align-items-center">
             <div className="col-lg-2 col-md-2 d-flex justify-content-start">
               <div className="logo-area">
-                <Link exact activeClassName="active-menu temp-logo" href="/">
+                <Link  href="/">
 
-                  <img src="/images/januszsykut-personal.png" alt="logo" className="img-fluid" />
+                  <a className="active-menu temp-logo"><img src="/images/januszsykut-personal.png" alt="logo" className="img-fluid" /></a>
 
                 </Link>
               </div>
@@ -21,13 +21,13 @@ const Header = () => {
                 <nav id="dropdown">
                   <ul>
                     <li>
-                      <Link exact activeClassName="active-menu" href="/"><a>Home</a></Link>
+                      <Link href="/"><a className="active-menu">Home</a></Link>
                     </li>
                     <li>
-                      <Link exact activeClassName="active-menu" href="#about"><a>O mnie</a></Link>
+                      <Link href="#about"><a className="active-menu">O mnie</a></Link>
                     </li>
                     <li>
-                      <Link exact activeClassName="active-menu" href="/blog"><a>Blog</a></Link>
+                      <Link href="/blog"><a className="active-menu">Blog</a></Link>
                     </li>
                     <li>
                       <a href="http://prodentica.info/">Prodentica</a>
@@ -36,7 +36,7 @@ const Header = () => {
                       <a href="https://prestigelublin.eu/">Prestige</a>
                     </li>
                     <li>
-                      <Link exact activeClassName="active-menu" href="/kontakt"><a>Kontakt</a></Link>
+                      <Link href="/kontakt"><a className="active-menu">Kontakt</a></Link>
                     </li>
                   </ul>
                 </nav>
