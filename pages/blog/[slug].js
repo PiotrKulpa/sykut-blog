@@ -8,12 +8,23 @@ import parseMD from 'parse-md';
 
 
 const Post = ({ htmlString, date, title, description }) => {
+
+  console.log(htmlString, date, title, description);
   return (
     <>
       <Head>
         <title>{title}</title>
         <meta title="description" content={description} />
       </Head>
+      <p>{date}</p>
+      <p>{date}</p>
+      <p>{date}</p>
+      <p>{date}</p>
+      <p>{date}</p>
+      <p>{date}</p>
+      <p>{date}</p>
+      <p>{date}</p>
+      <p>{date}</p>
       <div dangerouslySetInnerHTML={{ __html: htmlString }} />
     </>
   );

@@ -24,10 +24,24 @@ const index = ({ posts }) => {
   //   // dangerouslySetInnerHTML={{ __html: post.htmlString }}
   //   return ()
   //   )}
-
+console.log(posts);
   return (
     <>
-     Blog
+     <p>
+       Blog
+     </p>
+     <p>
+       Blog
+     </p>
+     <p>
+       Blog
+     </p>
+     <p>
+       Blog
+     </p>
+     <p>
+       Blog
+     </p>
 
     </>
   )

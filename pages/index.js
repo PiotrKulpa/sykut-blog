@@ -5,6 +5,7 @@ import AboutUs from '../components/AboutUs';
 import Portfolio from '../components/Portfolio';
 import WhatWeDone from '../components/WhatWeDone';
 import OurTeam from '../components/OurTeam';
+import LatestBlog from '../components/LatestBlog';
 
 export default class Home extends Component {
   render() {
@@ -14,6 +15,7 @@ export default class Home extends Component {
       <>
       <Banner data={homeMainBanner} />
       <AboutUs />
+      <LatestBlog />
       <Portfolio />
       <WhatWeDone />  
       <OurTeam />

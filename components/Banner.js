@@ -3,9 +3,8 @@ import { attributes } from '../content/componentSlider.md';
 import SlickSlider from "react-slick";
 
 const { homeMainSlider = [] } = attributes;
-console.log(homeMainSlider);
-class Banner extends Component {
 
+class Banner extends Component {
 
   render() {
     var settings = {
