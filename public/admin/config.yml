@@ -1,103 +1,63 @@
 backend:
   name: git-gateway
   branch: master
-media_folder: public/images
-public_folder: images
+media_folder: public/uploads
+public_folder: uploads
 collections:
   - name: "pages"
-    label: "Pages"
+    label: "Strony"
     files:
-    - label: "Home"
-      name: "home"
-      file: "content/home.md"
+    - label: "Kontakt"
+      name: "contact"
+      file: "content/contact.md"
       fields:
-        - { label: "Title", name: "title", widget: "string"}
-        - { label: "Publish Date", name: "date", widget: "datetime" }
-        - { label: "Body", name: "body", widget: "markdown"}
-        - label: 'Home Main Banner'
-          name: "homeMainBanner"
-          widget: list
-          fields:
-            - { label: "Tytuł", name: "title", widget: "string"}
-            - { label: "Podtytuł", name: "subtitle", widget: "text"}
-            - { label: "Hasło", name: "message", widget: "text"}
-            - { label: "Tekst przycisku", name: "btnTxt", widget: "string"}
-            - { label: "Url przycisku", name: "btnUrl", widget: "string"}
-            - { label: "Grafika", name: "imgUrl", widget: "image"}
-    - label: "Blog"
-      name: "blog"
-      file: "content/blog.md"
-      fields:
-        - { label: "Title", name: "title", widget: "string"}
-        - { label: "Publish Date", name: "date", widget: "datetime" }
-        - { label: "Body", name: "body", widget: "markdown"}
-
+        - { label: "Adres Linia 1", name: "address1", widget: "string"}
+        - { label: "Adres Linia 2", name: "address2", widget: "string"}
+        - { label: "Telefon 1", name: "phone1", widget: "string"}
+        - { label: "Telefon 2", name: "phone2", widget: "string"}
+        - { label: "E-mail 1", name: "email", widget: "string"}
+        - { label: "E-mail 2", name: "email2", widget: "string"}
+        - { label: "Fax 1", name: "fax1", widget: "string"}
+        - { label: "Fax 2", name: "fax2", widget: "string"}
+        - { label: "Nagłówek formularza", name: "head", widget: "string"}
+        - { label: "Nagłówek formularza 2", name: "subhead", widget: "string"}
+        
   - name: "components"
     label: "Komponenty strony"
     files:
-    - label: "Home Top Slider"
+    - label: "Home slider"
       name: "componentSlider"
       file: "content/componentSlider.md"
       fields:
         - { label: "Tytuł", name: "title", widget: "string"}
-        - { label: "Data publikacji", name: "date", widget: "datetime" }
         - label: 'Slider zawartość'
           name: "homeMainSlider"
           widget: list
           fields:
             - { label: "Tytuł", name: "title", widget: "string"}
             - { label: "Podtytuł", name: "subtitle", widget: "text"}
-            - { label: "Hasło", name: "message", widget: "text"}
-            - { label: "Tekst przycisku", name: "btnTxt", widget: "string"}
-            - { label: "Url przycisku", name: "btnUrl", widget: "string"}
+            - { label: "Zawartość", name: "content", widget: "text"}
             - { label: "Grafika", name: "imgUrl", widget: "image"}
     - label: "O mnie"
       name: "componentAboutUs"
       file: "content/componentAboutUs.md"
       fields:
         - { label: "Tytuł", name: "title", widget: "string"}
-        - { label: "Data publikacji", name: "date", widget: "datetime" }
-        - { label: "Zawartość", name: "body", widget: "text"}
+        - { label: "Zawartość", name: "content", widget: "text"}
         - { label: "Grafika", name: "imgUrl", widget: "image"}
-    - label: "Uslugi"
-      name: "componentServices"
-      file: "content/componentServices.md"
+    - label: "Współpraca z firmami"
+      name: "componentBrands"
+      file: "content/componentBrands.md"
+      fields:
+        - { label: "Tekst loga", name: "title", widget: "string"}
+        - { label: "Grafika", name: "imgUrl", widget: "image"}
+   - label: "Wyróżnione wpisy"
+      name: "componentPopularBlog"
+      file: "content/componentPopularBlog.md"
       fields:
         - { label: "Tytuł", name: "title", widget: "string"}
-        - { label: "Podtytuł", name: "subtitle", widget: "markdown"}
-        - label: 'Lista usług'
-          name: "serviceList"
-          widget: list
-          fields:
-            - { label: "Tytuł", name: "title", widget: "string"}
-            - { label: "Podtytuł", name: "subtitle", widget: "text"}
-            - { label: "Url przycisku", name: "btnUrl", widget: "string"}
-            - { label: "Grafika", name: "imgUrl", widget: "image"}
-    - label: "Portfolio"
-      name: "componentPortfolio"
-      file: "content/componentPortfolio.md"
-      fields:
-        - { label: "Tytuł", name: "title", widget: "string"}
-        - { label: "Podtytuł", name: "subtitle", widget: "markdown"}
-        - { label: "Hasło", name: "slogan", widget: "string"}
-        - { label: "Treść", name: "content", widget: "text"}
-        - { label: "Tekst przycisku", name: "btnTxt", widget: "string"}
-        - { label: "Url przycisku", name: "btnUrl", widget: "string"}
-        - label: 'Lista zdjęć'
-          name: "postfolioList"
-          widget: list
-          fields:
-            - { label: "Grafika", name: "imgUrl", widget: "image"}
-    - label: "Czego dokonaliśmy"
-      name: "componentWhatWeDone"
-      file: "content/componentWhatWeDone.md"
-      fields:
-        - { label: "Zawartość CMS", name: "content", widget: "markdown"}
-    - label: "Nasz zespół"
-      name: "componentOurTeam"
-      file: "content/componentOurTeam.md"
-      fields:
-        - { label: "Zawartość CMS", name: "content", widget: "markdown"}
+        - { label: "Zawartość", name: "content", widget: "text"}
+        - { label: "Grafika", name: "imgUrl", widget: "image"}
 
   - name: "blog"
     label: "Blog"
@@ -105,11 +65,8 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", pattern: ['.{0,141}', "Must have max. 141 characters"], name: "description", widget: "text"}
-      - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
-      - {label: "Featured Image", name: "featuredimage", widget: image}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Tutuł", name: "title", widget: "string"}
+      - {label: "Data publikacji", name: "date", widget: "datetime"}
+      - {label: "Zawartość", name: "content", widget: "markdown"}
+      - {label: "Zdjęcie wyróżniające", name: "featuredImage", widget: image}
+      - {label: "Tagi", name: "tags", widget: "string"}

@@ -1,5 +1,4 @@
 import React from 'react';
-import { attributes, react as BlogContent } from '../../content/blog.md';
 import Link from "next/link";
 import fs from "fs";
 import path from "path";
@@ -9,7 +8,6 @@ import parseMD from 'parse-md';
 
 
 const index = ({ posts }) => {
-  const { title } = attributes;
 
    {/* loop */}
   //  {posts.map(post => {
@@ -28,7 +26,7 @@ console.log(posts);
   return (
     <>
      <p>
-       Blog
+       Blogd
      </p>
      <p>
        Blog
