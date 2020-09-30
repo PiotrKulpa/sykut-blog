@@ -51,7 +51,7 @@ collections:
       fields:
         - { label: "Tekst loga", name: "title", widget: "string"}
         - { label: "Grafika", name: "imgUrl", widget: "image"}
-   - label: "Wyróżnione wpisy"
+    - label: "Wyróżnione wpisy"
       name: "componentPopularBlog"
       file: "content/componentPopularBlog.md"
       fields:
