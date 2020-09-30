@@ -47,11 +47,11 @@ console.log(posts);
 
 export const getStaticProps = async () => {
   const files = fs.readdirSync("content/blog");
-
+console.log('wyloguj',files);
 
   return {
     props: {
-      posts: files.map(filename => {
+      posts: files && files.map(filename => {
         const markdownWithMetadata = fs
           .readFileSync(path.join("content/blog", filename), 'utf8')
         const { metadata, content } = parseMD(markdownWithMetadata);

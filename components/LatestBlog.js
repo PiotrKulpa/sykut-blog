@@ -23,7 +23,7 @@ const LatestBlog = () => {
                     <a href="single-portfolio1.html">Paper Mockup</a>
                   </h3>
                   <div className="item-subtitle">
-                    <Link href="#">Element</Link>
+                    <Link href="#"><a >Element</a></Link>
                   </div>
                 </div>
               </div>
@@ -33,7 +33,7 @@ const LatestBlog = () => {
                     <img src="img/project/project11.jpg" alt="project" />
                   </div>
                   <div className="media-body">
-                    <h2 className="item-title"><Link href="#">Paper Mockup</Link></h2>
+                    <h2 className="item-title"><Link href="#"><a>Paper Mockup</a></Link></h2>
                     <ul className="item-category">
                       <li><i className="fas fa-arrow-right" />Brand Identity</li>
                       <li><i className="fas fa-arrow-right" />Web Design &amp; UI</li>
@@ -48,8 +48,8 @@ const LatestBlog = () => {
               <div className="portfolio-box-layout2">
                 <div className="item-img">
                   <img src="img/project/project7.jpg" alt="Project 7" />
-                  <Link href="#test-popup2" className="item-btn inline-popup">
-                    <i className="flaticon-next" />
+                  <Link href="#test-popup2">
+                    <a className="item-btn inline-popup"><i className="flaticon-next" /></a>
                   </Link>
                 </div>
                 <div className="item-content">
@@ -57,7 +57,7 @@ const LatestBlog = () => {
                     <a href="single-portfolio1.html">Iconic Branding</a>
                   </h3>
                   <div className="item-subtitle">
-                    <Link href="#">Branding</Link>
+                    <Link href="#"><a>Branding</a></Link>
                   </div>
                 </div>
               </div>
@@ -67,7 +67,7 @@ const LatestBlog = () => {
                     <img src="img/project/project7.jpg" alt="img" />
                   </div>
                   <div className="media-body">
-                    <h2 className="item-title"><Link href="#">Iconic Branding</Link></h2>
+                    <h2 className="item-title"><Link href="#"><a>Iconic Branding</a></Link></h2>
                     <ul className="item-category">
                       <li><i className="fas fa-arrow-right" />Brand Identity</li>
                       <li><i className="fas fa-arrow-right" />Web Design &amp; UI</li>
@@ -91,7 +91,7 @@ const LatestBlog = () => {
                     <a href="single-portfolio1.html">Smart Watch</a>
                   </h3>
                   <div className="item-subtitle">
-                    <Link href="#">Watch</Link>
+                    <Link href="#"><a>Watch</a></Link>
                   </div>
                 </div>
               </div>
@@ -101,7 +101,7 @@ const LatestBlog = () => {
                     <img src="img/project/project10.jpg" alt="img" />
                   </div>
                   <div className="media-body">
-                    <h2 className="item-title"><Link href="#">Smart Watch</Link></h2>
+                    <h2 className="item-title"><Link href="#"><a>Smart Watch</a></Link></h2>
                     <ul className="item-category">
                       <li><i className="fas fa-arrow-right" />Brand Identity</li>
                       <li><i className="fas fa-arrow-right" />Web Design &amp; UI</li>
@@ -125,7 +125,7 @@ const LatestBlog = () => {
                     <a href="single-portfolio1.html">Electronic Port</a>
                   </h3>
                   <div className="item-subtitle">
-                    <Link href="#">Accessories</Link>
+                    <Link href="#"><a>Accessories</a></Link>
                   </div>
                 </div>
               </div>
@@ -135,7 +135,7 @@ const LatestBlog = () => {
                     <img src="img/project/project10.jpg" alt="img" />
                   </div>
                   <div className="media-body">
-                    <h2 className="item-title"><Link href="#">Electronic Port</Link></h2>
+                    <h2 className="item-title"><Link href="#"><a>Electronic Port</a></Link></h2>
                     <ul className="item-category">
                       <li><i className="fas fa-arrow-right" />Brand Identity</li>
                       <li><i className="fas fa-arrow-right" />Web Design &amp; UI</li>
@@ -159,7 +159,7 @@ const LatestBlog = () => {
                     <a href="single-portfolio1.html">Seascape Villa</a>
                   </h3>
                   <div className="item-subtitle">
-                    <Link href="#">Aqaba, Jordan</Link>
+                    <Link href="#"><a>Aqaba, Jordan</a></Link>
                   </div>
                 </div>
               </div>
@@ -169,7 +169,7 @@ const LatestBlog = () => {
                     <img src="img/project/project11.jpg" alt="img" />
                   </div>
                   <div className="media-body">
-                    <h2 className="item-title"><Link href="#">Seascape Villa</Link></h2>
+                    <h2 className="item-title"><Link href="#"><a>Seascape Villa</a></Link></h2>
                     <ul className="item-category">
                       <li><i className="fas fa-arrow-right" />Brand Identity</li>
                       <li><i className="fas fa-arrow-right" />Web Design &amp; UI</li>
@@ -184,16 +184,16 @@ const LatestBlog = () => {
               <div className="portfolio-box-layout2">
                 <div className="item-img">
                   <img src="img/project/project7.jpg" alt="Project 7" />
-                  <Link href="#test-popup6" className="item-btn inline-popup">
-                    <i className="flaticon-next" />
+                  <Link href="#test-popup6">
+                    <a className="item-btn inline-popup"><i className="flaticon-next" /></a>
                   </Link>
                 </div>
                 <div className="item-content">
                   <h3 className="item-title">
-                    <Link href="single-portfolio1.html">Seascape Villa</Link>
+                    <Link href="single-portfolio1.html"><a>Seascape Villa</a></Link>
                   </h3>
                   <div className="item-subtitle">
-                    <Link href="#">Aqaba, Jordan</Link>
+                    <Link href="#"><a>Aqaba, Jordan</a></Link>
                   </div>
                 </div>
               </div>
@@ -203,7 +203,7 @@ const LatestBlog = () => {
                     <img src="img/project/project7.jpg" alt="img" />
                   </div>
                   <div className="media-body">
-                    <h2 className="item-title"><Link href="#">Seascape Villa</Link></h2>
+                    <h2 className="item-title"><Link href="#"><a>Seascape Villa</a></Link></h2>
                     <ul className="item-category">
                       <li><i className="fas fa-arrow-right" />Brand Identity</li>
                       <li><i className="fas fa-arrow-right" />Web Design &amp; UI</li>
@@ -216,7 +216,7 @@ const LatestBlog = () => {
             </div>
           </div>
           <div className="loadmore-layout2">
-            <Link href="/blog" className="item-btn">Zobacz więcej wpisów</Link>
+            <Link href="/blog" ><a className="item-btn">Zobacz więcej wpisów</a></Link>
           </div>
         </div>
       </section>
