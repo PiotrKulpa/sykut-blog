@@ -7,14 +7,13 @@ import marked from "marked";
 import parseMD from 'parse-md';
 
 
-const Post = ({ htmlString, date, title, description }) => {
+const Post = ({ htmlString, date, title, featuredimage }) => {
 
-  console.log(htmlString, date, title, description);
+  console.log(htmlString, date, title, featuredimage);
   return (
     <>
       <Head>
         <title>{title}</title>
-        <meta title="description" content={description} />
       </Head>
       <p>{date}</p>
       <p>{date}</p>
@@ -49,7 +48,15 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params: { slug } }) => {
   const markdownWithMetadata = fs
     .readFileSync(path.join("content/blog", slug + ".md"), 'utf8');
-    const { metadata, content } = parseMD(markdownWithMetadata);  
+    const { 
+      metadata: {
+      date = '', 
+      title = '', 
+      tags = '', 
+      featuredimage = ''
+      },
+      content = '',
+   } = parseMD(markdownWithMetadata);  
     const parsedMarkdown = matter(content);
     const htmlString = marked(parsedMarkdown.content);
   // const parsedMarkdown = matter(markdownWithMetadata);
@@ -59,10 +66,10 @@ export const getStaticProps = async ({ params: { slug } }) => {
   return {
     props: {
       htmlString,
-      date: metadata.date.toLocaleString(),
-      title: metadata.title,
-      description: metadata.description,
-
+      date: date.toLocaleString(),
+      title,
+      tags,
+      featuredimage
     }
   };
 };

@@ -22,7 +22,6 @@ const index = ({ posts }) => {
   //   // dangerouslySetInnerHTML={{ __html: post.htmlString }}
   //   return ()
   //   )}
-console.log(posts);
   return (
     <>
      <p>
@@ -47,22 +46,30 @@ console.log(posts);
 
 export const getStaticProps = async () => {
   const files = fs.readdirSync("content/blog");
-console.log('wyloguj',files);
 
   return {
     props: {
       posts: files && files.map(filename => {
         const markdownWithMetadata = fs
           .readFileSync(path.join("content/blog", filename), 'utf8')
-        const { metadata, content } = parseMD(markdownWithMetadata);
+        const { 
+          metadata: {
+            date = '', 
+            title = '', 
+            tags = '', 
+            featuredimage = ''
+          },
+          content = '',
+          } = parseMD(markdownWithMetadata);
+
         const parsedMarkdown = matter(content);
         const htmlString = marked(parsedMarkdown.content);
         return {
           slug: filename.replace(".md", ""),
-          date: metadata.date.toLocaleString(),
-          title: metadata.title,
-          description: metadata.description,
-          featuredimage: metadata.featuredimage,
+          date: date.toLocaleString(),
+          title,
+          featuredimage,
+          tags,
           htmlString
         }
 
