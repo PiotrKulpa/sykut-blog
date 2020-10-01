@@ -1,10 +1,14 @@
 import React from 'react';
 import Link from "next/link";
 
+import useStringSlicer from '../hooks/useStringSlicer';
+
 //TODO: short description hook
 
 const Posts = ({ posts }) => {
   console.log(posts);
+
+  const slicedContent = useStringSlicer
   return (
     <div>
       {posts.length > 0 ?
@@ -17,7 +21,7 @@ const Posts = ({ posts }) => {
           tags = '',
         }, index) => {
           const filteredTag = tags.split(',');
-          console.log(htmlString);
+
           return (
             <div key={index} className="col-xl-12 col-lg-6 col-md-6 col-12">
               <div className="blog-box-layout5">
@@ -39,7 +43,9 @@ const Posts = ({ posts }) => {
                         <a>{title}</a>
                       </Link>
                     </h3>
-                    <p dangerouslySetInnerHTML={{ __html: htmlString }} />
+                    <p 
+                    dangerouslySetInnerHTML=
+                      {{ __html: useStringSlicer(htmlString, 0, 177) }} />
                     <Link
                       className="item-btn"
                       href={`/blog/${slug}`}
