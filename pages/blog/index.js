@@ -6,41 +6,17 @@ import matter from "gray-matter";
 import marked from "marked";
 import parseMD from 'parse-md';
 
+import PostsWrapper from '../../components/PostsWrapper';
+import Posts from '../../components/Posts';
+
 
 const index = ({ posts }) => {
 
-   {/* loop */}
-  //  {posts.map(post => {
-  //   const { 
-  //     slug = '', 
-  //     date = '', 
-  //     htmlString = '', 
-  //     title = '', 
-  //     description = '',
-  //     featuredimage = ''
-  //   } = post;
-  //   // dangerouslySetInnerHTML={{ __html: post.htmlString }}
-  //   return ()
-  //   )}
   return (
-    <>
-     <p>
-       Blogd
-     </p>
-     <p>
-       Blog
-     </p>
-     <p>
-       Blog
-     </p>
-     <p>
-       Blog
-     </p>
-     <p>
-       Blog
-     </p>
+    <PostsWrapper>
+    <Posts { ...{posts}} />
 
-    </>
+    </PostsWrapper>
   )
 }
 
@@ -57,9 +33,9 @@ export const getStaticProps = async () => {
             date = '', 
             title = '', 
             tags = '', 
-            featuredimage = ''
+            featuredimage = '',
+            content ='',
           },
-          content = '',
           } = parseMD(markdownWithMetadata);
 
         const parsedMarkdown = matter(content);
@@ -70,7 +46,7 @@ export const getStaticProps = async () => {
           title,
           featuredimage,
           tags,
-          htmlString
+          htmlString,
         }
 
       })
