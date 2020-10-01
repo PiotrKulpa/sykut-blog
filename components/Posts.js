@@ -3,12 +3,8 @@ import Link from "next/link";
 
 import useStringSlicer from '../hooks/useStringSlicer';
 
-//TODO: short description hook
-
 const Posts = ({ posts }) => {
-  console.log(posts);
 
-  const slicedContent = useStringSlicer
   return (
     <div>
       {posts.length > 0 ?
@@ -28,14 +24,22 @@ const Posts = ({ posts }) => {
                 <div className="media media-none--lg">
                   <div className="item-img">
                     <Link href={`/blog/${slug}`}>
-                      <a><img src={featuredImage || '/images/placeholder.jpg'} alt="Blog" /></a>
+                      <a>
+                        <img 
+                          src={featuredImage || '/images/placeholder.jpg'} 
+                          alt="Blog" 
+                        />
+                      </a>
                     </Link>
                   </div>
                   <div className="media-body">
                     <ul className="entry-meta">
                       <li>{date}</li>
                       <li>
-                      {filteredTag.length > 0 && filteredTag.map((el, i) => (<a key={i} href={`/tagi/${el}/1`}>{el}</a>))}
+                      {filteredTag.length > 0 && 
+                        filteredTag.map((el, i) => 
+                        (<a key={i} href={`/tagi/${el}/1`}>{el}</a>))
+                      }
                       </li>
                     </ul>
                     <h3 className="item-title">
@@ -43,14 +47,17 @@ const Posts = ({ posts }) => {
                         <a>{title}</a>
                       </Link>
                     </h3>
-                    <p 
-                    dangerouslySetInnerHTML=
-                      {{ __html: useStringSlicer(htmlString, 0, 177) }} />
+                    <div 
+                      style={{marginBottom: '20px'}}
+                      dangerouslySetInnerHTML=
+                        {{ __html: useStringSlicer(htmlString, 0, 177) }} />
                     <Link
-                      className="item-btn"
+                      
                       href={`/blog/${slug}`}
                     >
-                      <a>Czytaj dalej <i className="flaticon-next"></i></a>
+                      <a className="item-btn">
+                          Czytaj dalej <i className="flaticon-next"></i>
+                      </a>
                     </Link>
                   </div>
                 </div>

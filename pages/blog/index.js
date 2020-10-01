@@ -15,7 +15,6 @@ const index = ({ posts }) => {
   return (
     <PostsWrapper>
     <Posts { ...{posts}} />
-
     </PostsWrapper>
   )
 }
