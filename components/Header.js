@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import Link from 'next/link';
+import { Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
+
 
 const Header = () => {
+
+  const scrollToAbout = () => {
+    scroller.scrollTo('aboutMe', {
+      duration: 1000,
+      delay: 50,
+      smooth: true,
+      offset: -150, 
+    });
+  }
+
   return (
     <header id="header_1">
       <div className="header-menu-area header-menu-layout2 box-layout-child">
@@ -23,8 +36,8 @@ const Header = () => {
                     <li>
                       <Link href="/"><a className="active-menu">Home</a></Link>
                     </li>
-                    <li>
-                      <Link href="/#omnie"><a className="active-menu">O mnie</a></Link>
+                    <li onClick={scrollToAbout}>
+                      <Link  href="/#"><a className="active-menu">O mnie</a></Link>
                     </li>
                     <li>
                       <Link href="/blog"><a className="active-menu">Blog</a></Link>

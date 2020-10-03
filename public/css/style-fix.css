@@ -1,0 +1,13 @@
+.awssld__content {
+  background-color: transparent !important;
+}
+
+.awssld__container {
+  padding-bottom: 800px !important
+}
+
+.slider-wrap-layout1 .slider-left-side-content,
+.slider-right-side-content
+{
+  z-index: 20;
+}

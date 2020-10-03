@@ -20,7 +20,9 @@
     "react": "^16.13.1",
     "react-awesome-slider": "^4.1.0",
     "react-dom": "^16.13.1",
-    "react-slick": "^0.26.1"
+    "react-scroll": "^1.8.1",
+    "react-slick": "^0.26.1",
+    "swiper": "^6.3.2"
   },
   "devDependencies": {
     "frontmatter-markdown-loader": "^3.5.0"

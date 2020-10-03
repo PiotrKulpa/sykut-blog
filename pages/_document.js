@@ -55,6 +55,8 @@ class MyDocument extends Document {
             type="text/css"
             href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
           />
+          {/* Fix styles */}
+          <link rel="stylesheet" href="/css/style-fix.css"></link>
           {/* Vendor Scripts */}
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
           <script src="/js/modernizr-3.6.0.min.js"></script>

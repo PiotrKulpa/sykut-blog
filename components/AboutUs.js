@@ -1,6 +1,8 @@
 import React, { memo } from 'react';
 import { attributes, html, react as AboutUsContent } from '../content/componentAboutUs.md';
 import fm from '../content/componentAboutUs.md';
+import { Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
 
 const AboutUs = () => {
 
@@ -12,6 +14,7 @@ const AboutUs = () => {
 
 
   return (
+    <Element name="aboutMe">
     <section id="omnie" className="about-wrap-layout1">
       <div className="container">
         <div className="row">
@@ -29,6 +32,7 @@ const AboutUs = () => {
         </div>
       </div>
     </section>
+    </Element>
   )
 }
 
