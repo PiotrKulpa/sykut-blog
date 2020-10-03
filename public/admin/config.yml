@@ -32,7 +32,6 @@ collections:
       name: "componentSlider"
       file: "content/componentSlider.md"
       fields:
-        - { label: "Tytuł", name: "title", widget: "string"}
         - label: 'Slider zawartość'
           name: "homeMainSlider"
           widget: list
@@ -46,21 +45,23 @@ collections:
       file: "content/componentAboutUs.md"
       fields:
         - { label: "Tytuł", name: "title", widget: "string"}
-        - { label: "Zawartość", name: "content", widget: "text"}
+        - { label: "Zawartość", name: "content", widget: "markdown"}
         - { label: "Grafika", name: "imgUrl", widget: "image"}
     - label: "Współpraca z firmami"
       name: "componentBrands"
       file: "content/componentBrands.md"
       fields:
-        - { label: "Tekst loga", name: "title", widget: "string"}
-        - { label: "Grafika", name: "imgUrl", widget: "image"}
+        - label: 'Dodaj logo'
+          name: "Brands"
+          widget: list
+          fields:
+            - { label: "Tytuł", name: "title", widget: "string"}
+            - { label: "Grafika", name: "imgUrl", widget: "image"}
     - label: "Wyróżnione wpisy"
       name: "componentPopularBlog"
       file: "content/componentPopularBlog.md"
       fields:
-        - { label: "Tytuł", name: "title", widget: "string"}
-        - { label: "Zawartość", name: "content", widget: "text"}
-        - { label: "Grafika", name: "imgUrl", widget: "image"}
+        - { label: "Zawartość", name: "content", widget: "markdown"}
 
   - name: "blog"
     label: "Blog"
