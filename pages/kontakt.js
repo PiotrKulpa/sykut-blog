@@ -1,6 +1,21 @@
 import React from 'react';
+import fm from '../content/contact.md';
 
 const Contact = () => {
+
+  const {
+    address1 = '',
+    address2 = '',
+    email = '',
+    email2 = '',
+    fax1 = '',
+    fax2 = '',
+    head = '',
+    phone1 = '',
+    phone2 = '',
+    subhead = '',
+  } = fm.attributes || {};
+
   return (
     <section className="contact-page-wrap">
       <div className="container">
@@ -29,17 +44,17 @@ const Contact = () => {
               <div className="contact-list">
                 <h5 className="item-title">Adres:</h5>
                 <ul>
-                  <li>ul. Altanowa 4/U6</li>
-                  <li>Lublin</li>
+                  <li>{address1}</li>
+                  <li>{address2}</li>
                 </ul>
               </div>
             </div>
             <div className="col-md-3 col-sm-6">
               <div className="contact-list">
-                <h5 className="item-title">Phone:</h5>
+                <h5 className="item-title">Telefon:</h5>
                 <ul>
-                  <li>+48 570 727 676</li>
-                  <li>+48 081 742 68 24</li>
+                  <li>{phone1}</li>
+                  <li>{phone1}</li>
                 </ul>
               </div>
             </div>
@@ -47,7 +62,7 @@ const Contact = () => {
               <div className="contact-list">
                 <h5 className="item-title">E-mail:</h5>
                 <ul>
-                  <li>sykutjanusz@gmail.com</li>
+                  <li>{email}</li>
                 </ul>
               </div>
             </div>
@@ -55,8 +70,8 @@ const Contact = () => {
               <div className="contact-list">
                 <h5 className="item-title">Fax:</h5>
                 <ul>
-                  <li>-</li>
-                  <li>-</li>
+                  <li>{fax1}</li>
+                  <li>{fax2}</li>
                 </ul>
               </div>
             </div>
@@ -64,8 +79,8 @@ const Contact = () => {
         </div>
         <div className="contact-form-wrap">
           <div className="section-heading text-center heading-dark heading-layout2">
-            <h2>Masz pytania? <span>pisz śmiało na maila</span></h2>
-            <p>chętnie odpowiem na wszystkie, oczywiście w wolnej chwili.</p>
+            <h2>{head}</h2>
+            <p>{subhead}</p>
           </div>
           <form className="contact-form-box" id="contact-form">
             <div className="row">

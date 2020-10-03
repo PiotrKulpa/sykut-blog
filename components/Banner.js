@@ -2,23 +2,21 @@ import React, { Component } from 'react';
 import { attributes } from '../content/componentSlider.md';
 import SlickSlider from "react-slick";
 
-const { homeMainSlider = [] } = attributes;
+const settings = {
+  dots: false,
+  infinite: true,
+  autoplay: false,
+  autoplaySpeed: 5000,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1
+};
 
-class Banner extends Component {
+const Banner = () => {
 
-  render() {
-    var settings = {
-      dots: false,
-      infinite: true,
-      autoplay: false,
-      autoplaySpeed: 5000,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1
-    };
+  const { homeMainSlider = [] } = attributes  || {};
 
     return (
-
       <section className="slider-wrap-layout1 box-layout-child-4">
         <div className="slider-left-side-content">JANUSZ SYKUT BLOG</div>
         <div className="slider-right-side-content">
@@ -55,12 +53,11 @@ class Banner extends Component {
             </li>
           </ul>
         </div>
-
         <div className="full-width-container" style={{width: "100%"}}>
           <div className="slider-area slider-layout1 slider-top-margin95">
+            <div className="bend niceties preview-1">
+              <div className="ensign-nivoslider-1">
             <SlickSlider {...settings}>
-             
-
               {homeMainSlider && homeMainSlider.map(({
                 btnTxt = '',
                 btnUrl = '',
@@ -69,20 +66,18 @@ class Banner extends Component {
                 subtitle = '',
                 title = ''
               }, i) =>
-              <div>
+              <>
                 <img src={imgUrl}alt=""/>
-              </div>
+              </>
               )}
           </SlickSlider>
           </div>
+          </div>
+          </div>
         </div>
-
-
       </section>
-
-
     );
-  }
+  
 }
 
 export default Banner;

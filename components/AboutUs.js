@@ -8,7 +8,7 @@ const AboutUs = () => {
     title = '',
     content = '',
     imgUrl = ''
-  } = fm.attributes;
+  } = fm.attributes  || {};
 
 
   return (

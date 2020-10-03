@@ -5,7 +5,7 @@ const PopularBlog = () => {
 
   const {
     content = '' 
-  } = fm.attributes;
+  } = fm.attributes  || {};
 
     return (
         <div dangerouslySetInnerHTML = {{ __html: content }} />

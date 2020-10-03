@@ -16,7 +16,7 @@ const Brands = () => {
 
   const {
     Brands: brandsContent,
-  } = fm.attributes;
+  } = fm.attributes  || {};
 
   return (
     <section className="brand-wrap-layout2">
