@@ -17,7 +17,7 @@ const Posts = ({ posts }) => {
           tags = '',
         }, index) => {
           const filteredTag = tags.split(',');
-
+          const convertedDate = date ? new Date(date).toLocaleString() : '';
           return (
             <div key={index} className="col-xl-12 col-lg-6 col-md-6 col-12">
               <div className="blog-box-layout5">
@@ -34,7 +34,7 @@ const Posts = ({ posts }) => {
                   </div>
                   <div className="media-body">
                     <ul className="entry-meta">
-                      <li>{date}</li>
+                      <li>{convertedDate}</li>
                       <li>
                       {filteredTag.length > 0 && 
                         filteredTag.map((el, i) => 
