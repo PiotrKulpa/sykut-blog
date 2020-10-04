@@ -9,7 +9,7 @@ const AutoplaySlider = withAutoplay(AwesomeSlider);
 const Banner = () => {
 
   const { homeMainSlider = [] } = attributes || {};
-
+  console.log(attributes);
   return (
     <section className="slider-wrap-layout1 box-layout-child-4">
       <div className="slider-left-side-content">JANUSZ SYKUT BLOG</div>
@@ -52,7 +52,7 @@ const Banner = () => {
           <div className="bend niceties preview-1">
             <div className="ensign-nivoslider-1"></div>
             <AutoplaySlider
-              play={false}
+              play={true}
               cancelOnInteraction={false}
               interval={6000}
               organicArrows={false}
@@ -61,15 +61,19 @@ const Banner = () => {
               className="custom-react-awesome-slider"
             >
               {homeMainSlider && homeMainSlider.map(({
-                btnTxt = '',
-                btnUrl = '',
                 imgUrl = '',
-                message = '',
+                content = '',
                 subtitle = '',
                 title = ''
               }, i) =>
 
                 <div>
+                  <div className="custom-banner-content">
+                    <p className="custom-slider-title">{title}</p>
+                    <p className="custom-slider-sub-text">{subtitle}</p>
+                    <p className="custom-slider-content">{content}</p>
+                  </div>
+
                   <img src={imgUrl} alt="" />
                 </div>
 
@@ -78,8 +82,8 @@ const Banner = () => {
           </div>
         </div>
       </div>
-        
-      </section >
+
+    </section >
   );
 
 }

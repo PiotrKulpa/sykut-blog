@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,700,900);
+
 .awssld__content {
   background-color: transparent !important;
 }
@@ -32,4 +34,58 @@
 
 .blog-box-layout5 .item-btn {
   cursor: pointer;
+}
+
+.custom-banner-content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(0, -50%);
+  width: 40%;
+}
+
+.custom-slider-title {
+  font-size: 16px;
+  color: #444444;
+  font-weight: 500;
+}
+
+.custom-slider-sub-text {
+  font-size: 8rem;
+  font-weight: 700 !important;
+  font-family: 'Poppins', sans-serif;
+  color: #444444;
+  font-weight: 500;
+  line-height: 7rem;
+}
+
+.custom-slider-content {
+  font-size: 16px;
+  color: #444444;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 1399px) {
+  .custom-slider-sub-text {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .custom-slider-sub-text {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .custom-slider-sub-text {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  .custom-slider-content {
+    display: none;
+  }
 }
