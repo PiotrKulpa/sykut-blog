@@ -38,6 +38,9 @@ content: >-
   W ten sposób możliwe jest uzyskanie znakomitych efektów przy zachowaniu
   najwyższego komfortu. Korzystając z aparatów Invisalign, będziesz odczuwał
   pełną swobodę!
+
+
+  Źródło: https://stomatologia-gliwa.pl/niewidoczne-leczenie-ortodontyczne/
 featuredImage: /uploads/woman-3498849_960_720.webp
 tags: ortodonta
 ---
