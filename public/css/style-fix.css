@@ -11,3 +11,25 @@
 {
   z-index: 20;
 }
+
+.portfolio-box-layout2 .item-img img {
+  width: 383px;
+  height: 312px;
+  object-fit: cover;
+}
+
+.blog-wrap-layout2 .blog-box-layout2 img {
+  width: 605px;
+  height: 432px;
+  object-fit: cover;
+}
+
+.blog-wrap-layout4 .item-img img {
+  width: 360px;
+  height: 330px;
+  object-fit: cover;
+}
+
+.blog-box-layout5 .item-btn {
+  cursor: pointer;
+}
