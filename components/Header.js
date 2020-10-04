@@ -24,7 +24,8 @@ const Header = () => {
               <div className="logo-area">
                 <Link  href="/">
 
-                  <a className="active-menu temp-logo"><img src="/images/januszsykut-personal.png" alt="logo" className="img-fluid" /></a>
+                  <a className="active-menu temp-logo">
+                    <img src="/images/jsykutlogo.jpg" alt="logo" className="img-fluid" /></a>
 
                 </Link>
               </div>

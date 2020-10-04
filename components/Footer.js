@@ -12,7 +12,7 @@ const Footer = () => {
               <div className="footer-box-layout2">
                 <div className="footer-logo">
                   <Link href="/">
-                    <a><img src="/images/jsykutlogo-footer.png" alt="Logo" /></a>
+                    <a><img src="/images/jsykutlogo-footer.jpg" alt="Logo" /></a>
                   </Link>
                 </div>
                 <ul className="footer-menu">
