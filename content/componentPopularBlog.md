@@ -29,7 +29,7 @@ content: |-
         </div>
         <div class="col-lg-6 order-lg-2">
           <div class="blog-box-layout2">
-            <img src="/uploads/test.jpg" alt="Blog">
+            <img src="/uploads/platform-2877646_960_720.jpg" alt="Blog">
           </div>
         </div>
         <div class="col-lg-6 order-lg-1 d-flex align-items-center">
