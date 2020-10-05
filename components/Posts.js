@@ -64,10 +64,19 @@ const Posts = ({ posts }) => {
               </div>
             </div>
           )
+         
         }
         )
         :
         <p>Nie znaleziono wpisów.</p>}
+        <div
+          className="pagination-layout1 margin-b-30 custom-btn-show-more">
+          <button 
+            className="item-back-btn"  
+            >
+              Pokaż kolejne
+          </button>
+        </div>
     </div>
   )
 }

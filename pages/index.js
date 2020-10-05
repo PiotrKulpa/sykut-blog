@@ -60,7 +60,7 @@ console.log(files);
     return dateA - dateB;
   })
   .reverse()
-  .slice(0, 3)
+  .slice(0, 6)
     }
   };
 };

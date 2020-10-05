@@ -11,7 +11,7 @@ import Posts from '../../components/Posts';
 import getSortedPosts from '../../helpers/getSortedPosts'
 
 
-const index = ({ posts }) => {
+const index = ({ posts = [] }) => {
 
   return (
     <PostsWrapper>
