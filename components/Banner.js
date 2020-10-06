@@ -9,7 +9,7 @@ const AutoplaySlider = withAutoplay(AwesomeSlider);
 const Banner = () => {
 
   const { homeMainSlider = [] } = attributes || {};
-  console.log(attributes);
+
   return (
     <section className="slider-wrap-layout1 box-layout-child-4">
       <div className="slider-left-side-content">JANUSZ SYKUT BLOG</div>

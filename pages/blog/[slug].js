@@ -71,7 +71,7 @@ const Post = (
                 <div className="row">
                   <div className="col-sm-6">
                     <ul className="blog-tag">
-                      <li>Tags: <a href="/">Business,</a><a href="/">Trend</a></li>
+                      <li></li>
                     </ul>
                   </div>
                   <div className="col-sm-6">

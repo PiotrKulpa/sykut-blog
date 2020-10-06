@@ -17,8 +17,8 @@ const Home = ({ posts }) => {
       <Banner />
       <AboutUs />
       <LatestBlog { ...{posts}}/>
-      <Brands />
       <PopularBlog />
+      <Brands />
       </>
     )
 }

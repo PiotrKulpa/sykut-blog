@@ -7,7 +7,6 @@ const Posts = ({ posts }) => {
 
   const defaultCounter = 3;
   const [counter, setCounter] = useState(defaultCounter);
-console.log(counter);
 
   const showMore = () => {
     if(counter < posts.length) setCounter((prev) => prev + defaultCounter);

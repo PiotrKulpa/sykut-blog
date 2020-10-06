@@ -1,4 +1,5 @@
 import React from 'react';
+import Sidebar from './Sidebar';
 
 const PostsWrapper = (props) => {
     return (
@@ -10,6 +11,7 @@ const PostsWrapper = (props) => {
                             {props.children}
                         </div>
                     </div>
+                < Sidebar />
                 </div>
             </div>
         </section>
