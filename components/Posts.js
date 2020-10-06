@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from "next/link";
 
 import useStringSlicer from '../hooks/useStringSlicer';
 
 const Posts = ({ posts }) => {
 
+  const defaultCounter = 3;
+  const [counter, setCounter] = useState(defaultCounter);
+console.log(counter);
+
+  const showMore = () => {
+    if(counter < posts.length) setCounter((prev) => prev + defaultCounter);
+  }
+
   return (
     <div>
       {posts.length > 0 ?
-        posts.map(({
+        posts.slice(0, counter).map(({
           slug = '',
           date = '',
           htmlString = '',
@@ -63,8 +71,7 @@ const Posts = ({ posts }) => {
                 </div>
               </div>
             </div>
-          )
-         
+          ) 
         }
         )
         :
@@ -72,7 +79,8 @@ const Posts = ({ posts }) => {
         <div
           className="pagination-layout1 margin-b-30 custom-btn-show-more">
           <button 
-            className="item-back-btn"  
+            className={`item-back-btn${counter >= posts.length ? " custom-btn-disabled" : ""}`}
+            onClick={showMore}
             >
               Pokaż kolejne
           </button>
