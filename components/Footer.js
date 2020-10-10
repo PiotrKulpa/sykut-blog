@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Link from 'next/link';
 
 const Footer = () => {
+
+  const date = new Date();
+  const currentYear = useMemo(() => date.getFullYear(), [date]);
+
   return (
     <>
       {/* <!-- Footer Area Start Here --> */}
@@ -34,37 +38,17 @@ const Footer = () => {
                 </ul>
                 <ul className="footer-social">
                   <li>
-                    <a href="/">
-                      <i className="fab fa-facebook-f"></i>
+                    <a href="https://www.instagram.com/challenge/?next=/drnmed_jsykut/%253Fhl%253Dpl">
+                      <i className="fab fa-instagram"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="/">
-                      <i className="fab fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/">
-                      <i className="fab fa-behance"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/">
-                      <i className="fab fa-dribbble"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/">
-                      <i className="fab fa-linkedin-in"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/">
-                      <i className="fab fa-google-plus-g"></i>
+                    <a href="https://pl.linkedin.com/">
+                      <i className="fab fa-linkedin"></i>
                     </a>
                   </li>
                 </ul>
-                <div className="copyright">Copyright © 2018 by J. Sykut. All rights reserved.</div>
+                <div className="copyright">Copyright © {currentYear} by Dr J. Sykut. All rights reserved.</div>
               </div>
             </div>
           </div>
