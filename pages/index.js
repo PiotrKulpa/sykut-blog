@@ -25,7 +25,6 @@ const Home = ({ posts }) => {
 
 export const getStaticProps = async () => {
   const files = fs.readdirSync("content/blog");
-console.log(files);
   return {
     props: {
       posts: files && files.map(filename => {

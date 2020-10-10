@@ -9,8 +9,7 @@ const Posts = ({ posts }) => {
  
   const showMore = () => {
     const sessionCounter = Number(window.sessionStorage.getItem("sessionCounter")) ||  defaultCount;
-    console.log(sessionCounter);
-    window.sessionStorage.setItem("sessionCounter", sessionCounter + defaultCount)
+    window.sessionStorage.setItem("sessionCounter", sessionCounter + defaultCount);
     
    
     setCounter((prev) => prev + defaultCount)
