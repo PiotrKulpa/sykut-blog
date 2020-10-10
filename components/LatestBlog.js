@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 const LatestBlog = ({ posts }) => {
-console.log(posts);
+
   return (
     <section className="portfolio-wrap-layout2">
       <div className="container">
