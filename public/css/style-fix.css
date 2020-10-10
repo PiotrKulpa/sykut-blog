@@ -5,7 +5,25 @@
 }
 
 .awssld__container {
-  padding-bottom: 800px !important
+  padding-bottom: 200px !important
+}
+
+@media only screen and (min-width: 768px) {
+  .awssld__container {
+    padding-bottom: 300px !important
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .awssld__container {
+    padding-bottom: 500px !important
+  }
+}
+
+@media only screen and (min-width: 1680px) {
+  .awssld__container {
+    padding-bottom: 800px !important
+  }
 }
 
 .slider-wrap-layout1 .slider-left-side-content,
@@ -90,6 +108,9 @@
     font-size: 2rem;
     line-height: 2rem;
   }
+}
+
+@media only screen and (max-width: 768px) {
 
   .custom-slider-content {
     display: none;

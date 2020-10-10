@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 const LatestBlog = ({ posts }) => {
-
+console.log(posts);
   return (
     <section className="portfolio-wrap-layout2">
       <div className="container">
@@ -15,21 +15,24 @@ const LatestBlog = ({ posts }) => {
             title = '',
             tags = '',
             featuredImage = '',
+            slug,
           }) =>
             <div className="col-lg-4 col-sm-6">
               <div className="portfolio-box-layout2">
                 <div className="item-img">
                   <img src={featuredImage} alt="Project 11" />
-                  <a href="#test-popup1" className="item-btn inline-popup">
-                    <i className="flaticon-next" />
-                  </a>
+                  <Link href={`/blog/${slug}`}>
+                    <a  href="#" className="item-btn inline-popup">
+                      <i className="flaticon-next" />
+                    </a>
+                  </Link>
                 </div>
                 <div className="item-content">
                   <h3 className="item-title">
                     <a href="single-portfolio1.html">{title}</a>
                   </h3>
                   <div className="item-subtitle">
-                    <Link href="#"><a >tag: {tags}</a></Link>
+                    <Link href="#"><a >{tags}</a></Link>
                   </div>
                 </div>
               </div>

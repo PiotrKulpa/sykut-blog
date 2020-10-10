@@ -32,7 +32,7 @@ const Banner = () => {
           <div className="bend niceties preview-1">
             <div className="ensign-nivoslider-1"></div>
             <AutoplaySlider
-              play={true}
+              play={false}
               cancelOnInteraction={false}
               interval={6000}
               organicArrows={false}

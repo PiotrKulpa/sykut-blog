@@ -12,7 +12,6 @@ const Contact = () => {
     fax2 = '',
     head = '',
     phone1 = '',
-    phone2 = '',
     subhead = '',
   } = fm.attributes || {};
 
