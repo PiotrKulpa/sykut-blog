@@ -11,7 +11,7 @@ const PostsWrapper = (props) => {
                             {props.children}
                         </div>
                     </div>
-                < Sidebar />
+                < Sidebar posts={props.posts}/>
                 </div>
             </div>
         </section>

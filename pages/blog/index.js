@@ -8,12 +8,11 @@ import parseMD from 'parse-md';
 
 import PostsWrapper from '../../components/PostsWrapper';
 import Posts from '../../components/Posts';
-import getSortedPosts from '../../helpers/getSortedPosts'
 
 const index = ({ posts = [] }) => {
 
   return (
-    <PostsWrapper>
+    <PostsWrapper { ...{posts}}>
     <Posts { ...{posts}} />
     </PostsWrapper>
   )
