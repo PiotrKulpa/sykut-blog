@@ -12,5 +12,7 @@ Brands:
     title: Nazwa partnera
   - imgUrl: /uploads/brand4.png
     title: Nazwa partnera
+  - imgUrl: /uploads/brand5.png
+    title: Nazwa partnera
 ---
 
