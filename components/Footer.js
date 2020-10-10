@@ -85,16 +85,22 @@ const Footer = () => {
       {/* <!-- Off canvas Menu Start --> */}
       <ul className="offcanvas-navigation">
         <li>
-          <a href="index.html">Home</a>
+          <a href="/">Home</a>
         </li>
         <li>
-          <a href="about1.html">About</a>
+          <a href="/">O mnie</a>
         </li>
         <li>
-          <a href="blog1.html">Blog</a>
+          <a href="/blog">Blog</a>
         </li>
         <li>
-          <a href="single-portfolio1.html">Portfolio</a>
+          <a href="http://prodentica.info/">Prodentica</a>
+        </li>
+        <li>
+          <a href="https://prestigelublin.eu/">Prestige</a>
+        </li>
+        <li>
+          <a href="/kontakt">Kontakt</a>
         </li>
       </ul>
       <svg className="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">

@@ -354,7 +354,7 @@
           MeanMenu activation code
           --------------------------------------*/
         $("nav#dropdown").meanmenu({
-            siteLogo: "<div class='mobile-menu-nav-back'><a class='logo-mobile' href='index.html'><img src='/img/januszsykut-personal.png' alt='logo' class='img-fluid'/></a></div>"
+            siteLogo: "<div class='mobile-menu-nav-back'><a class='logo-mobile' href='index.html'><img src='/images/jsykutlogo.jpg' alt='logo' class='img-fluid'/></a></div>"
         });
 
         // Countdown activation code

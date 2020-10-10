@@ -12,37 +12,17 @@ const Banner = () => {
 
   return (
     <section className="slider-wrap-layout1 box-layout-child-4">
-      <div className="slider-left-side-content">JANUSZ SYKUT BLOG</div>
+      <div className="slider-left-side-content">DR JANUSZ SYKUT BLOG</div>
       <div className="slider-right-side-content">
         <ul>
           <li>
-            <a href="/">
-              <i className="fab fa-facebook-f"></i>
+            <a href="https://www.instagram.com/challenge/?next=/drnmed_jsykut/%253Fhl%253Dpl">
+              <i className="fab fa-instagram"></i>
             </a>
           </li>
           <li>
-            <a href="/">
-              <i className="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a href="/">
-              <i className="fab fa-behance"></i>
-            </a>
-          </li>
-          <li>
-            <a href="/">
-              <i className="fab fa-dribbble"></i>
-            </a>
-          </li>
-          <li>
-            <a href="/">
-              <i className="fab fa-linkedin-in"></i>
-            </a>
-          </li>
-          <li>
-            <a href="/">
-              <i className="fab fa-google-plus-g"></i>
+            <a href="https://pl.linkedin.com/">
+              <i className="fab fa-linkedin"></i>
             </a>
           </li>
         </ul>
