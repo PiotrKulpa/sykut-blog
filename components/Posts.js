@@ -1,16 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from "next/link";
 
 import useStringSlicer from '../hooks/useStringSlicer';
 
 const Posts = ({ posts }) => {
-
-  const defaultCounter = 3;
-  const [counter, setCounter] = useState(defaultCounter);
-
+  const defaultCount = 1;
+  const[counter, setCounter] = useState(defaultCount);
+ 
   const showMore = () => {
-    if(counter < posts.length) setCounter((prev) => prev + defaultCounter);
+    const sessionCounter = Number(window.sessionStorage.getItem("sessionCounter")) ||  defaultCount;
+    console.log(sessionCounter);
+    window.sessionStorage.setItem("sessionCounter", sessionCounter + defaultCount)
+    
+   
+    setCounter((prev) => prev + defaultCount)
   }
+  
+  useEffect(() => {
+    const sessionCounter = Number(window.sessionStorage.getItem("sessionCounter"));
+    setCounter(sessionCounter || defaultCount);
+  }, []);
 
   return (
     <div>
