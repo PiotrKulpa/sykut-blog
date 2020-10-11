@@ -27,7 +27,6 @@ const Sidebar = ({ posts }) => {
     setFilteredTags(formatAllTags);
    
   }, [posts]);
-  console.log(filteredTags);
 
   return (
     <div className="col-xl-3 col-lg-4 col-12 sidebar-widget-area sidebar-break-md">

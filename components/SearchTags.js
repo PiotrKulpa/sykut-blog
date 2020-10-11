@@ -1,30 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import Link from "next/link";
+import { useRouter } from 'next/router'
 
 import useStringSlicer from '../hooks/useStringSlicer';
 import { DEFAULT_POSTS_PER_PAGE } from '../constants';
 
-const Posts = ({ posts }) => {
+const SearchTags = ({ posts }) => {
   const defaultCount = DEFAULT_POSTS_PER_PAGE;
   const[counter, setCounter] = useState(defaultCount);
- 
+  const[filteredPosts, setFilteredPosts] = useState([]);
+  const router = useRouter();
+  const searchText = router.query.id || '';
+
   const showMore = () => {
-    const sessionCounter = Number(window.sessionStorage.getItem("sessionCounter")) ||  defaultCount;
-    window.sessionStorage.setItem("sessionCounter", sessionCounter + defaultCount);
-    
-   
+    const sessionCounter = Number(window.sessionStorage.getItem("sessionCounterSearch")) ||  defaultCount;
+    window.sessionStorage.setItem("sessionCounterSearch", sessionCounter + defaultCount);
     setCounter((prev) => prev + defaultCount)
   }
   
   useEffect(() => {
-    const sessionCounter = Number(window.sessionStorage.getItem("sessionCounter"));
+    const sessionCounter = Number(window.sessionStorage.getItem("sessionCounterSearch"));
     setCounter(sessionCounter || defaultCount);
   }, []);
 
+  useEffect(() => {
+    setFilteredPosts(posts && searchText && 
+      posts.filter((el) => {
+        return el.tags.toLowerCase().includes(searchText.toLowerCase());
+      }))
+  }, [searchText, posts]);
+
   return (
     <div>
-      {posts.length > 0 ?
-        posts.slice(0, counter).map(({
+      {filteredPosts.length > 0 ?
+        filteredPosts.slice(0, counter).map(({
           slug = '',
           date = '',
           htmlString = '',
@@ -54,7 +63,7 @@ const Posts = ({ posts }) => {
                       <li>
                       {filteredTag.length > 0 && 
                         filteredTag.map((el, i) => 
-                        (<a key={i} href={`/tagi?id=${el}`}>{el}</a>))
+                        (<a key={i} href={`/tagi/${el}/1`}>{el}</a>))
                       }
                       </li>
                     </ul>
@@ -83,11 +92,11 @@ const Posts = ({ posts }) => {
         }
         )
         :
-        <p>Nie znaleziono wpisów.</p>}
+      <p>Nie znaleziono wpisów dla tagów: <strong>{searchText}</strong></p>}
         <div
           className="pagination-layout1 margin-b-30 custom-btn-show-more">
           <button 
-            className={`item-back-btn${counter >= posts.length ? " custom-btn-disabled" : ""}`}
+            className={`item-back-btn${counter >= filteredPosts.length ? " custom-btn-disabled" : ""}`}
             onClick={showMore}
             >
               Pokaż kolejne
@@ -97,4 +106,4 @@ const Posts = ({ posts }) => {
   )
 }
 
-export default Posts;
+export default SearchTags;
