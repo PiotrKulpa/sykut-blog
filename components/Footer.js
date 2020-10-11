@@ -1,7 +1,17 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+
 
 const Footer = () => {
+
+  const inputHeaderEl = useRef(null);
+  const router = useRouter();
+  const search = () => {
+    const searchText = inputHeaderEl.current.value;
+    searchText && router.push(`/szukaj?id=${searchText}`,
+      undefined, { shallow: true });
+  }
 
   const date = new Date();
   const currentYear = useMemo(() => date.getFullYear(), [date]);
@@ -59,8 +69,8 @@ const Footer = () => {
       <div id="header-search" className="header-search">
         <button type="button" className="close">×</button>
         <form className="header-search-form">
-          <input type="search" placeholder="Type here........" />
-          <button type="submit" className="search-btn">
+          <input ref={inputHeaderEl} type="search" placeholder="Szukaj........" />
+          <button onClick={search} type="submit" className="search-btn">
             <i className="flaticon-search"></i>
           </button>
         </form>

@@ -95,6 +95,7 @@
 
     $("form").on('submit', function (event) {
         event.preventDefault();
+        $("#header-search").removeClass("open");
         return false;
     });
 
