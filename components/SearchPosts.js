@@ -3,22 +3,23 @@ import Link from "next/link";
 import { useRouter } from 'next/router'
 
 import useStringSlicer from '../hooks/useStringSlicer';
+import { DEFAULT_POSTS_PER_PAGE } from '../constants';
 
 const SearchPosts = ({ posts }) => {
-  const defaultCount = 1;
+  const defaultCount = DEFAULT_POSTS_PER_PAGE;
   const[counter, setCounter] = useState(defaultCount);
   const[filteredPosts, setFilteredPosts] = useState([]);
   const router = useRouter();
   const searchText = router.query.id || '';
 
   const showMore = () => {
-    const sessionCounter = Number(window.sessionStorage.getItem("sessionCounter")) ||  defaultCount;
-    window.sessionStorage.setItem("sessionCounter", sessionCounter + defaultCount);
+    const sessionCounter = Number(window.sessionStorage.getItem("sessionCounterSearch")) ||  defaultCount;
+    window.sessionStorage.setItem("sessionCounterSearch", sessionCounter + defaultCount);
     setCounter((prev) => prev + defaultCount)
   }
   
   useEffect(() => {
-    const sessionCounter = Number(window.sessionStorage.getItem("sessionCounter"));
+    const sessionCounter = Number(window.sessionStorage.getItem("sessionCounterSearch"));
     setCounter(sessionCounter || defaultCount);
   }, []);
 
@@ -94,7 +95,7 @@ const SearchPosts = ({ posts }) => {
         <div
           className="pagination-layout1 margin-b-30 custom-btn-show-more">
           <button 
-            className={`item-back-btn${counter >= posts.length ? " custom-btn-disabled" : ""}`}
+            className={`item-back-btn${counter >= filteredPosts.length ? " custom-btn-disabled" : ""}`}
             onClick={showMore}
             >
               Pokaż kolejne

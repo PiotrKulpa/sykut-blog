@@ -1,22 +1,45 @@
-import React, { useRef} from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useRouter } from 'next/router'
 
 const Sidebar = ({ posts }) => {
 
   const router = useRouter();
   const inputEl = useRef(null);
+  const [filteredTags, setFilteredTags] = useState([]);
+
   const search = () => {
-    
     const searchText = inputEl.current.value;
     searchText && router.push(`/szukaj?id=${searchText}`,
       undefined, { shallow: true });
   }
 
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      search();
+    }
+  }
+
+  useEffect(() => {
+    const getAllTags = posts && posts.map(({ tags }) => {
+      return tags
+    });
+    const formatAllTags = getAllTags && getAllTags.join(',').split(',');
+    setFilteredTags(formatAllTags);
+   
+  }, [posts]);
+  console.log(filteredTags);
+
   return (
     <div className="col-xl-3 col-lg-4 col-12 sidebar-widget-area sidebar-break-md">
       <div className="widget widget-search-box">
         <div className="input-group stylish-input-group">
-          <input ref={inputEl} type="text" className="form-control" placeholder="Szukaj . . ." />
+          <input 
+            ref={inputEl}
+            onKeyDown={handleKeyDown} 
+            type="text" 
+            className="form-control" 
+            placeholder="Szukaj . . ." 
+          />
           <span className="input-group-addon">
             <button onClick={search} type="submit">
               <span className="flaticon-search" aria-hidden="true" />
@@ -33,9 +56,9 @@ const Sidebar = ({ posts }) => {
           date,
           title,
           featuredImage,  
-        }) => {
+        }, i) => {
           const convertedDate = date ? new Date(date).toLocaleString() : '';
-          return <div className="media">
+          return <div key={i} className="media">
             <div className="item-img">
               <a href={`blog/${slug}`}>
                 <img src={featuredImage} alt="Ostatni wpis" />
@@ -55,21 +78,11 @@ const Sidebar = ({ posts }) => {
           <h3>Tagi</h3>
         </div>
         <ul>
-          <li>
-            <a href="#">Advertising</a>
-          </li>
-          <li>
-            <a href="#">Electonics</a>
-          </li>
-          <li>
-            <a href="#">Food</a>
-          </li>
-          <li>
-            <a href="#">Mobile</a>
-          </li>
-          <li>
-            <a href="#">Social</a>
-          </li>
+          {filteredTags && filteredTags.map((el) => {
+             return <li>
+             <a href={`/tagi?id=${el.trim()}`}>{el.trim().toLowerCase()}</a>
+           </li>
+          })}
         </ul>
       </div>
     </div>

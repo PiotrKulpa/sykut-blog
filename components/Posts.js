@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Link from "next/link";
 
 import useStringSlicer from '../hooks/useStringSlicer';
+import { DEFAULT_POSTS_PER_PAGE } from '../constants';
 
 const Posts = ({ posts }) => {
-  const defaultCount = 1;
+  const defaultCount = DEFAULT_POSTS_PER_PAGE;
   const[counter, setCounter] = useState(defaultCount);
  
   const showMore = () => {
