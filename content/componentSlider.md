@@ -1,12 +1,9 @@
 ---
 homeMainSlider:
-  - content: >-
-      Czyli dziale medycyny zajmujący się funkcjonowaniem, patologiami i
-      leczeniem zębów, przyzębia, języka, błony śluzowej i innych tkanek jamy
-      ustnej oraz ją otaczających.
+  - content: Strona w budowie!
     imgUrl: /uploads/slide2-1.jpg
-    subtitle: Wszystko o stomatologii.
-    title: Stomatologia
+    subtitle: Strona w budowie!
+    title: 'Uwaga:'
   - content: >-
       Nowoczesna implantologia pozwala na osiągnięcie trwałego efektu
       estetycznego i na poprawę zaburzonej poprzez utratę zębów mechaniki
