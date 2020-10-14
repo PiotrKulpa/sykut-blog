@@ -99,7 +99,7 @@ const Contact = () => {
                   type="text" 
                   placeholder="imię *" 
                   className="form-control" 
-                  name="name" 
+                  name="użytkownik" 
                   required 
                 />
                 <div className="help-block with-errors"></div>
@@ -119,7 +119,7 @@ const Contact = () => {
                   type="text" 
                   placeholder="Temat *" 
                   className="form-control" 
-                  name="subject" 
+                  name="temat" 
                   required 
                 />
                 <div className="help-block with-errors"></div>
@@ -128,7 +128,7 @@ const Contact = () => {
                 <textarea 
                   placeholder="Treść *" 
                   className="textarea form-control" 
-                  name="message" 
+                  name="wiadomość" 
                   id="form-message" 
                   rows="2" 
                   cols="20"
