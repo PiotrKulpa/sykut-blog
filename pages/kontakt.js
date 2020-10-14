@@ -100,7 +100,7 @@ const Contact = () => {
                   placeholder="imię *" 
                   className="form-control" 
                   name="name" 
-                  data-error="Name field is required" required 
+                  required 
                 />
                 <div className="help-block with-errors"></div>
               </div>
@@ -110,7 +110,7 @@ const Contact = () => {
                   placeholder="E-mail *" 
                   className="form-control" 
                   name="email" 
-                  data-error="e-mail field is required" required 
+                  required 
                 />
                 <div className="help-block with-errors"></div>
               </div>
@@ -120,7 +120,7 @@ const Contact = () => {
                   placeholder="Temat *" 
                   className="form-control" 
                   name="subject" 
-                  data-error="Subject field is required" required 
+                  required 
                 />
                 <div className="help-block with-errors"></div>
               </div>
@@ -132,7 +132,7 @@ const Contact = () => {
                   id="form-message" 
                   rows="2" 
                   cols="20"
-                  data-error="Message field is required" required
+                  required
                 >
                 </textarea>
                 <div className="help-block with-errors"></div>
