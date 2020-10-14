@@ -4,45 +4,45 @@
     /*-------------------------------------
      Contact Form initiating
      -------------------------------------*/
-    var contactForm = $('#contact-form');
-    if (contactForm.length) {
-        contactForm.validator().on('submit', function (e) {
-            var $this = $(this),
-                $target = contactForm.find('.form-response');
-            if (e.isDefaultPrevented()) {
-                $target.html("<div class='alert alert-danger'><p>Please select all required field.</p></div>");
-            } else {
-                $.ajax({
-                    url: "vendor/php/form-process.php",
-                    type: "POST",
-                    data: contactForm.serialize(),
-                    beforeSend: function () {
-                        $target.html("<div class='alert alert-info'><p>Loading ...</p></div>");
-                    },
-                    success: function (response) {
-                        var res = JSON.parse(response);
-                        console.log(res);
-                        if (res.success) {
-                            $this[0].reset();
-                            $target.html("<div class='alert alert-success'><p>Message has been sent successfully.</p></div>");
-                        } else {
-                            if (res.message.length) {
-                                var messages = null;
-                                res.message.forEach(function (message) {
-                                    messages += "<p>" + message + "</p>";
-                                });
-                                $target.html("<div class='alert alert-success'><p>" + messages + "</p></div>");
-                            }
-                        }
-                    },
-                    error: function () {
-                        $target.html("<div class='alert alert-success'><p>Error !!!</p></div>");
-                    }
-                });
-                return false;
-            }
-        });
-    }
+    // var contactForm = $('#contact-form');
+    // if (contactForm.length) {
+    //     contactForm.validator().on('submit', function (e) {
+    //         var $this = $(this),
+    //             $target = contactForm.find('.form-response');
+    //         if (e.isDefaultPrevented()) {
+    //             $target.html("<div class='alert alert-danger'><p>Please select all required field.</p></div>");
+    //         } else {
+    //             $.ajax({
+    //                 url: "vendor/php/form-process.php",
+    //                 type: "POST",
+    //                 data: contactForm.serialize(),
+    //                 beforeSend: function () {
+    //                     $target.html("<div class='alert alert-info'><p>Loading ...</p></div>");
+    //                 },
+    //                 success: function (response) {
+    //                     var res = JSON.parse(response);
+    //                     console.log(res);
+    //                     if (res.success) {
+    //                         $this[0].reset();
+    //                         $target.html("<div class='alert alert-success'><p>Message has been sent successfully.</p></div>");
+    //                     } else {
+    //                         if (res.message.length) {
+    //                             var messages = null;
+    //                             res.message.forEach(function (message) {
+    //                                 messages += "<p>" + message + "</p>";
+    //                             });
+    //                             $target.html("<div class='alert alert-success'><p>" + messages + "</p></div>");
+    //                         }
+    //                     }
+    //                 },
+    //                 error: function () {
+    //                     $target.html("<div class='alert alert-success'><p>Error !!!</p></div>");
+    //                 }
+    //             });
+    //             return false;
+    //         }
+    //     });
+    // }
 
     /*-------------------------------------
       Section background image

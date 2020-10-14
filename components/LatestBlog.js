@@ -16,8 +16,8 @@ const LatestBlog = ({ posts }) => {
             tags = '',
             featuredImage = '',
             slug,
-          }) =>
-            <div className="col-lg-4 col-sm-6">
+          }, i) =>
+            <div key={i} className="col-lg-4 col-sm-6">
               <div className="portfolio-box-layout2">
                 <div className="item-img">
                   <img src={featuredImage} alt="Project 11" />

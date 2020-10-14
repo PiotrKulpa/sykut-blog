@@ -15,6 +15,8 @@ const Contact = () => {
     subhead = '',
   } = fm.attributes || {};
 
+
+
   return (
     <section className="contact-page-wrap">
       <div className="container">
@@ -81,31 +83,72 @@ const Contact = () => {
             <h2>{head}</h2>
             <p>{subhead}</p>
           </div>
-          <form className="contact-form-box" id="contact-form">
+
+          <form 
+            className="contact-form-box" 
+            id="contact-form"
+            name="contact" 
+            method="POST" 
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            >
             <div className="row">
               <div className="col-md-4 form-group">
-                <input type="text" placeholder="imię *" className="form-control" name="name" data-error="Name field is required" required />
+                <input type="hidden" name="form-name" value="contact" />
+                <input 
+                  type="text" 
+                  placeholder="imię *" 
+                  className="form-control" 
+                  name="name" 
+                  data-error="Name field is required" required 
+                />
                 <div className="help-block with-errors"></div>
               </div>
               <div className="col-md-4 form-group">
-                <input type="email" placeholder="E-mail *" className="form-control" name="email" data-error="e-mail field is required" required />
+                <input 
+                  type="email" 
+                  placeholder="E-mail *" 
+                  className="form-control" 
+                  name="email" 
+                  data-error="e-mail field is required" required 
+                />
                 <div className="help-block with-errors"></div>
               </div>
               <div className="col-md-4 form-group">
-                <input type="text" placeholder="Temat *" className="form-control" name="subject" data-error="Subject field is required" required />
+                <input 
+                  type="text" 
+                  placeholder="Temat *" 
+                  className="form-control" 
+                  name="subject" 
+                  data-error="Subject field is required" required 
+                />
                 <div className="help-block with-errors"></div>
               </div>
               <div className="col-12 form-group">
-                <textarea placeholder="Treść *" className="textarea form-control" name="message" id="form-message" rows="2" cols="20"
-                  data-error="Message field is required" required></textarea>
+                <textarea 
+                  placeholder="Treść *" 
+                  className="textarea form-control" 
+                  name="message" 
+                  id="form-message" 
+                  rows="2" 
+                  cols="20"
+                  data-error="Message field is required" required
+                >
+                </textarea>
                 <div className="help-block with-errors"></div>
               </div>
               <div className="col-12 form-group">
-                <button type="submit" className="item-btn">Wyślij<i className="flaticon-right-arrow"></i></button>
+                <button 
+                  type="submit" 
+                  className="item-btn"
+                >
+                    Wyślij<i className="flaticon-right-arrow"></i>
+                </button>
               </div>
             </div>
             <div className="form-response"></div>
           </form>
+
         </div>
       </div>
     </section>

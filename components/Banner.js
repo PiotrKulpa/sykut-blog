@@ -47,7 +47,7 @@ const Banner = () => {
                 title = ''
               }, i) =>
 
-                <div>
+                <div key={i}>
                   <div className="custom-banner-content">
                     <p className="custom-slider-title">{title}</p>
                     <p className="custom-slider-sub-text">{subtitle}</p>
