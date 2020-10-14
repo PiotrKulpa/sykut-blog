@@ -90,7 +90,7 @@ const Contact = () => {
             name="contact" 
             method="POST" 
             data-netlify="true"
-            data-netlify-honeypot="bot-field"
+            action="/success"
             >
             <div className="row">
               <div className="col-md-4 form-group">
