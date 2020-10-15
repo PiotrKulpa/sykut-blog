@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import useStringSlicer from '../hooks/useStringSlicer';
 import { DEFAULT_POSTS_PER_PAGE } from '../constants';
+import Pagination from '../components/Pagination';
 
 const Posts = ({ posts }) => {
   const defaultCount = DEFAULT_POSTS_PER_PAGE;
@@ -92,6 +93,7 @@ const Posts = ({ posts }) => {
             >
               Pokaż kolejne
           </button>
+          <Pagination />
         </div>
     </div>
   )
