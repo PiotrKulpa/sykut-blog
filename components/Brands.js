@@ -23,9 +23,9 @@ const Brands = () => {
       <div className="container">
       <SlickSlider {...settings}>
         {brandsContent && brandsContent.map((el, i) => 
-          <>
-            <img key={i} src={el.imgUrl} />
-          </>
+          <React.Fragment key={i}>
+            <img src={el.imgUrl} />
+          </React.Fragment>
         )}
       </SlickSlider>
       </div>
