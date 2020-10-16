@@ -15,6 +15,12 @@ content: >-
   Pacjentki/ Pacjenci błyskawicznie adaptują się do tego typu uzupełnienia
   protetycznego i szybko odczuwają taki sam komfort ich użytkowania jak w
   przypadku naturalnego uzębienia.
+
+
+
+
+  żródło:
+  http://magazynlubelski.pl/artykuly/edukacyjne/303-nasza-misja-jest-usmiech-pacjentow
 featuredImage: /uploads/instagram-01.jpg
 tags: 'korony, protetyka'
 ---
