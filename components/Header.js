@@ -41,7 +41,7 @@ const Header = () => {
                       <Link  href="/#"><a className="active-menu">O mnie</a></Link>
                     </li>
                     <li>
-                      <Link href="/blog"><a className="active-menu">Blog</a></Link>
+                      <Link href="/blog?strona=1"><a className="active-menu">Blog</a></Link>
                     </li>
                     <li>
                       <a href="http://prodentica.info/">Prodentica</a>

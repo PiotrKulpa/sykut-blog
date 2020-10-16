@@ -1,31 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import Link from "next/link";
+import { useRouter } from 'next/router';
 
 import useStringSlicer from '../hooks/useStringSlicer';
 import { DEFAULT_POSTS_PER_PAGE } from '../constants';
 import Pagination from '../components/Pagination';
 
 const Posts = ({ posts }) => {
+
+  const router = useRouter();
   const defaultCount = DEFAULT_POSTS_PER_PAGE;
   const[counter, setCounter] = useState(defaultCount);
  
-  const showMore = () => {
-    const sessionCounter = Number(window.sessionStorage.getItem("sessionCounter")) ||  defaultCount;
-    window.sessionStorage.setItem("sessionCounter", sessionCounter + defaultCount);
+  // const showMore = () => {
+  //   const sessionCounter = Number(window.sessionStorage.getItem("sessionCounter")) ||  defaultCount;
+  //   window.sessionStorage.setItem("sessionCounter", sessionCounter + defaultCount);
     
    
-    setCounter((prev) => prev + defaultCount)
-  }
+  //   setCounter((prev) => prev + defaultCount)
+  // }
   
   useEffect(() => {
-    const sessionCounter = Number(window.sessionStorage.getItem("sessionCounter"));
-    setCounter(sessionCounter || defaultCount);
-  }, []);
+    const urlId = router.query.strona;
+    console.log({urlId});
+    setCounter(urlId || 1);
+  }, [router]);
 
   return (
     <div>
       {posts.length > 0 ?
-        posts.slice(0, counter).map(({
+        posts.slice(counter - DEFAULT_POSTS_PER_PAGE, counter).map(({
           slug = '',
           date = '',
           htmlString = '',
@@ -40,7 +44,7 @@ const Posts = ({ posts }) => {
               <div className="blog-box-layout5">
                 <div className="media media-none--lg">
                   <div className="item-img">
-                    <Link href={`/blog/${slug}`}>
+                    <Link href="/blog/[slug]" as={`/blog/${slug}`} shallow={true}>
                       <a>
                         <img 
                           src={featuredImage || '/images/placeholder.jpg'} 
@@ -87,13 +91,13 @@ const Posts = ({ posts }) => {
         <p>Nie znaleziono wpisów.</p>}
         <div
           className="pagination-layout1 margin-b-30 custom-btn-show-more">
-          <button 
+          {/* <button 
             className={`item-back-btn${counter >= posts.length ? " custom-btn-disabled" : ""}`}
             onClick={showMore}
             >
               Pokaż kolejne
-          </button>
-          <Pagination />
+          </button> */}
+          <Pagination data={posts} path='blog'/>
         </div>
     </div>
   )
