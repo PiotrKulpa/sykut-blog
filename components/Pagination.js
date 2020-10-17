@@ -4,6 +4,10 @@ import { useRouter } from 'next/router';
 
 const Pagination = (props) => {
 
+    // TODO: refactor all Posts and Pagination components to behavior like SSR app
+    // cach total pages once on /blog
+    // let ssr to fetch pages based on /blog/1/ in getStaticProps
+
     const {
         data = [],
         perPage = 1,

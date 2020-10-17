@@ -9,7 +9,7 @@ import Pagination from '../components/Pagination';
 const Posts = ({ posts }) => {
 
   const router = useRouter();
-  const defaultCount = DEFAULT_POSTS_PER_PAGE;
+  const defaultCount = 0;
   const[counter, setCounter] = useState(defaultCount);
  
   // const showMore = () => {
@@ -20,16 +20,16 @@ const Posts = ({ posts }) => {
   //   setCounter((prev) => prev + defaultCount)
   // }
   
-  useEffect(() => {
-    const urlId = router.query.strona;
-    console.log({urlId});
-    setCounter(urlId || 1);
-  }, [router]);
+  // useEffect(() => {
+  //   const urlId = router.query.strona;
+  //   console.log({urlId});
+  //   setCounter(urlId || 0);
+  // }, [router]);
 
   return (
     <div>
       {posts.length > 0 ?
-        posts.slice(counter - DEFAULT_POSTS_PER_PAGE, counter).map(({
+        posts.map(({
           slug = '',
           date = '',
           htmlString = '',
@@ -44,7 +44,7 @@ const Posts = ({ posts }) => {
               <div className="blog-box-layout5">
                 <div className="media media-none--lg">
                   <div className="item-img">
-                    <Link href="/blog/[slug]" as={`/blog/${slug}`} shallow={true}>
+                    <Link href={`/blog/wpis/${slug}`}>
                       <a>
                         <img 
                           src={featuredImage || '/images/placeholder.jpg'} 
@@ -64,7 +64,7 @@ const Posts = ({ posts }) => {
                       </li>
                     </ul>
                     <h3 className="item-title">
-                      <Link href={`/blog/${slug}`}>
+                      <Link href={`/blog/wpis/${slug}`}>
                         <a>{title}</a>
                       </Link>
                     </h3>
@@ -74,7 +74,7 @@ const Posts = ({ posts }) => {
                         {{ __html: useStringSlicer(htmlString, 0, 177) }} />
                     <Link
                       
-                      href={`/blog/${slug}`}
+                      href={`/blog/wpis/${slug}`}
                     >
                       <a className="item-btn">
                           Czytaj dalej <i className="flaticon-next"></i>
@@ -97,7 +97,7 @@ const Posts = ({ posts }) => {
             >
               Pokaż kolejne
           </button> */}
-          <Pagination data={posts} path='blog'/>
+          {/* <Pagination data={posts} path='blog' perPage={5}/> */}
         </div>
     </div>
   )

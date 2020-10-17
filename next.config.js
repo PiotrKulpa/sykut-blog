@@ -10,3 +10,15 @@ module.exports = {
       return cfg;
   }
 }
+
+module.exports = {
+    async redirects() {
+      return [
+        {
+          source: '/blog',
+          destination: '/blog/strona/1',
+          permanent: true,
+        },
+      ]
+    },
+  }
