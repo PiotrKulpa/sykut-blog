@@ -19,7 +19,7 @@
     "gray-matter": "^4.0.2",
     "lodash-es": "^4.17.15",
     "marked": "^1.1.0",
-    "next": "^9.4.4",
+    "next": "^9.5.5",
     "next-redux-wrapper": "^6.0.2",
     "parse-md": "^2.0.4",
     "react": "^16.13.1",
