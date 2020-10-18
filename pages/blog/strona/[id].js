@@ -9,13 +9,14 @@ import parseMD from 'parse-md';
 import PostsWrapper from '../../../components/PostsWrapper';
 import Posts from '../../../components/Posts';
 import { DEFAULT_POSTS_PER_PAGE } from '../../../constants';
+import getTotalPages from '../../../helpers/getTotalPages';
+import setTotalPagesArray from '../../../helpers/setTotalPagesArray';
 
-const BlogPages= ({ posts = [] }) => {
-console.log(posts);
-console.log('posts');
+const BlogPages= ({ posts = [], totalPages = 0}) => {
+
   return (
     <PostsWrapper { ...{posts}}>
-    <Posts { ...{posts}} />
+      <Posts { ...{posts, totalPages}} />
     </PostsWrapper>
   )
 }
@@ -24,10 +25,10 @@ export const getStaticPaths = async () => {
     const files = fs.readdirSync("content/blog");
     
     // calculate pagination pages
-    const paginationPages = Math.ceil(files.length / DEFAULT_POSTS_PER_PAGE) ;
-
-    // set static paths for blog pages
+    const paginationPages = getTotalPages(files) ;
     const slicedFiles = files.slice(0, paginationPages);
+
+     // set static paths for blog pages
     const paths = slicedFiles.map((_, i) => ({
       params: {
         id: `${i +1}`
@@ -39,10 +40,10 @@ export const getStaticPaths = async () => {
     };
   };
   
-
   export const getStaticProps = async ({params: {id}}) => {
     const files = fs.readdirSync("content/blog");
-  
+    const paginationPages = setTotalPagesArray(getTotalPages(files));
+
     return {
       props: {
         posts: files && files.map(filename => {
@@ -77,7 +78,8 @@ export const getStaticPaths = async () => {
       return dateA - dateB;
     })
     .reverse()
-    .slice((DEFAULT_POSTS_PER_PAGE * id) - DEFAULT_POSTS_PER_PAGE, DEFAULT_POSTS_PER_PAGE * id)
+    .slice((DEFAULT_POSTS_PER_PAGE * id) - DEFAULT_POSTS_PER_PAGE, DEFAULT_POSTS_PER_PAGE * id),
+    totalPages: paginationPages,
       }
     };
   };

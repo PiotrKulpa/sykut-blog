@@ -151,3 +151,15 @@
   height: 80px;
   object-fit: cover;
 }
+
+.custom-pagination-active-btn {
+  pointer-events: auto;
+  cursor: auto;
+  margin: 10px;
+}
+
+.custom-pagination-blocked-btn {
+  pointer-events: none;
+  cursor: not-allowed;
+  margin: 10px;
+}

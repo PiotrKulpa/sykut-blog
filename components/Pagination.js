@@ -1,111 +1,63 @@
 import React, { useEffect, useState, memo } from 'react';
 import { useRouter } from 'next/router';
+import Link from "next/link";
+import { DEFAULT_NUMBER_OF_PAGES } from '../constants';
 
+const Pagination = (
+  {
+    path = '',
+    totalPages = [],
+    btnBlockedClass = 'custom-pagination-blocked-btn',
+    btnActivClass = 'custom-pagination-active-btn ',
+    activeClassName = 'active',
+  }) => {
 
-const Pagination = (props) => {
+  const [sliceFrom, setSliceFrom] = useState(0);
+  const [sliceTo, setSliceTo] = useState(0);
+  const router = useRouter();
+  const currentPage = Number(router.query.id) || 1;
+  const show = DEFAULT_NUMBER_OF_PAGES || 3;
 
-    // TODO: refactor all Posts and Pagination components to behavior like SSR app
-    // cach total pages once on /blog
-    // let ssr to fetch pages based on /blog/1/ in getStaticProps
+  useEffect(() => {
+    if (currentPage >= show) {
+      setSliceFrom(currentPage - Math.round(show / 2));
+      setSliceTo(currentPage + Math.round(show / 2) - 1);
+    }
+    else {
+      setSliceFrom(0);
+      setSliceTo(show);
+    }
+  }, [currentPage, show])
 
-    const {
-        data = [],
-        perPage = 1,
-        path = '',
-        cursorStyle = 'not-allowed',
-        activeClassName = 'active',
-        show = 3,
-    } = props;
-
-    const [pages, setPages] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [sliceFrom, setSliceFrom] = useState(0);
-    const [sliceTo, setSliceTo] = useState(0);
-    const router = useRouter();
-
-    useEffect(() => {
-        if (data.length > 0) {
-            const numOfPages = Math.ceil(data.length / perPage);
-            const pagesData = [];
-            for (let x = 0; x < numOfPages; x++) {
-                pagesData.push({ index: x, page: x + 1 })
-            }
-            setPages(pagesData);
-        }
-
-    }, [data, perPage]);
-
-    useEffect(() => {
-        const sessionCounter = Number(window.sessionStorage.getItem("sessionCounter")) || 1;
-        router.push(`/${path}?strona=${sessionCounter}`);
-        setCurrentPage(sessionCounter);
-    }, []);
-
-    const currentPageEvent = (page) => {
-        router.push(`/${path}?strona=${page}`, undefined, { shallow: true });
-        window.sessionStorage.setItem("sessionCounter", page);
-        setCurrentPage(page);
-    };
-
-    const next = () => {  
-        if(currentPage < data.length) {
-            const sessionCounter = Number(window.sessionStorage.getItem("sessionCounter")) || 1;
-            router.push(`/${path}?strona=${sessionCounter + 1}`);
-            setCurrentPage(sessionCounter + 1);
-            window.sessionStorage.setItem("sessionCounter", sessionCounter + 1);
-        }
-    };
-
-    const back = () => {
-        if(currentPage > 1) {
-            const sessionCounter = Number(window.sessionStorage.getItem("sessionCounter")) || 1;
-            router.push(`/${path}?strona=${sessionCounter - 1}`);
-            setCurrentPage(sessionCounter - 1);
-            window.sessionStorage.setItem("sessionCounter", sessionCounter - 1);
-        }
-    };
-
-    useEffect(() => {
-        if (currentPage >= show) {
-            setSliceFrom(currentPage - Math.round(show / 2));
-            setSliceTo(currentPage + Math.round(show / 2) - 1);
-        }
-        else {
-            setSliceFrom(0);
-            setSliceTo(show);
-        }
-    }, [currentPage, show])
-
-    return (
-
-        <div className="pagination-layout2 margin-b-30 d-flex justify-content-center">
-            <span
-                onClick={back}
-                style={{ cursor: currentPage > 1 ? 'pointer' : cursorStyle, margin: '10px'}}
+  return (
+    <div className="pagination-layout2 margin-b-30 d-flex justify-content-center">
+      <span className={`${currentPage > 1 ? btnActivClass : btnBlockedClass}`}>
+        <Link
+          href={`${path}${currentPage - 1}`}
+        >
+          <a>{`<< Wstecz`}</a>
+        </Link>
+      </span>
+      <ul >
+        {totalPages && totalPages.length > 0
+          && totalPages.slice(sliceFrom, sliceTo).map((el) =>
+            <li
+              key={el}
+              style={{ cursor: 'pointer' }}
             >
-                {`<< Wstecz`}
-            </span>
-            <ul >
-            {pages && pages.length > 0
-                && pages.slice(sliceFrom, sliceTo).map(({ index, page }) =>
-                    <li
-                        key={index}
-                        onClick={() => currentPageEvent(page)}
-                        style={{ cursor: 'pointer' }}
-                    >
-                        <a className={`${currentPage === page  ? activeClassName : ''}`}>{page}</a>
-                    </li>)}
-            </ul>
-            <span
-                onClick={next}
-                style={{ cursor: currentPage < data.length ? 'pointer' : cursorStyle, margin: '10px' }}
-            >
-                {`Dalej >>`}
-            </span>
-        </div>
+              <Link href={`${path}${el}`}><a className={`${currentPage === el ? activeClassName : ''}`}>{el}</a></Link>
+            </li>)}
+      </ul>
+      <span className={`${currentPage < totalPages.length ? btnActivClass : btnBlockedClass}`}>
+        <Link
+          href={`${path}${currentPage + 1}`}
 
-
-    )
+        >
+          <a>{`Dalej >>`}</a>
+        </Link>
+      </span>
+    </div>
+  )
 }
 
 export default memo(Pagination);
