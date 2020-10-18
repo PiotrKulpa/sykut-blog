@@ -9,5 +9,13 @@ module.exports = {
       )
       return cfg;
   },
-
+  redirects: () => {
+    return [
+      {
+        source: '/blog',
+        destination: '/blog/strona/1',
+        permanent: true,
+      },
+    ]
+  },
 }
