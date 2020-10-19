@@ -1,6 +1,5 @@
-import React, { useState, } from 'react';
+import React from 'react';
 import Link from "next/link";
-import { useRouter } from 'next/router';
 
 import useStringSlicer from '../hooks/useStringSlicer';
 import Pagination from '../components/Pagination';

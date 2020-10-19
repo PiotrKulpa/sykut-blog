@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useRouter } from 'next/router'
 
-const Sidebar = ({ posts }) => {
+const Sidebar = ({ posts, tags }) => {
 
   const router = useRouter();
   const inputEl = useRef(null);
@@ -20,11 +20,11 @@ const Sidebar = ({ posts }) => {
   }
 
   useEffect(() => {
-    const getAllTags = posts && posts.map(({ tags }) => {
-      return tags
-    });
-    const formatAllTags = getAllTags && getAllTags.join(',').split(',');
-    setFilteredTags(formatAllTags);
+    // const getAllTags = posts && posts.map(({ tags }) => {
+    //   return tags
+    // });
+    // const formatAllTags = getAllTags && getAllTags.join(',').split(',');
+    // setFilteredTags(formatAllTags);
    
   }, [posts]);
 
@@ -59,7 +59,7 @@ const Sidebar = ({ posts }) => {
           const convertedDate = date ? new Date(date).toLocaleString() : '';
           return <div key={i} className="media">
             <div className="item-img">
-              <a href={`blog/${slug}`}>
+              <a href={`/blog/wpis/${slug}`}>
                 <img src={featuredImage} alt="Ostatni wpis" />
               </a>
             </div>
@@ -77,7 +77,7 @@ const Sidebar = ({ posts }) => {
           <h3>Tagi</h3>
         </div>
         <ul>
-          {filteredTags && filteredTags.map((el) => {
+          {tags && tags.map((el) => {
              return <li>
              <a href={`/tagi?id=${el.trim()}`}>{el.trim().toLowerCase()}</a>
            </li>
