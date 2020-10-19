@@ -11,6 +11,7 @@ import Posts from '../../../components/Posts';
 import { DEFAULT_POSTS_PER_PAGE } from '../../../constants';
 import getTotalPages from '../../../helpers/getTotalPages';
 import setTotalPagesArray from '../../../helpers/setTotalPagesArray';
+import { BLOG_FILES_PATH } from '../../../constants';
 
 const BlogPages = ({ posts = [], totalPages = 0 }) => {
 
@@ -45,7 +46,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params: { id } }) => {
-  const files = fs.readdirSync("content/blog");
+  const files = fs.readdirSync(BLOG_FILES_PATH);
   const parsedPosts = files && files.map(filename => {
     const markdownWithMetadata = fs
       .readFileSync(path.join("content/blog", filename), 'utf8')
