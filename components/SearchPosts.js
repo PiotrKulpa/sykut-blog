@@ -31,8 +31,8 @@ const SearchPosts = ({ posts }) => {
 
   return (
     <div>
-      {filteredPosts.length > 0 ?
-        filteredPosts.slice(0, counter).map(({
+      {posts.length > 0 ?
+        posts.map(({
           slug = '',
           date = '',
           htmlString = '',
@@ -47,7 +47,7 @@ const SearchPosts = ({ posts }) => {
               <div className="blog-box-layout5">
                 <div className="media media-none--lg">
                   <div className="item-img">
-                    <Link href={`/blog/${slug}`}>
+                    <Link href={`/blog/wpis/${slug}`}>
                       <a>
                         <img 
                           src={featuredImage || '/images/placeholder.jpg'} 
@@ -67,7 +67,7 @@ const SearchPosts = ({ posts }) => {
                       </li>
                     </ul>
                     <h3 className="item-title">
-                      <Link href={`/blog/${slug}`}>
+                      <Link href={`/blog/wpis/${slug}`}>
                         <a>{title}</a>
                       </Link>
                     </h3>
@@ -77,7 +77,7 @@ const SearchPosts = ({ posts }) => {
                         {{ __html: useStringSlicer(htmlString, 0, 177) }} />
                     <Link
                       
-                      href={`/blog/${slug}`}
+                      href={`/blog/wpis/${slug}`}
                     >
                       <a className="item-btn">
                           Czytaj dalej <i className="flaticon-next"></i>
@@ -94,12 +94,7 @@ const SearchPosts = ({ posts }) => {
       <p>Nie znaleziono wpisów dla hasła: <strong>{searchText}</strong></p>}
         <div
           className="pagination-layout1 margin-b-30 custom-btn-show-more">
-          <button 
-            className={`item-back-btn${counter >= filteredPosts.length ? " custom-btn-disabled" : ""}`}
-            onClick={showMore}
-            >
-              Pokaż kolejne
-          </button>
+         
         </div>
     </div>
   )

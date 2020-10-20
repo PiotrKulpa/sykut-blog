@@ -9,8 +9,7 @@ const Sidebar = ({ posts, tags }) => {
 
   const search = () => {
     const searchText = inputEl.current.value;
-    searchText && router.push(`/szukaj?id=${searchText}`,
-      undefined, { shallow: true });
+    searchText && router.push(`/szukaj?id=${searchText}`);
   }
 
   const handleKeyDown = (event) => {
