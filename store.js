@@ -8,6 +8,7 @@ const initialState = {
   lastUpdate: 0,
   light: false,
   count: 2,
+  posts: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -32,6 +33,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         count: initialState.count,
+      }
+      case 'UPDATE_POSTS':
+      return {
+        ...state,
+        posts: action.payload,
       }
     default:
       return state

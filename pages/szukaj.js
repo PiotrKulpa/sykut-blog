@@ -14,15 +14,11 @@ const Search = ({ posts = [] }) => {
   )
 }
 
-export const getServerSideProps = async (context) => {
+export const getStaticProps = async () => {
   const files = fs.readdirSync(BLOG_FILES_PATH);
-  const { query: { id = '' }} = context;
-  const filteredPosts = getParsedPosts(files)
-    .filter((el) => el.title.toLowerCase().includes(id.toLowerCase()) || 
-    el.htmlString.toLowerCase().includes(id.toLowerCase()));
   return {
     props: {
-      posts: filteredPosts,
+      posts: getParsedPosts(files),
 
     },
   }

@@ -8,11 +8,13 @@ import { POST_URL_PATH } from '../constants';
 const SearchTags = ({ posts }) => {
   const router = useRouter();
   const searchText = router.query.id || '';
+  const filteredPosts = posts &&
+    posts.filter((el) => el.tags.toLowerCase().includes(searchText.toLowerCase()));
 
   return (
     <div>
-      {posts.length > 0 ?
-        posts.map(({
+      {filteredPosts.length > 0 ?
+        filteredPosts.map(({
           slug = '',
           date = '',
           htmlString = '',
