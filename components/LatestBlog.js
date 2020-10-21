@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 
+import { POST_URL_PATH } from '../constants';
+
 const LatestBlog = ({ posts }) => {
 
   return (
@@ -21,7 +23,7 @@ const LatestBlog = ({ posts }) => {
               <div className="portfolio-box-layout2">
                 <div className="item-img">
                   <img src={featuredImage} alt="Project 11" />
-                  <Link href={`/blog/${slug}`}>
+                  <Link href={`${POST_URL_PATH}${slug}`}>
                     <a  href="#" className="item-btn inline-popup">
                       <i className="flaticon-next" />
                     </a>
@@ -39,7 +41,7 @@ const LatestBlog = ({ posts }) => {
               <div id="test-popup1" className="popup-content mfp-hide">
                 <div className="media media-none--xs">
                   <div className="item-img">
-                    <img src="img/project/project11.jpg" alt="project" />
+                    {/* <img src="img/project/project11.jpg" alt="project" /> */}
                   </div>
                   <div className="media-body">
                     <h2 className="item-title"><Link href="#"><a>Paper Mockup</a></Link></h2>

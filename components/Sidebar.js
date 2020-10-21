@@ -1,11 +1,12 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { useRouter } from 'next/router'
+import React, { useRef } from 'react';
+import { useRouter } from 'next/router';
+
+import { POST_URL_PATH } from '../constants';
 
 const Sidebar = ({ posts, tags }) => {
 
   const router = useRouter();
   const inputEl = useRef(null);
-  const [filteredTags, setFilteredTags] = useState([]);
 
   const search = () => {
     const searchText = inputEl.current.value;
@@ -17,15 +18,6 @@ const Sidebar = ({ posts, tags }) => {
       search();
     }
   }
-
-  useEffect(() => {
-    // const getAllTags = posts && posts.map(({ tags }) => {
-    //   return tags
-    // });
-    // const formatAllTags = getAllTags && getAllTags.join(',').split(',');
-    // setFilteredTags(formatAllTags);
-   
-  }, [posts]);
 
   return (
     <div className="col-xl-3 col-lg-4 col-12 sidebar-widget-area sidebar-break-md">
@@ -58,13 +50,13 @@ const Sidebar = ({ posts, tags }) => {
           const convertedDate = date ? new Date(date).toLocaleString() : '';
           return <div key={i} className="media">
             <div className="item-img">
-              <a href={`/blog/wpis/${slug}`}>
+              <a href={`${POST_URL_PATH}${slug}`}>
                 <img src={featuredImage} alt="Ostatni wpis" />
               </a>
             </div>
             <div className="media-body space-sm">
               <h5 className="post-title">
-                <a href="#">{title}</a>
+                <a href={`${POST_URL_PATH}${slug}`}>{title}</a>
               </h5>
         <div className="post-date">{convertedDate}</div>
             </div>
@@ -76,10 +68,10 @@ const Sidebar = ({ posts, tags }) => {
           <h3>Tagi</h3>
         </div>
         <ul>
-          {tags && tags.map((el) => {
-             return <li>
-             <a href={`/tagi?id=${el.trim()}`}>{el.trim().toLowerCase()}</a>
-           </li>
+          {tags && tags.map((el, i) => {
+             return <li key={i}>
+                      <a href={`/tagi?id=${el.trim()}`}>{el.trim().toLowerCase()}</a>
+                    </li>
           })}
         </ul>
       </div>

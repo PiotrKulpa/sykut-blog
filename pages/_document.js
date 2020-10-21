@@ -12,8 +12,6 @@ class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-          {/* Mobile Metas */}
-          <meta name="viewport" content="width=devsice-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
           {/* Site Metas */}
           <meta name="keywords" content="Janusz Sykut,blog, stomatologia, protetyka, chirurgia, implantologia" />
           <meta name="description" content="Janusz Sykut - blog o tematyce stomatologicznej: protetyka, chirurgia, implantologia" />
@@ -47,7 +45,7 @@ class MyDocument extends Document {
           <link
             rel="stylesheet"
             type="text/css"
-            charset="UTF-8"
+            charSet="UTF-8"
             href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
           />
           <link

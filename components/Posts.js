@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import useStringSlicer from '../hooks/useStringSlicer';
 import Pagination from '../components/Pagination';
+import { POST_URL_PATH } from '../constants';
 
 const Posts = ({ posts, totalPages }) => {
   return (
@@ -23,7 +24,7 @@ const Posts = ({ posts, totalPages }) => {
               <div className="blog-box-layout5">
                 <div className="media media-none--lg">
                   <div className="item-img">
-                    <Link href={`/blog/wpis/${slug}`}>
+                    <Link href={`${POST_URL_PATH}${slug}`}>
                       <a>
                         <img 
                           src={featuredImage || '/images/placeholder.jpg'} 
@@ -43,7 +44,7 @@ const Posts = ({ posts, totalPages }) => {
                       </li>
                     </ul>
                     <h3 className="item-title">
-                      <Link href={`/blog/wpis/${slug}`}>
+                      <Link href={`${POST_URL_PATH}${slug}`}>
                         <a>{title}</a>
                       </Link>
                     </h3>
@@ -53,7 +54,7 @@ const Posts = ({ posts, totalPages }) => {
                         {{ __html: useStringSlicer(htmlString, 0, 177) }} />
                     <Link
                       
-                      href={`/blog/wpis/${slug}`}
+                      href={`${POST_URL_PATH}${slug}`}
                     >
                       <a className="item-btn">
                           Czytaj dalej <i className="flaticon-next"></i>
