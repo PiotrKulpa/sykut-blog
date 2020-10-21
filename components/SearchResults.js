@@ -5,16 +5,19 @@ import { useRouter } from 'next/router'
 import useStringSlicer from '../hooks/useStringSlicer';
 import { POST_URL_PATH } from '../constants';
 
-const SearchTags = ({ posts }) => {
+const SearchResults = ({ posts, pageName = '' }) => {
   const router = useRouter();
   const searchText = router.query.id || '';
-  const filteredPosts = posts &&
+  const filteredPosts = posts && 
+  pageName === 'search' ? 
+    posts.filter((el) => el.title.toLowerCase().includes(searchText.toLowerCase()) || 
+    el.htmlString.toLowerCase().includes(searchText.toLowerCase())) :
     posts.filter((el) => el.tags.toLowerCase().includes(searchText.toLowerCase()));
 
   return (
     <div>
       {filteredPosts.length > 0 ?
-        filteredPosts.map(({
+        filteredPosts.slice(0, 100).map(({
           slug = '',
           date = '',
           htmlString = '',
@@ -73,12 +76,13 @@ const SearchTags = ({ posts }) => {
         }
         )
         :
-      <p>Nie znaleziono wpisów dla tagów: <strong>{searchText}</strong></p>}
+      <p>Nie znaleziono wpisów dla hasła: <strong>{searchText}</strong></p>}
         <div
           className="pagination-layout1 margin-b-30 custom-btn-show-more">
+         
         </div>
     </div>
   )
 }
 
-export default SearchTags;
+export default SearchResults;
