@@ -1,34 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Link from "next/link";
 import { useRouter } from 'next/router'
 
 import useStringSlicer from '../hooks/useStringSlicer';
-import { DEFAULT_POSTS_PER_PAGE } from '../constants';
+import { POST_URL_PATH } from '../constants';
 
 const SearchTags = ({ posts }) => {
-  const defaultCount = DEFAULT_POSTS_PER_PAGE;
-  const[counter, setCounter] = useState(defaultCount);
-  const[filteredPosts, setFilteredPosts] = useState([]);
   const router = useRouter();
   const searchText = router.query.id || '';
-
-  const showMore = () => {
-    const sessionCounter = Number(window.sessionStorage.getItem("sessionCounterSearch")) ||  defaultCount;
-    window.sessionStorage.setItem("sessionCounterSearch", sessionCounter + defaultCount);
-    setCounter((prev) => prev + defaultCount)
-  }
-  
-  useEffect(() => {
-    const sessionCounter = Number(window.sessionStorage.getItem("sessionCounterSearch"));
-    setCounter(sessionCounter || defaultCount);
-  }, []);
-
-  useEffect(() => {
-    setFilteredPosts(posts && searchText && 
-      posts.filter((el) => {
-        return el.tags.toLowerCase().includes(searchText.toLowerCase());
-      }))
-  }, [searchText, posts]);
 
   return (
     <div>
@@ -48,7 +27,7 @@ const SearchTags = ({ posts }) => {
               <div className="blog-box-layout5">
                 <div className="media media-none--lg">
                   <div className="item-img">
-                    <Link href={`/blog/${slug}`}>
+                    <Link href={`${POST_URL_PATH}${slug}`}>
                       <a>
                         <img 
                           src={featuredImage || '/images/placeholder.jpg'} 
@@ -68,7 +47,7 @@ const SearchTags = ({ posts }) => {
                       </li>
                     </ul>
                     <h3 className="item-title">
-                      <Link href={`/blog/${slug}`}>
+                      <Link href={`${POST_URL_PATH}${slug}`}>
                         <a>{title}</a>
                       </Link>
                     </h3>
@@ -78,7 +57,7 @@ const SearchTags = ({ posts }) => {
                         {{ __html: useStringSlicer(htmlString, 0, 177) }} />
                     <Link
                       
-                      href={`/blog/${slug}`}
+                      href={`${POST_URL_PATH}${slug}`}
                     >
                       <a className="item-btn">
                           Czytaj dalej <i className="flaticon-next"></i>
@@ -95,12 +74,6 @@ const SearchTags = ({ posts }) => {
       <p>Nie znaleziono wpisów dla tagów: <strong>{searchText}</strong></p>}
         <div
           className="pagination-layout1 margin-b-30 custom-btn-show-more">
-          <button 
-            className={`item-back-btn${counter >= filteredPosts.length ? " custom-btn-disabled" : ""}`}
-            onClick={showMore}
-            >
-              Pokaż kolejne
-          </button>
         </div>
     </div>
   )
