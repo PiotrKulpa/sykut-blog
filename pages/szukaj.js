@@ -19,47 +19,6 @@ const Search = ({ posts = [] }) => {
   )
 }
 
-// export const getStaticProps = async () => {
-//   const files = fs.readdirSync("content/blog");
-
-//   return {
-//     props: {
-//       posts: files && files.map(filename => {
-//         const markdownWithMetadata = fs
-//           .readFileSync(path.join("content/blog", filename), 'utf8')
-//         const {
-//           metadata: {
-//             date = '',
-//             title = '',
-//             tags = '',
-//             featuredImage = '',
-//             content = '',
-//           },
-//         } = parseMD(markdownWithMetadata);
-
-//         const parsedMarkdown = matter(content);
-//         const htmlString = marked(parsedMarkdown.content);
-
-//         return {
-//           slug: filename.replace(".md", ""),
-//           date: date.toString(),
-//           title,
-//           featuredImage,
-//           tags,
-//           htmlString,
-//         }
-
-//       })
-//         .sort((a, b) => {
-//           var dateA = new Date(a.date);
-//           var dateB = new Date(b.date);
-//           return dateA - dateB;
-//         })
-//         .reverse()
-//     }
-//   };
-// };
-
 export const getServerSideProps = async (context) => {
   const files = fs.readdirSync(BLOG_FILES_PATH);
   const { query: { id = '' }} = context;

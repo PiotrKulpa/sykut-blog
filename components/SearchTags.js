@@ -32,8 +32,8 @@ const SearchTags = ({ posts }) => {
 
   return (
     <div>
-      {filteredPosts.length > 0 ?
-        filteredPosts.slice(0, counter).map(({
+      {posts.length > 0 ?
+        posts.map(({
           slug = '',
           date = '',
           htmlString = '',
