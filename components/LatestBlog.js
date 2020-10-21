@@ -58,7 +58,7 @@ const LatestBlog = ({ posts }) => {
           )}
         </div>
         <div className="loadmore-layout2">
-          <Link href="/blog" ><a className="item-btn">Zobacz więcej wpisów</a></Link>
+          <Link href="/blog/strona/1" ><a className="item-btn">Zobacz więcej wpisów</a></Link>
         </div>
       </div>
     </section>
