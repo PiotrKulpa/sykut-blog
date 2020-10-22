@@ -85,7 +85,7 @@ const Footer = () => {
           <a href="/">O mnie</a>
         </li>
         <li>
-          <a href="/blog">Blog</a>
+          <a href="/blog/strona/1">Blog</a>
         </li>
         <li>
           <a href="http://prodentica.info/">Prodentica</a>

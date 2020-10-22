@@ -70,7 +70,7 @@ const Posts = ({ posts, totalPages }) => {
         :
         <p>Nie znaleziono wpisów.</p>}
         <div
-          className="pagination-layout1 margin-b-30 custom-btn-show-more">
+          className="col-12 pagination-layout1 margin-b-30 custom-btn-show-more">
           <Pagination {...{totalPages} } path='/blog/strona/'/>
         </div>
     </>
