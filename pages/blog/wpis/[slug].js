@@ -6,7 +6,7 @@ import Head from "next/head";
 import marked from "marked";
 import parseMD from 'parse-md';
 import { useRouter } from 'next/router';
-
+import Link from "next/link";
 
 const Post = (
   {
@@ -46,7 +46,10 @@ const Post = (
                     <li>
                       {filteredTag && 
                         filteredTag.map((el, i) => 
-                          <a key={i} href={el}>{el}</a>)}
+                          <Link key={i} href={`/tagi?id=${el.trim()}`}>
+                            <a>{el}</a>
+                          </Link>)
+                          }
                     </li>
                   </ul>
                   <h2 className="blog-title">{title}</h2>
@@ -93,15 +96,7 @@ const Post = (
                   </button>
                 </div>
               </div>
-
-              {/* <>
-                  <div className="pagination-layout1 margin-b-30">
-                    <button className="item-back-btn" onClick={goBack}><i className="flaticon-back"></i> Wróć do wpisów</button>
-                  </div>
-                </> */}
-
             </div>
-            {/* <Sidebar></Sidebar> */}
           </div>
         </div>
       </section>
