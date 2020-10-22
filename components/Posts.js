@@ -7,7 +7,7 @@ import { POST_URL_PATH } from '../constants';
 
 const Posts = ({ posts, totalPages }) => {
   return (
-    <div>
+    <>
       {posts.length > 0 ?
         posts.map(({
           slug = '',
@@ -39,7 +39,7 @@ const Posts = ({ posts, totalPages }) => {
                       <li>
                       {filteredTag.length > 0 && 
                         filteredTag.map((el, i) => 
-                        (<a key={i} href={`/tagi?id=${el}`}>{el}</a>))
+                        (<Link href={`/tagi?id=${el.trim()}`}><a key={i}>{el}</a></Link>))
                       }
                       </li>
                     </ul>
@@ -73,7 +73,7 @@ const Posts = ({ posts, totalPages }) => {
           className="pagination-layout1 margin-b-30 custom-btn-show-more">
           <Pagination {...{totalPages} } path='/blog/strona/'/>
         </div>
-    </div>
+    </>
   )
 }
 

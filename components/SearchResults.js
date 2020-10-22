@@ -15,7 +15,7 @@ const SearchResults = ({ posts, pageName = '' }) => {
     posts.filter((el) => el.tags.toLowerCase().includes(searchText.toLowerCase()));
 
   return (
-    <div>
+    <>
       {filteredPosts.length > 0 ?
         filteredPosts.slice(0, 100).map(({
           slug = '',
@@ -47,7 +47,7 @@ const SearchResults = ({ posts, pageName = '' }) => {
                       <li>
                       {filteredTag.length > 0 && 
                         filteredTag.map((el, i) => 
-                        (<a key={i} href={`/tagi/${el}/1`}>{el}</a>))
+                        (<Link href={`/tagi/?id=${el.trim()}`}><a key={i} >{el}</a></Link>))
                       }
                       </li>
                     </ul>
@@ -81,7 +81,7 @@ const SearchResults = ({ posts, pageName = '' }) => {
           className="pagination-layout1 margin-b-30 custom-btn-show-more">
          
         </div>
-    </div>
+    </>
   )
 }
 

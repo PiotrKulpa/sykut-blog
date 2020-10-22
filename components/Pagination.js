@@ -30,7 +30,7 @@ const Pagination = (
   }, [currentPage, show])
 
   return (
-    <div className="pagination-layout2 margin-b-30 d-flex justify-content-center">
+    <div className="col-12 pagination-layout2 margin-b-30 d-flex justify-content-center">
       <span className={`${currentPage > 1 ? btnActivClass : btnBlockedClass}`}>
         <Link
           href={`${path}${currentPage - 1}`}

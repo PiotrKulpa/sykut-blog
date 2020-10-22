@@ -2,7 +2,6 @@
 // import App from 'next/app';
 // import { Provider } from 'react-redux';
 // import withRedux from 'next-redux-wrapper';
-import Head from 'next/head';
 import Layout from '../components/Layout';
 import 'react-awesome-slider/dist/styles.css';
 
