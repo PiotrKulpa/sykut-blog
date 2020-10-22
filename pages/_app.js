@@ -12,16 +12,11 @@ import { useStore } from '../store'
 export default function App({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState)
   return (
-    <>
-    <Head>
-      <meta name="viewport" content="width=devsice-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
-    </Head>
     <Provider store={store}>
        <Layout>
       <Component {...pageProps} />
       </Layout>
     </Provider>
-    </>
   )
 }
 
