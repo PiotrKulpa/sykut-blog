@@ -97,8 +97,8 @@ const Post = (
                       <li>Share:
                         <a href={`https://www.facebook.com/sharer/sharer.php?u=${baseUrl}`} target="_blank"><i className="fab fa-facebook-f"></i></a>
                         <a href={`https://twitter.com/intent/tweet?url=${baseUrl}`}><i className="fab fa-twitter"></i></a>
-                        <a href="/"> <i className="fab fa-linkedin-in"></i></a>
-                        <a href="/"><i className="fab fa-google-plus-g"></i></a>
+                        <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${baseUrl}`}> <i className="fab fa-linkedin-in"></i></a>
+                        <a href={`https://plus.google.com/share?url=${baseUrl}`}><i className="fab fa-google-plus-g"></i></a>
                       </li>
                     </ul>
                   </div>
