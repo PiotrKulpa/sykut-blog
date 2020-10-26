@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -9,8 +9,6 @@ import { useRouter } from 'next/router';
 
 import Sidebar from '../../../components/Sidebar';
 import { BLOG_FILES_PATH } from '../../../constants';
-import getTotalPages from '../../../helpers/getTotalPages';
-import setTotalPagesArray from '../../../helpers/setTotalPagesArray';
 import getParsedPosts from '../../../helpers/getParsedPosts';
 
 import Link from "next/link";
@@ -26,8 +24,16 @@ const Post = (
     sidebarTags = [],
   }
 ) => {
-console.log(lastPosts);
-  const router = useRouter()
+
+  const[baseUrl, setBaseUrl] = useState('')
+
+  useEffect(() => {
+    setBaseUrl(window.location.href)
+  }, []);
+
+  const router = useRouter();
+  const { asPath = '' } = router;
+  console.log(router);
 
   const goBack = () => {
     router.back();
@@ -89,8 +95,8 @@ console.log(lastPosts);
                   <div className="col-sm-6">
                     <ul className="blog-social">
                       <li>Share:
-                        <a href="/"><i className="fab fa-facebook-f"></i></a>
-                        <a href="/"><i className="fab fa-twitter"></i></a>
+                        <a href={`https://www.facebook.com/sharer/sharer.php?u=${baseUrl}`} target="_blank"><i className="fab fa-facebook-f"></i></a>
+                        <a href={`https://twitter.com/intent/tweet?url=${baseUrl}`}><i className="fab fa-twitter"></i></a>
                         <a href="/"> <i className="fab fa-linkedin-in"></i></a>
                         <a href="/"><i className="fab fa-google-plus-g"></i></a>
                       </li>

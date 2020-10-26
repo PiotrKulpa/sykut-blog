@@ -47,7 +47,7 @@ const SearchResults = ({ posts, pageName = '' }) => {
                       <li>
                       {filteredTag.length > 0 && 
                         filteredTag.map((el, i) => 
-                        (<Link href={`/tagi/?id=${el.trim()}`}><a key={i} >{el}</a></Link>))
+                        (<Link key={i} href={`/tagi/?id=${el.trim()}`}><a>{el}</a></Link>))
                       }
                       </li>
                     </ul>
