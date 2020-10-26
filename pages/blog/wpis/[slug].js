@@ -8,7 +8,12 @@ import parseMD from 'parse-md';
 import { useRouter } from 'next/router';
 
 import Sidebar from '../../../components/Sidebar';
+import { BLOG_FILES_PATH } from '../../../constants';
+import getTotalPages from '../../../helpers/getTotalPages';
+import setTotalPagesArray from '../../../helpers/setTotalPagesArray';
+import getParsedPosts from '../../../helpers/getParsedPosts';
 
+import Link from "next/link";
 
 const Post = (
   {
@@ -17,9 +22,11 @@ const Post = (
     title = '',
     featuredImage = '',
     tags = '',
+    lastPosts = [], 
+    sidebarTags = [],
   }
 ) => {
-
+console.log(lastPosts);
   const router = useRouter()
 
   const goBack = () => {
@@ -48,7 +55,10 @@ const Post = (
                     <li>
                       {filteredTag && 
                         filteredTag.map((el, i) => 
-                          <a key={i} href={el}>{el}</a>)}
+                          <Link key={i} href={`/tagi?id=${el.trim()}`}>
+                            <a>{el}</a>
+                          </Link>)
+                          }
                     </li>
                   </ul>
                   <h2 className="blog-title">{title}</h2>
@@ -95,15 +105,8 @@ const Post = (
                   </button>
                 </div>
               </div>
-
-              {/* <>
-                  <div className="pagination-layout1 margin-b-30">
-                    <button className="item-back-btn" onClick={goBack}><i className="flaticon-back"></i> Wróć do wpisów</button>
-                  </div>
-                </> */}
-
             </div>
-            <Sidebar></Sidebar>
+            <Sidebar posts={lastPosts} tags={sidebarTags} ></Sidebar>
           </div>
         </div>
       </section>
@@ -129,7 +132,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params: { slug } }) => {
   const markdownWithMetadata = fs
-    .readFileSync(path.join("content/blog", slug + ".md"), 'utf8');
+    .readFileSync(path.join(BLOG_FILES_PATH, slug + ".md"), 'utf8');
   const {
     metadata: {
       date = '',
@@ -142,13 +145,20 @@ export const getStaticProps = async ({ params: { slug } }) => {
   const parsedMarkdown = matter(content);
   const htmlString = marked(parsedMarkdown.content);
 
+  const files = fs.readdirSync(BLOG_FILES_PATH);
+  const sidebarTags = Array.from(new Set(getParsedPosts(files).map(({ tags }) => {
+    return tags.replace(/\s/g, '')
+  }).join(',').split(',').slice(0, 12)));
+
   return {
     props: {
       htmlString,
       date: date.toLocaleString(),
       title,
       tags,
-      featuredImage
+      featuredImage,
+      lastPosts: getParsedPosts(files).slice(0, 6),
+      sidebarTags,
     }
   };
 };
