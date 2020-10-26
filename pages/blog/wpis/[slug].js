@@ -7,6 +7,8 @@ import marked from "marked";
 import parseMD from 'parse-md';
 import { useRouter } from 'next/router';
 
+import Sidebar from '../../../components/Sidebar';
+
 
 const Post = (
   {
@@ -101,7 +103,7 @@ const Post = (
                 </> */}
 
             </div>
-            {/* <Sidebar></Sidebar> */}
+            <Sidebar></Sidebar>
           </div>
         </div>
       </section>
