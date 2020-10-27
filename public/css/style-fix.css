@@ -163,3 +163,7 @@
   cursor: not-allowed;
   margin: 10px;
 }
+
+.item-back-btn {
+  cursor: pointer;
+}
