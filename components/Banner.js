@@ -12,8 +12,8 @@ const Banner = () => {
 
   return (
     <section className="slider-wrap-layout1 box-layout-child-4">
-      <div className="slider-left-side-content">DR JANUSZ SYKUT BLOG</div>
-      <div className="slider-right-side-content">
+      {/* <div className="slider-left-side-content">DR JANUSZ SYKUT BLOG</div> */}
+      {/* <div className="slider-right-side-content">
         <ul>
           <li>
             <a href="https://www.instagram.com/challenge/?next=/drnmed_jsykut/%253Fhl%253Dpl">
@@ -26,7 +26,7 @@ const Banner = () => {
             </a>
           </li>
         </ul>
-      </div>
+      </div> */}
       <div className="full-width-container" style={{ width: "100%" }}>
         <div className="slider-area slider-layout1 slider-top-margin95">
           <div className="bend niceties preview-1">
@@ -47,14 +47,21 @@ const Banner = () => {
                 title = ''
               }, i) =>
 
-                <div key={i}>
+                <div style={{
+                  backgroundImage: `url(${imgUrl})`,
+                  }} key={i}>
+
                   <div className="custom-banner-content">
-                    <p className="custom-slider-title">{title}</p>
-                    <p className="custom-slider-sub-text">{subtitle}</p>
-                    <p className="custom-slider-content">{content}</p>
+                    <div>Left</div>
+                    <div>
+                      <p className="custom-slider-title">{title}</p>
+                      <p className="custom-slider-sub-text">{subtitle}</p>
+                      <p className="custom-slider-content">{content}</p>
+                    </div>
+                    <div>Right</div>
                   </div>
 
-                  <img src={imgUrl} alt="" />
+                  {/* <img src={imgUrl} alt="" /> */}
                 </div>
 
               )}

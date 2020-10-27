@@ -55,11 +55,16 @@
 }
 
 .custom-banner-content {
-  position: absolute;
-  top: 50%;
-  left: 15%;
-  transform: translate(0, -50%);
-  width: 40%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* top: 50%; */
+  /* left: 15%; */
+  /* transform: translate(0, -50%); */
+  width: 100%;
+  background: transparent;
 }
 
 
