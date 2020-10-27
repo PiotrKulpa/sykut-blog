@@ -9,13 +9,17 @@ import getTotalPages from '../../../helpers/getTotalPages';
 import setTotalPagesArray from '../../../helpers/setTotalPagesArray';
 import getParsedPosts from '../../../helpers/getParsedPosts';
 import { BLOG_FILES_PATH } from '../../../constants';
+import Breadcrumbs from '../../../components/Breadcrumbs';
 
 const BlogPages = ({ posts = [], totalPages = 0, lastPosts = [], tags = [] }) => {
 
   return (
+    <>
+    <Breadcrumbs />
     <PostsWrapper {...{ lastPosts, tags }}>
       <Posts {...{ posts, totalPages }} />
     </PostsWrapper>
+    </>
   )
 }
 

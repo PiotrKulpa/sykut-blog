@@ -4,17 +4,19 @@ import { useRouter } from 'next/router';
 
 const Breadcrumbs = (props) => {
   const {
-    overrides = {},
+    disableOn = ['/', '/#'],
+    overrides = {'/#': '/O mnie'},
     separator = ">",
     disabledBreadcrumbClass = "disabled-breadcrumb-link",
-    breadcrumbLinkClass = "breadcrumb-link"
+    breadcrumbLinkClass = "breadcrumb-link",
+    ovverideLast = ''
   } = props || {};
 
   const router = useRouter();
 
-  const { pathname = '' } = router;
+  const { asPath = '' } = router;
 
-  console.log(pathname);
+  console.log(!disableOn.includes(asPath));
   const isLastLink = (index, splittedUrl) => index === splittedUrl.length - 1;
   const setLinkPath = (index, splittedUrl) => {
     return splittedUrl
@@ -29,13 +31,12 @@ const Breadcrumbs = (props) => {
       return splittedUrl.map((el, index) => (
         <React.Fragment key={index}>
           {/* <span> {separator} </span> */}
-          <li>
+          <li className={`${breadcrumbLinkClass} ${isLastLink(index, splittedUrl) ? disabledBreadcrumbClass : ""
+                }`}>
             <Link
-              href={`/${setLinkPath(index, splittedUrl)}`}
-              className={`${breadcrumbLinkClass} ${isLastLink(index, splittedUrl) ? disabledBreadcrumbClass : ""
-                }`}
+              href={`/${setLinkPath(index, splittedUrl)}`}  
             >
-              {el}
+              {isLastLink(index, splittedUrl) && ovverideLast ? ovverideLast : el.replace(/[-]/g, ' ')}
             </Link>
           </li>
         </React.Fragment>
@@ -45,27 +46,26 @@ const Breadcrumbs = (props) => {
   );
 
   const breadcrumbsParser = useMemo(() => {
-    if (Object.keys(overrides).includes(pathname)) {
+    if (Object.keys(overrides).includes(asPath)) {
       const filteredOverrides = Object.entries(overrides).find(
-        ([key]) => key === pathname
+        ([key]) => key === asPath
       );
 
       if (filteredOverrides[1]) {
         return setLinks(filteredOverrides[1]);
       } else {
-        return setLinks(pathname);
+        return setLinks(asPath);
       }
     } else {
-      return setLinks(pathname);
+      return setLinks(asPath);
     }
-  }, [setLinks, overrides]);
+  }, [setLinks, overrides, asPath]);
 
   return (
-
-    <section
+    !disableOn.includes(asPath) && <section
       className="inner-page-banner bg-common inner-page-margin"
-      data-bg-image="img/figure/banner.jpg"
-      style={{ backgroundImage: 'url("images/figure/banner.jpg")' }}>
+      data-bg-image="images/figure/banner.jpg"
+      style={{ backgroundImage: 'url("/images/figure/banner.jpg")' }}>
       <div className="container">
         <div className="row">
           <div className="col-12">

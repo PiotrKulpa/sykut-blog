@@ -167,3 +167,8 @@
 .item-back-btn {
   cursor: pointer;
 }
+
+.disabled-breadcrumb-link {
+  pointer-events: none;
+  cursor: default;
+}

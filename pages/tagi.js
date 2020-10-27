@@ -7,12 +7,16 @@ import { BLOG_FILES_PATH } from '../constants';
 import getParsedPosts from '../helpers/getParsedPosts';
 import getTotalPages from '../helpers/getTotalPages';
 import setTotalPagesArray from '../helpers/setTotalPagesArray';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const Tags = ({ posts = [], lastPosts = [], tags = [] }) => {
   return (
-    <PostsWrapper {...{ lastPosts, tags }}>
-      <SearchResults {...{ posts }} />
-    </PostsWrapper>
+    <>
+      <Breadcrumbs ovverideLast='tagi' />
+      <PostsWrapper {...{ lastPosts, tags }}>
+        <SearchResults {...{ posts }} />
+      </PostsWrapper>
+    </>
   )
 }
 

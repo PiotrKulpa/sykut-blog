@@ -14,7 +14,7 @@ class Layout extends Component {
       </Head>
       <div id="wrapper" className="wrapper">
         <Header />
-        <Breadcrumbs />
+        {/* <Breadcrumbs /> */}
         {children}
         <Footer />
       </div>

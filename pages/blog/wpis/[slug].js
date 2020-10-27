@@ -10,6 +10,7 @@ import { useRouter } from 'next/router';
 import Sidebar from '../../../components/Sidebar';
 import { BLOG_FILES_PATH } from '../../../constants';
 import getParsedPosts from '../../../helpers/getParsedPosts';
+import Breadcrumbs from '../../../components/Breadcrumbs';
 
 import Link from "next/link";
 
@@ -44,7 +45,7 @@ const Post = (
       <Head>
         <title>{title}</title>
       </Head>
-
+      <Breadcrumbs ovverideLast={title} />
       <section className="single-blog-wrap-layout1">
         <div className="container">
           <div className="row">
