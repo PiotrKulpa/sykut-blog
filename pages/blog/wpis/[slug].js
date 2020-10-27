@@ -32,8 +32,6 @@ const Post = (
   }, []);
 
   const router = useRouter();
-  const { asPath = '' } = router;
-  console.log(router);
 
   const goBack = () => {
     router.back();

@@ -25,7 +25,7 @@ const Header = () => {
                 <Link  href="/">
 
                   <a className="active-menu temp-logo">
-                    <img src="/images/jsykutlogo.jpg" alt="logo" className="img-fluid" /></a>
+                    <img src="/images/jsykutlogo.svg" alt="logo" className="img-fluid" /></a>
 
                 </Link>
               </div>
