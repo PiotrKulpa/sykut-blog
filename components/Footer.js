@@ -45,6 +45,9 @@ const Footer = () => {
                   <li>
                     <Link href="/kontakt"><a>Kontakt</a></Link>
                   </li>
+                  <li>
+                  <Link href="/polityka-prywatnosci"><a>Polityka prywatności</a></Link>
+                  </li>
                 </ul>
                 <ul className="footer-social">
                   <li>
