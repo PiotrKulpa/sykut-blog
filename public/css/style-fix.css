@@ -55,25 +55,36 @@
 }
 
 .custom-banner-content {
-  position: relative;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-evenly;
-  /* top: 50%; */
+  position: absolute !important;
+  display: flex !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  top: 50%;
   /* left: 15%; */
-  /* transform: translate(0, -50%); */
+  transform: translate(0, -50%);
   width: 100%;
-  background: transparent;
+  max-width: 1720px;
 }
 
+.custom-banner-content-left, .custom-banner-content-right {
+  width: 10%;
+}
 
-@media only screen and (min-width: 2100px) {
+.custom-banner-middle {
+  width: 80%;
+}
+
+.custom-banner-content-right {
+  align-content: flex-end;
+}
+
+/* @media only screen and (min-width: 2100px) {
   .custom-banner-content {
    left: 20%;
    width: 30%;
   }
-}
+} */
 
 .custom-slider-title {
   font-size: 16px;
