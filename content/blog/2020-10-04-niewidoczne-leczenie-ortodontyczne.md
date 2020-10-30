@@ -41,7 +41,7 @@ content: >-
 
 
   Źródło: https://stomatologia-gliwa.pl/niewidoczne-leczenie-ortodontyczne/
-featuredImage: /uploads/woman-3498849_960_720.webp
+featuredImage: /uploads/woman-3498849_960_720.jpg
 tags: ortodonta
 ---
 
