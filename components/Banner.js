@@ -11,39 +11,57 @@ const Banner = () => {
   const { homeMainSlider = [] } = attributes || {};
 
   return (
-            <AutoplaySlider
-              play={false}
-              cancelOnInteraction={false}
-              interval={6000}
-              organicArrows={false}
-              buttons={false}
-              bullets={false}
-              className="custom-react-awesome-slider"
-            >
-              {homeMainSlider && homeMainSlider.map(({
-                imgUrl = '',
-                content = '',
-                subtitle = '',
-                title = ''
-              }, i) =>
+    <AutoplaySlider
+      play={true}
+      cancelOnInteraction={true}
+      interval={8000}
+      organicArrows={false}
+      buttons={false}
+      bullets={false}
+      className="custom-react-awesome-slider"
+    >
+      {homeMainSlider && homeMainSlider.map(({
+        imgUrl = '',
+        content = '',
+        subtitle = '',
+        title = ''
+      }, i) =>
 
-                <div key={i}>
+        <div key={i}>
 
-                  <div className="custom-banner-content">
-                    <div className="custom-banner-content-left">Left</div>
-                    <div className="custom-banner-middle">
-                      <p className="custom-slider-title">{title}</p>
-                      <p className="custom-slider-sub-text">{subtitle}</p>
-                      <p className="custom-slider-content">{content}</p>
-                    </div>
-                    <div className="custom-banner-content-right">Right</div>
-                  </div>
+          <div className="custom-banner-content">
+            <div className="custom-banner-content-left">
+              <p className="custom-banner-content-left-inner">
+                DR JANUSZ SYKUT BLOG
+                    </p>
+            </div>
+            <div className="custom-banner-middle">
+              <p className="custom-slider-title">{title}</p>
+              <p className="custom-slider-sub-text">{subtitle}</p>
+              <p className="custom-slider-content">{content}</p>
+            </div>
+            <div className="custom-banner-content-right">
+              <ul>
+                <li>
+                  <a href="https://www.instagram.com/challenge/?next=/drnmed_jsykut/%253Fhl%253Dpl">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://pl.linkedin.com/">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                </li>
+              </ul>
 
-                  <img src={imgUrl} alt="" />
-                </div>
+            </div>
+          </div>
 
-              )}
-            </AutoplaySlider>
+          <img src={imgUrl} alt="" />
+        </div>
+
+      )}
+    </AutoplaySlider>
 
   );
 
