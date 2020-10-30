@@ -16,7 +16,6 @@ const Breadcrumbs = (props) => {
 
   const { asPath = '' } = router;
 
-  console.log(!disableOn.includes(asPath));
   const isLastLink = (index, splittedUrl) => index === splittedUrl.length - 1;
   const setLinkPath = (index, splittedUrl) => {
     return splittedUrl
@@ -27,7 +26,6 @@ const Breadcrumbs = (props) => {
   const setLinks = useCallback(
     (data) => {
       const splittedUrl = data && data.split("/").slice(1, data.length);
-      console.log(splittedUrl);
       return splittedUrl.map((el, index) => (
         <React.Fragment key={index}>
           {/* <span> {separator} </span> */}
