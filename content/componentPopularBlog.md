@@ -9,7 +9,7 @@ content: |-
       <div class="row no-gutters">
         <div class="col-lg-6">
           <div class="blog-box-layout2">
-  <img src="/uploads/woman-3498849_960_720.webp" alt="Blog">
+  <img src="/uploads/woman-3498849_960_720.jpg" alt="Blog">
       </div>
         </div>
         <div class="col-lg-6 d-flex align-items-center">
