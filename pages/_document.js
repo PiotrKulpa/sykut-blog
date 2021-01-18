@@ -59,6 +59,7 @@ class MyDocument extends Document {
           {/* Vendor Scripts */}
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
           <script src="/js/modernizr-3.6.0.min.js"></script>
+          <script src="/js/prompt.js"></script>
         </Head>
         <body>
           <Main />

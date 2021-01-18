@@ -44,12 +44,12 @@ const Banner = () => {
               <ul>
                 <li>
                   <a href="https://www.instagram.com/challenge/?next=/drnmed_jsykut/%253Fhl%253Dpl">
-                    <i class="fab fa-instagram"></i>
+                    <i className="fab fa-instagram"></i>
                   </a>
                 </li>
                 <li>
                   <a href="https://pl.linkedin.com/">
-                    <i class="fab fa-linkedin"></i>
+                    <i className="fab fa-linkedin"></i>
                   </a>
                 </li>
               </ul>

@@ -13,6 +13,7 @@ const Contact = () => {
     fax2 = '',
     head = '',
     phone1 = '',
+    phone2 = '',
     subhead = '',
   } = fm.attributes || {};
 
@@ -55,7 +56,7 @@ const Contact = () => {
                   <h5 className="item-title">Telefon:</h5>
                   <ul>
                     <li>{phone1}</li>
-                    <li>{phone1}</li>
+                    <li>{phone2}</li>
                   </ul>
                 </div>
               </div>
