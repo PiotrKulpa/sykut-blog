@@ -243,3 +243,12 @@
   pointer-events: none;
   cursor: default;
 }
+
+.blog-img .awssld__container {
+  padding-bottom: 100% !important;
+  }
+
+.blog-img .awssld__bullets {
+  position: relative;
+  bottom: 0;
+}

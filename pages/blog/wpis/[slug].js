@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -6,6 +6,7 @@ import Head from "next/head";
 import marked from "marked";
 import parseMD from 'parse-md';
 import { useRouter } from 'next/router';
+import AwesomeSlider from 'react-awesome-slider';
 
 import Sidebar from '../../../components/Sidebar';
 import { BLOG_FILES_PATH } from '../../../constants';
@@ -21,12 +22,12 @@ const Post = (
     title = '',
     featuredImage = '',
     tags = '',
-    lastPosts = [], 
+    lastPosts = [],
     sidebarTags = [],
+    galleryImages = [],
   }
 ) => {
-
-  const[baseUrl, setBaseUrl] = useState('')
+  const [baseUrl, setBaseUrl] = useState('')
 
   useEffect(() => {
     setBaseUrl(window.location.href)
@@ -52,31 +53,37 @@ const Post = (
             <div className="col-xl-9 col-lg-8">
               <div className="single-blog-box-layout1">
                 <div className="blog-img">
-                  <img src={featuredImage} alt="blog" />
+                  <AwesomeSlider>
+                    {galleryImages && galleryImages.map((el, i) => {
+                      return <div key={i}>
+                        <img src={el} alt="blog" />
+                      </div>
+                    })}
+                  </AwesomeSlider>
                 </div>
                 <div className="blog-content">
                   <ul className="entry-meta">
                     <li>{date}</li>
                     <li>
-                      {filteredTag && 
-                        filteredTag.map((el, i) => 
+                      {filteredTag &&
+                        filteredTag.map((el, i) =>
                           <Link key={i} href={`/tagi?id=${el.trim()}`}>
                             <a>{el}</a>
                           </Link>)
-                          }
+                      }
                     </li>
                   </ul>
                   <h2 className="blog-title">{title}</h2>
                   <ul className="post-action">
                     <li>
                       <div className="media media-none--xs">
-                        <img 
-                          src="/images/avatar.jpg" 
-                          alt="Blog" 
-                          className="media-img-auto" 
+                        <img
+                          src="/images/avatar.jpg"
+                          alt="Blog"
+                          className="media-img-auto"
                         />
                         <div className="media-body space-sm">
-                          <h5 
+                          <h5
                             className="item-title">Autor <span>Dr J. Sykut</span>
                           </h5>
                         </div>
@@ -103,10 +110,10 @@ const Post = (
                   </div>
                 </div>
                 <div className="pagination-layout1 margin-b-30">
-                  <button 
-                    className="item-back-btn" 
+                  <button
+                    className="item-back-btn"
                     onClick={goBack}>
-                      <i className="flaticon-back"></i> Wróć do wpisów
+                    <i className="flaticon-back"></i> Wróć do wpisów
                   </button>
                 </div>
               </div>
@@ -145,6 +152,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
       tags = '',
       featuredImage = '',
       content = '',
+      galleryImages = [],
     },
   } = parseMD(markdownWithMetadata);
   const parsedMarkdown = matter(content);
@@ -164,6 +172,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
       featuredImage,
       lastPosts: getParsedPosts(files).slice(0, 6),
       sidebarTags,
+      galleryImages,
     }
   };
 };
