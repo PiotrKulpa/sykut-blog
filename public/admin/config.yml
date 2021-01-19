@@ -74,3 +74,8 @@ collections:
       - {label: "Zawartość", name: "content", widget: "markdown"}
       - {label: "Zdjęcie wyróżniające", name: "featuredImage", widget: image}
       - {label: "Tagi", name: "tags", widget: "string"}
+      - label: "Zdjęcia"
+        name: "galleryImages"
+        widget: "list"
+        summary: '{{fields.image}}'
+        field: {label: Image, name: image, widget: image}
