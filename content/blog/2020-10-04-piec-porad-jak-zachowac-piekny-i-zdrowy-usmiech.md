@@ -130,5 +130,9 @@ content: >-
   https://stomatologia-gliwa.pl/piec-porad-jak-zachowac-piekny-i-zdrowy-usmiech/
 featuredImage: /uploads/toothpaste-1786388_960_720.jpg
 tags: 'porady, uśmiech'
+galleryImages:
+  - /uploads/toothpaste-1786388_960_720.jpg
+  - /uploads/blog22.jpg
+  - /uploads/platform-2877646_960_720.jpg
 ---
 
