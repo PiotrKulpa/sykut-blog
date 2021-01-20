@@ -7,6 +7,7 @@ import marked from "marked";
 import parseMD from 'parse-md';
 import { useRouter } from 'next/router';
 import AwesomeSlider from 'react-awesome-slider';
+import Slider from "react-slick";
 
 import Sidebar from '../../../components/Sidebar';
 import { BLOG_FILES_PATH } from '../../../constants';
@@ -41,6 +42,16 @@ const Post = (
 
   const filteredTag = tags.split(',');
 
+  const settings = {
+    dots: true,
+    arrows: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    // adaptiveHeight: true,
+  };
+
   return (
     <>
       <Head>
@@ -53,13 +64,21 @@ const Post = (
             <div className="col-xl-9 col-lg-8">
               <div className="single-blog-box-layout1">
                 <div className="blog-img">
-                  <AwesomeSlider>
+                  {/* <AwesomeSlider>
                     {galleryImages && galleryImages.map((el, i) => {
                       return <div key={i}>
                         <img src={el} alt="blog" />
                       </div>
                     })}
-                  </AwesomeSlider>
+                  </AwesomeSlider> */}
+
+                  <Slider {...settings}>
+                  {galleryImages && galleryImages.map((el, i) => {
+                      return <div key={i}>
+                        <img src={el} alt="blog" />
+                      </div>
+                    })}
+                  </Slider>
                 </div>
                 <div className="blog-content">
                   <ul className="entry-meta">
