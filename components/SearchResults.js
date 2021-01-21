@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from 'next/router'
 
 import useStringSlicer from '../hooks/useStringSlicer';
-import { POST_URL_PATH } from '../constants';
+import { POST_URL_PATH, IMAGE_PLACEHOLDER } from '../constants';
 
 const SearchResults = ({ posts, pageName = '' }) => {
   const router = useRouter();
@@ -22,11 +22,12 @@ const SearchResults = ({ posts, pageName = '' }) => {
           date = '',
           htmlString = '',
           title = '',
-          featuredImage = '',
           tags = '',
+          galleryImages = [],
         }, index) => {
           const filteredTag = tags.split(',');
           const convertedDate = date ? new Date(date).toLocaleString() : '';
+          const featuredImage =  galleryImages[0] || IMAGE_PLACEHOLDER;
           return (
             <div key={index} className="col-xl-12 col-lg-6 col-md-6 col-12">
               <div className="blog-box-layout5">
@@ -35,7 +36,7 @@ const SearchResults = ({ posts, pageName = '' }) => {
                     <Link href={`${POST_URL_PATH}${slug}`}>
                       <a>
                         <img 
-                          src={featuredImage || '/images/placeholder.jpg'} 
+                          src={featuredImage} 
                           alt="Blog" 
                         />
                       </a>

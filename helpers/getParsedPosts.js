@@ -15,8 +15,8 @@ const getParsedPosts = (files = []) => {
         date = '',
         title = '',
         tags = '',
-        featuredImage = '',
         content = '',
+        galleryImages = [],
       },
     } = parseMD(markdownWithMetadata);
 
@@ -27,9 +27,9 @@ const getParsedPosts = (files = []) => {
       slug: filename.replace(".md", ""),
       date: date.toString(),
       title,
-      featuredImage,
       tags,
       htmlString,
+      galleryImages,
     }
 
   })

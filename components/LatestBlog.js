@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { POST_URL_PATH } from '../constants';
+import { POST_URL_PATH, IMAGE_PLACEHOLDER } from '../constants';
 
 const LatestBlog = ({ posts }) => {
 
@@ -16,10 +16,12 @@ const LatestBlog = ({ posts }) => {
           {posts && posts.map(({
             title = '',
             tags = '',
-            featuredImage = '',
             slug,
+            galleryImages = [],
           }, i) =>
-            <div key={i} className="col-lg-4 col-sm-6">
+            { 
+              const featuredImage =  galleryImages[0] || IMAGE_PLACEHOLDER;
+              return <div key={i} className="col-lg-4 col-sm-6">
               <div className="portfolio-box-layout2">
                 <div className="item-img">
                   <img src={featuredImage} alt="Project 11" />
@@ -54,7 +56,7 @@ const LatestBlog = ({ posts }) => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div>}
           )}
         </div>
         <div className="loadmore-layout2">

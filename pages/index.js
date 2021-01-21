@@ -35,8 +35,8 @@ export const getStaticProps = async () => {
         date = '', 
         title = '', 
         tags = '', 
-        featuredImage = '',
-        content ='',
+        content = '',
+        galleryImages = [],
       },
       } = parseMD(markdownWithMetadata);
 
@@ -47,9 +47,9 @@ export const getStaticProps = async () => {
       slug: filename.replace(".md", ""),
       date: date.toString(),
       title,
-      featuredImage,
       tags,
       htmlString,
+      galleryImages,
     }
 
   })

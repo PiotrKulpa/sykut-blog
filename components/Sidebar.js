@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useRouter } from 'next/router';
 
-import { POST_URL_PATH } from '../constants';
+import { POST_URL_PATH, IMAGE_PLACEHOLDER } from '../constants';
 
 const Sidebar = ({ posts, tags }) => {
 
@@ -45,9 +45,10 @@ const Sidebar = ({ posts, tags }) => {
           slug,
           date,
           title,
-          featuredImage,  
+          galleryImages = [],  
         }, i) => {
           const convertedDate = date ? new Date(date).toLocaleString() : '';
+          const featuredImage =  galleryImages[0] || IMAGE_PLACEHOLDER;
           return <div key={i} className="media">
             <div className="item-img">
               <a href={`${POST_URL_PATH}${slug}`}>
