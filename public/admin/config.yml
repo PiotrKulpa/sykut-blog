@@ -72,7 +72,6 @@ collections:
       - {label: "Tutuł", name: "title", widget: "string"}
       - {label: "Data publikacji", name: "date", widget: "datetime"}
       - {label: "Zawartość", name: "content", widget: "markdown"}
-      - {label: "Zdjęcie wyróżniające", name: "featuredImage", widget: image}
       - {label: "Tagi", name: "tags", widget: "string"}
       - label: "Zdjęcia"
         name: "galleryImages"
