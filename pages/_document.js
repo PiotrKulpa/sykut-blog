@@ -18,9 +18,9 @@ class MyDocument extends Document {
           <meta name="author" content="Janusz Sykut" />
           <meta name="viewport" content="width=devsice-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
           {/* Manifest */}
-          <link rel="manifest" href="manifest.json"></link>
+          {/* <link rel="manifest" href="manifest.json"></link> */}
           {/* Favicon*/}
-          <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+          <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
           <link rel="apple-touch-icon" href="#" />
           {/* Normalize CSS */}
           <link rel="stylesheet" href="/css/normalize.css" />
