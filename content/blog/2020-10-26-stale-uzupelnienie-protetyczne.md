@@ -6,7 +6,7 @@ featuredImage: /uploads/118601148_642961036425224_5802857680080596000_n.jpg
 tags: 'korona, uzupełnienie, protetyczne'
 galleryImages:
   - /uploads/118601148_642961036425224_5802857680080596000_n.jpg
-  - /uploads/fireshotcapture003.png
-  - /uploads/fireshotcapture008.png
+  - /uploads/118592835_327387968611198_232854259420908531_n.jpg
+  - /uploads/118625819_148094786946663_770887165328994709_n.jpg
 ---
 
