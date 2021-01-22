@@ -17,5 +17,12 @@ content: >-
   Źródło: https://pl.wikipedia.org/wiki/Implantologia
 featuredImage: /uploads/instagram-11.jpg
 tags: 'implantoprotetyka, stomatologia, uzębienie'
+galleryImages:
+  - /uploads/93756150_837152663436636_8623347394312964143_n.jpg
+  - /uploads/93989569_165656311393117_7662764344569408333_n.jpg
+  - /uploads/93795358_543603809919612_1631035852937031737_n.jpg
+  - /uploads/93880140_717180872421684_6137937316174849649_n.jpg
+  - /uploads/93795354_236571944082020_6560149237798164468_n.jpg
+  - /uploads/93659938_139334097645513_698268586769680808_n.jpg
 ---
 
