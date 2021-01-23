@@ -56,7 +56,6 @@ export const getStaticProps = async () => {
 
   const popularPosts = (mappedPosts && mappedPosts.filter(({ isPopular }) => isPopular === true)) || [];
 
-  // end of mapped posts
   return {
     props: {
       popularPosts,

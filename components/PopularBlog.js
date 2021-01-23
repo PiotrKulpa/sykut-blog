@@ -1,12 +1,13 @@
 import React from 'react';
-import { IMAGE_PLACEHOLDER } from '../constants';
+import { POST_URL_PATH, IMAGE_PLACEHOLDER } from '../constants';
 import useStringSlicer from '../hooks/useStringSlicer';
+import Link from "next/link";
 
 const PopularBlog = ({ popularPosts = [] }) => {
 
   return (
-    <section class="blog-wrap-layout2">
-      <div class="container">
+    <section className="blog-wrap-layout2">
+      <div className="container">
         <div className="section-heading text-center heading-dark heading-layout2">
           <h2>Wyróżnione</h2>
           <div className="item-subtitle">Zobacz poplularne wpisy</div>
@@ -15,8 +16,8 @@ const PopularBlog = ({ popularPosts = [] }) => {
           date = '',
           htmlString = '',
           title = '',
-          tags = '',
           galleryImages = [],
+          slug = ''
         }, i) => {
           const convertedDate = date ? new Date(date).toLocaleDateString() : '';
           const featuredImage = galleryImages[0] || IMAGE_PLACEHOLDER;
@@ -32,13 +33,22 @@ const PopularBlog = ({ popularPosts = [] }) => {
                   <div className="blog-box-layout3">
                     <div className="item-subtitle"></div>
                     <h3 className="item-title">
-                      <a href="single-blog1.html">{title}</a>
+                      <Link href={`${POST_URL_PATH}${slug}`}>
+                        <a>{title}</a>
+                      </Link>
                     </h3>
                     <p dangerouslySetInnerHTML = {{ __html: useStringSlicer(htmlString, 0, 177) }} />
+                    <Link
+                      href={`${POST_URL_PATH}${slug}`}
+                    >
+                      <a className="item-btn">
+                          Czytaj dalej <i className="flaticon-next"></i>
+                      </a>
+                    </Link>
                     <ul className="entry-meta">
-                      <li>Autor:<a href="#"> Dr J. Sykut </a>
+                      <li>
+                        <a href="#"> Dr J. Sykut, {convertedDate}</a>
                       </li>
-                      <li> {convertedDate}</li>
                     </ul>
                   </div>
                 </div>
@@ -54,22 +64,28 @@ const PopularBlog = ({ popularPosts = [] }) => {
                   <div className="blog-box-layout3">
                     <div className="item-subtitle"></div>
                     <h3 className="item-title">
-                      <a href="single-blog1.html">{title}</a>
+                      <Link href={`${POST_URL_PATH}${slug}`}>
+                        <a>{title}</a>
+                      </Link>
                     </h3>
-                    <p>Aimply dummy text of the printing and type setting area industry. Lorem Ipsum has been
-                    the industry's
-        standard dumen been the industry'so.</p>
+                    <p dangerouslySetInnerHTML = {{ __html: useStringSlicer(htmlString, 0, 177) }} />
+                    <Link
+                      href={`${POST_URL_PATH}${slug}`}
+                    >
+                      <a className="item-btn">
+                          Czytaj dalej <i className="flaticon-next"></i>
+                      </a>
+                    </Link>
                     <ul className="entry-meta">
-                      <li>Autor:<a href="#"> Dr J. Sykut </a>
+                    <li>
+                        <a href="#"> Dr J. Sykut, {convertedDate}</a>
                       </li>
-                      <li>{`${convertedDate}`}</li>
                     </ul>
                   </div>
                 </div>
               </>
             }
           </div>
-
         })}
       </div>
     </section>
@@ -78,6 +94,3 @@ const PopularBlog = ({ popularPosts = [] }) => {
 }
 
 export default PopularBlog;
-
-
-{/* <div dangerouslySetInnerHTML = {{ __html: content }} /> */ }
