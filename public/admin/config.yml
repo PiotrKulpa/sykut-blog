@@ -72,6 +72,7 @@ collections:
       - {label: "Tutuł", name: "title", widget: "string"}
       - {label: "Data publikacji", name: "date", widget: "datetime"}
       - {label: "Zawartość", name: "content", widget: "markdown"}
+      - {label: "Wyróżniony wpis?", name: "isPopular", widget: "boolean", default: false}
       - {label: "Tagi", name: "tags", widget: "string"}
       - label: "Zdjęcia"
         name: "galleryImages"
