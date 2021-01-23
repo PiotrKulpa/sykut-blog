@@ -25,6 +25,7 @@ content: >-
 
 
   Źródło: https://pl.wikipedia.org/wiki/Korona_protetyczna
+isPopular: true
 tags: 'korona, uzupełnienie, protetyczne'
 galleryImages:
   - /uploads/118601148_642961036425224_5802857680080596000_n.jpg
