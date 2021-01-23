@@ -11,13 +11,13 @@ import LatestBlog from '../components/LatestBlog';
 import Brands from '../components/Brands';
 import PopularBlog from '../components/PopularBlog';
 
-const Home = ({ posts }) => {
+const Home = ({ posts, popularPosts }) => {
     return (
       <>
       <Banner />
       <AboutUs />
       <LatestBlog { ...{posts}}/>
-      <PopularBlog />
+      <PopularBlog { ...{popularPosts}}/>
       <Brands />
       </>
     )
@@ -25,9 +25,7 @@ const Home = ({ posts }) => {
 
 export const getStaticProps = async () => {
   const files = fs.readdirSync("content/blog");
-  return {
-    props: {
-      posts: files && files.map(filename => {
+  const mappedPosts = files && files.map(filename => {
     const markdownWithMetadata = fs
       .readFileSync(path.join("content/blog", filename), 'utf8')
     const { 
@@ -37,6 +35,7 @@ export const getStaticProps = async () => {
         tags = '', 
         content = '',
         galleryImages = [],
+        isPopular = false,
       },
       } = parseMD(markdownWithMetadata);
 
@@ -50,16 +49,24 @@ export const getStaticProps = async () => {
       tags,
       htmlString,
       galleryImages,
+      isPopular,
     }
 
-  })
-  .sort((a, b) => {
-    var dateA = new Date(a.date);
-    var dateB = new Date(b.date);
-    return dateA - dateB;
-  })
-  .reverse()
-  .slice(0, 6)
+  });
+
+  const popularPosts = (mappedPosts && mappedPosts.filter(({ isPopular }) => isPopular === true)) || [];
+
+  // end of mapped posts
+  return {
+    props: {
+      popularPosts,
+      posts: mappedPosts.sort((a, b) => {
+        var dateA = new Date(a.date);
+        var dateB = new Date(b.date);
+        return dateA - dateB;
+      })
+      .reverse()
+      .slice(0, 6)
     }
   };
 };
