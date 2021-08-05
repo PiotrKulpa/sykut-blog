@@ -21,11 +21,11 @@ const Post = (
     htmlString = '',
     date = '',
     title = '',
-    featuredImage = '',
     tags = '',
     lastPosts = [],
     sidebarTags = [],
     galleryImages = [],
+    blogVideoLink = '',
   }
 ) => {
   const [baseUrl, setBaseUrl] = useState('')
@@ -64,20 +64,16 @@ const Post = (
             <div className="col-xl-9 col-lg-8">
               <div className="single-blog-box-layout1">
                 <div className="blog-img">
-                  {/* <AwesomeSlider>
-                    {galleryImages && galleryImages.map((el, i) => {
-                      return <div key={i}>
-                        <img src={el} alt="blog" />
-                      </div>
-                    })}
-                  </AwesomeSlider> */}
-
                   <Slider {...settings}>
-                  {galleryImages && galleryImages.map((el, i) => {
-                      return <div key={i}>
-                        <img src={el} alt="blog" />
-                      </div>
-                    })}
+                     {blogVideoLink && <video width="100%" height="100%" controls>
+                        <source src={blogVideoLink} type="video/mp4" />
+                        Twoja przeglądarka nie wspiera plików wideo typu mp4.
+                      </video>}
+                      {galleryImages && galleryImages.map((el, i) => {
+                        return <div key={i}>
+                          <img src={el} alt="blog" />
+                        </div>
+                      })}
                   </Slider>
                 </div>
                 <div className="blog-content">

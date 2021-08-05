@@ -79,3 +79,6 @@ collections:
         widget: "list"
         summary: '{{fields.image}}'
         field: {label: Image, name: image, widget: image}
+      - label: "Wideo"
+        name: "blogVideoLink"
+        widget: "file"
