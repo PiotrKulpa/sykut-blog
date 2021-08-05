@@ -168,6 +168,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
       featuredImage = '',
       content = '',
       galleryImages = [],
+      blogVideoLink = ''
     },
   } = parseMD(markdownWithMetadata);
   const parsedMarkdown = matter(content);
@@ -188,6 +189,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
       lastPosts: getParsedPosts(files).slice(0, 6),
       sidebarTags,
       galleryImages,
+      blogVideoLink,
     }
   };
 };
