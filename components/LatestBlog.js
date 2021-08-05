@@ -35,8 +35,8 @@ const LatestBlog = ({ posts }) => {
                   <h3 className="item-title">
                     <a href="single-portfolio1.html">{title}</a>
                   </h3>
-                  <div className="item-subtitle">
-                    <Link href="#"><a >{tags}</a></Link>
+                  <div className="item-subtitle" style={{overflowX: "hidden"}}>
+                    <Link href="#">{tags}</Link>
                   </div>
                 </div>
               </div>
