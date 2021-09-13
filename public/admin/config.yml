@@ -82,3 +82,4 @@ collections:
       - label: "Wideo"
         name: "blogVideoLink"
         widget: "file"
+        optional: true
