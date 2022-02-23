@@ -1,8 +1,6 @@
 import React, { memo } from 'react';
-import { attributes, html, react as AboutUsContent } from '../content/componentAboutUs.md';
 import fm from '../content/componentAboutUs.md';
-import { Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-
+import { Element } from 'react-scroll'
 
 const AboutUs = () => {
 
@@ -11,7 +9,6 @@ const AboutUs = () => {
     content = '',
     imgUrl = ''
   } = fm.attributes  || {};
-
 
   return (
     <Element name="aboutMe">

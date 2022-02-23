@@ -1,6 +1,6 @@
-import React, { memo } from 'react';
+import React from "react";
 import SlickSlider from "react-slick";
-import fm from '../content/componentBrands.md';
+import fm from "../content/componentBrands.md";
 
 const settings = {
   dots: false,
@@ -9,29 +9,25 @@ const settings = {
   autoplaySpeed: 5000,
   speed: 500,
   slidesToShow: 6,
-  slidesToScroll: 1
+  slidesToScroll: 1,
 };
 
 const Brands = () => {
-
-  const {
-    Brands: brandsContent,
-  } = fm.attributes  || {};
-
+  const { Brands: brandsContent } = fm.attributes || {};
   return (
     <section className="brand-wrap-layout2">
       <div className="container">
-      <SlickSlider {...settings}>
-        {brandsContent && brandsContent.map((el, i) => 
-          <React.Fragment key={i}>
-            <img src={el.imgUrl} />
-          </React.Fragment>
-        )}
-      </SlickSlider>
+        <SlickSlider {...settings}>
+          {brandsContent &&
+            brandsContent.map((el, i) => (
+              <React.Fragment key={i}>
+                <img src={el.imgUrl} />
+              </React.Fragment>
+            ))}
+        </SlickSlider>
       </div>
     </section>
-
-  )
-}
+  );
+};
 
 export default Brands;

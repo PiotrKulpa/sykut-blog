@@ -1,20 +1,20 @@
-import React, { useMemo, useRef } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-
+import React, { useMemo, useRef } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Footer = () => {
-
   const inputHeaderEl = useRef(null);
   const router = useRouter();
   const search = () => {
     const searchText = inputHeaderEl.current.value;
-    searchText && router.push(`/szukaj?id=${searchText}`,
-      undefined, { shallow: true });
-  }
+    searchText &&
+      router.push(`/szukaj?id=${searchText}`, undefined, { shallow: true });
+  };
 
-  const date = new Date();
-  const currentYear = useMemo(() => date.getFullYear(), [date]);
+  const currentYear = useMemo(() => {
+    const date = new Date();
+    return date.getFullYear();
+  }, []);
 
   return (
     <>
@@ -26,15 +26,21 @@ const Footer = () => {
               <div className="footer-box-layout2">
                 <div className="footer-logo">
                   <Link href="/">
-                    <a><img src="/images/jsykutlogo-footer.svg" alt="Logo" /></a>
+                    <a>
+                      <img src="/images/jsykutlogo-footer.svg" alt="Logo" />
+                    </a>
                   </Link>
                 </div>
                 <ul className="footer-menu">
                   <li>
-                    <Link href="/"><a>Home</a></Link>
+                    <Link href="/">
+                      <a>Home</a>
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/blog"><a>Blog</a></Link>
+                    <Link href="/blog">
+                      <a>Blog</a>
+                    </Link>
                   </li>
                   <li>
                     <a href="http://prodentica.info/">Prodentica</a>
@@ -43,10 +49,14 @@ const Footer = () => {
                     <a href="https://prestigelublin.eu/">Prestige</a>
                   </li>
                   <li>
-                    <Link href="/kontakt"><a>Kontakt</a></Link>
+                    <Link href="/kontakt">
+                      <a>Kontakt</a>
+                    </Link>
                   </li>
                   <li>
-                  <Link href="/polityka-prywatnosci"><a>Polityka prywatności</a></Link>
+                    <Link href="/polityka-prywatnosci">
+                      <a>Polityka prywatności</a>
+                    </Link>
                   </li>
                 </ul>
                 <ul className="footer-social">
@@ -61,7 +71,9 @@ const Footer = () => {
                     </a>
                   </li>
                 </ul>
-                <div className="copyright">Copyright © {currentYear} by Dr J. Sykut. All rights reserved.</div>
+                <div className="copyright">
+                  Copyright © {currentYear} by Dr J. Sykut. All rights reserved.
+                </div>
               </div>
             </div>
           </div>
@@ -70,9 +82,15 @@ const Footer = () => {
       {/* <!-- Footer Area End Here --> */}
       {/* <!-- Search Box Start Here --> */}
       <div id="header-search" className="header-search">
-        <button type="button" className="close">×</button>
+        <button type="button" className="close">
+          ×
+        </button>
         <form className="header-search-form">
-          <input ref={inputHeaderEl} type="search" placeholder="Szukaj........" />
+          <input
+            ref={inputHeaderEl}
+            type="search"
+            placeholder="Szukaj........"
+          />
           <button onClick={search} type="submit" className="search-btn">
             <i className="flaticon-search"></i>
           </button>
@@ -100,14 +118,27 @@ const Footer = () => {
           <a href="/kontakt">Kontakt</a>
         </li>
       </ul>
-      <svg className="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <path className="shape-overlays__path" d="M 0 100 C 50 100 50 100 100 100 V 100 H 0"></path>
-        <path className="shape-overlays__path" d="M 0 100 C 50 100 50 100 100 100 V 100 H 0"></path>
-        <path className="shape-overlays__path" d="M 0 100 C 50 100 50 100 100 100 V 100 H 0"></path>
+      <svg
+        className="shape-overlays"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+        <path
+          className="shape-overlays__path"
+          d="M 0 100 C 50 100 50 100 100 100 V 100 H 0"
+        ></path>
+        <path
+          className="shape-overlays__path"
+          d="M 0 100 C 50 100 50 100 100 100 V 100 H 0"
+        ></path>
+        <path
+          className="shape-overlays__path"
+          d="M 0 100 C 50 100 50 100 100 100 V 100 H 0"
+        ></path>
       </svg>
       {/*  Off canvas Menu End  */}
     </>
-  )
-}
+  );
+};
 
 export default Footer;

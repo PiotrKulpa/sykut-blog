@@ -1,20 +1,18 @@
-import React from 'react';
-import fm from '../content/contact.md';
-import Breadcrumbs from '../components/Breadcrumbs';
+import React from "react";
+import fm from "../content/contact.md";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 const Contact = () => {
-
   const {
-    address1 = '',
-    address2 = '',
-    email = '',
-    email2 = '',
-    fax1 = '',
-    fax2 = '',
-    head = '',
-    phone1 = '',
-    phone2 = '',
-    subhead = '',
+    address1 = "",
+    address2 = "",
+    email = "",
+    fax1 = "",
+    fax2 = "",
+    head = "",
+    phone1 = "",
+    phone2 = "",
+    subhead = "",
   } = fm.attributes || {};
 
   return (
@@ -23,7 +21,7 @@ const Contact = () => {
       <section className="contact-page-wrap">
         <div className="container">
           <div className="google-map-area">
-            <div style={{ height: '540px', width: '100%' }}>
+            <div style={{ height: "540px", width: "100%" }}>
               <div className="mapouter">
                 <div className="gmap_canvas">
                   <iframe
@@ -34,8 +32,8 @@ const Contact = () => {
                     frameBorder="0"
                     scrolling="no"
                     marginHeight="0"
-                    marginWidth="0">
-                  </iframe>
+                    marginWidth="0"
+                  ></iframe>
                 </div>
               </div>
             </div>
@@ -134,27 +132,22 @@ const Contact = () => {
                     rows="2"
                     cols="20"
                     required
-                  >
-                  </textarea>
+                  ></textarea>
                   <div className="help-block with-errors"></div>
                 </div>
                 <div className="col-12 form-group">
-                  <button
-                    type="submit"
-                    className="item-btn"
-                  >
+                  <button type="submit" className="item-btn">
                     Wyślij<i className="flaticon-right-arrow"></i>
                   </button>
                 </div>
               </div>
               <div className="form-response"></div>
             </form>
-
           </div>
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
 export default Contact;

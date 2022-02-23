@@ -1,19 +1,16 @@
-import React, { useCallback } from 'react';
-import Link from 'next/link';
-import { Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-
-
+import React from "react";
+import Link from "next/link";
+import { scroller } from "react-scroll";
 
 const Header = () => {
-
   const scrollToAbout = () => {
-    scroller.scrollTo('aboutMe', {
+    scroller.scrollTo("aboutMe", {
       duration: 1000,
       delay: 50,
       smooth: true,
-      offset: -150, 
+      offset: -150,
     });
-  }
+  };
 
   return (
     <header id="header_1">
@@ -22,11 +19,14 @@ const Header = () => {
           <div className="row no-gutters d-flex align-items-center">
             <div className="col-lg-2 col-md-2 d-flex justify-content-start">
               <div className="logo-area">
-                <Link  href="/">
-
+                <Link href="/">
                   <a className="active-menu temp-logo">
-                    <img src="/images/jsykutlogo.svg" alt="logo" className="img-fluid" /></a>
-
+                    <img
+                      src="/images/jsykutlogo.svg"
+                      alt="logo"
+                      className="img-fluid"
+                    />
+                  </a>
                 </Link>
               </div>
             </div>
@@ -35,13 +35,19 @@ const Header = () => {
                 <nav id="dropdown">
                   <ul>
                     <li>
-                      <Link href="/"><a className="active-menu">Home</a></Link>
+                      <Link href="/">
+                        <a className="active-menu">Home</a>
+                      </Link>
                     </li>
                     <li onClick={scrollToAbout}>
-                      <Link  href="/#"><a className="active-menu">O mnie</a></Link>
+                      <Link href="/#">
+                        <a className="active-menu">O mnie</a>
+                      </Link>
                     </li>
                     <li>
-                      <Link href="/blog/strona/1"><a className="active-menu">Blog</a></Link>
+                      <Link href="/blog/strona/1">
+                        <a className="active-menu">Blog</a>
+                      </Link>
                     </li>
                     <li>
                       <a href="http://prodentica.info/">Prodentica</a>
@@ -50,7 +56,9 @@ const Header = () => {
                       <a href="https://prestigelublin.eu/">Prestige</a>
                     </li>
                     <li>
-                      <Link href="/kontakt"><a className="active-menu">Kontakt</a></Link>
+                      <Link href="/kontakt">
+                        <a className="active-menu">Kontakt</a>
+                      </Link>
                     </li>
                   </ul>
                 </nav>
@@ -65,7 +73,10 @@ const Header = () => {
                     </a>
                   </li>
                   <li className="offcanvas-menu-wrap">
-                    <button type="button" className="offcanvas offcanvas-menu-btn offcanvas-btn-dark menu-status-open">
+                    <button
+                      type="button"
+                      className="offcanvas offcanvas-menu-btn offcanvas-btn-dark menu-status-open"
+                    >
                       <span className="menu-btn-icon">
                         <span></span>
                         <span></span>
@@ -80,7 +91,7 @@ const Header = () => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
 export default Header;
